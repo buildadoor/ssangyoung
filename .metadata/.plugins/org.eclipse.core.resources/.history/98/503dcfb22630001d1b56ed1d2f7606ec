@@ -1,0 +1,53 @@
+package homework;
+
+public class A00_Systemout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*5. 두명(컴퓨터vs컴퓨터)의 구슬 홀짝게임 : 한명이 구슬 10개를 가지고 임의의로 쥐게 하여,
+다른 한명이 이것을 맞추었는지 여부에 따라 승/패로 출력하게 하세요.
+		int gIdx1 = (int)(Math.random()*10+1);//0.1
+		System.out.println("#홀/짝 게임#");
+		System.out.println("게임시작 홀/짝을 선택하세요:");
+		String com1 = "";; // 홀or짝 선택
+		String com2 = "";
+		System.out.println("컴퓨터1의 선택:");
+		if(gIdx1==0) { //위에 임의로 값이 0
+			System.out.println("짝!!");
+			com1 = "짝"; //com이 짝
+		}else {	//임의 값이 1
+			System.out.println("홀!!");
+			com2= "홀"; //com 홀
+		}
+		if(com1.equals.com2)) {
+			System.out.println("컴퓨터1이 이겼습니다.");
+		}else {
+			System.out.println("컴퓨터2가 이겼습니다.");
+		}
+		}
+		}else if(com02%2==0){	
+			System.out.println("@짝@");
+		}else {
+			System.out.println("@홀@");
+		*/
+		int game = (int)(Math.random()*10+1);//0.1
+		System.out.println("@@~구슬 홀짝 게임~@@");
+		int com01 = (int)(Math.random()*10+1);
+		int com02 = (int)(Math.random()*10+1);
+	
+		System.out.println("컴퓨터1의 선택:");	
+
+
+		if(com01%2==0) {
+			System.out.println("@짝@");
+		}else if(com01%2==1){	
+			System.out.println("@홀");
+		}
+			System.out.println("컴퓨터2의 정답:"+com01);
+		if(com02==com01) {
+			System.out.println("컴퓨터2가 이겼습니다.");
+		}else { 
+			System.out.println("컴퓨터1이 이겼습니다.");
+		}
+	}
+}

@@ -1,0 +1,1 @@
+{"resources":{"src/main/java/a01_diexp/Z01.sql":{"default-schema":"SCOTT","default-datasource":"oracle_thin-1847e3212ec-597f2d29b1801e8a"},"src/main/webapp/z01_homework/practice.sql":{"default-datasource":"oracle_thin-1847e3212ec-597f2d29b1801e8a","default-schema":"SCOTT"}}}

@@ -1,0 +1,16 @@
+package javaexp.z01_project;
+
+import java.util.Scanner;
+
+public class A02_ProductPage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("하얼빈 상세페이지");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("책소개 입력");
+		String intro = sc.nextLine();
+		System.out.print("책소개:"+intro);
+	}
+
+}

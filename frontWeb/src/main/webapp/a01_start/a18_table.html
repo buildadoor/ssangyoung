@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	td{text-align:center;}/*
+	css로 글자들을 중앙정렬 td에는 align 속성이 없음
+	ps) 일반적으로 기본으로 중앙정렬을 하면 가독성이 좋고, 보다 세밀하게 하려면
+	cellpadding옵션과 함께, 코드성 데이터는 중앙정렬, 일반 문자열 데이터는
+	왼쪽정렬, 숫자형 데이터의 경우는 오른쪽 정렬을 처리한다.
+	*/
+	
+	th{background-color:yellow;color:blue;
+		border-bottom:1px double red;}
+	tr:hover{background-color:tomato;}
+	table{border-collapse:collapse;}
+	/*
+	border : 2px double blue; 
+		테두리에 대한 옵션을 굵기, 종류, 색상으로 설정함.
+		boder-bottom : 해당 th의 하단 부분에만 설정 옵션을 처리할 때 , 활용된다.
+	
+	테이블의 cell의 border는 2중의 2D형식의 라인이 default로 지원한다.
+	이것을 한줄로 하려면 css를 table 속성 border-collapse로 collapse
+	처리하여야 한다.
+	
+	*/
+</style>
+
+</head>
+<body>
+<!-- 
+테이블 기타 속성 
+1.align: 전체 화면 대비 정렬
+2.width="%": 전체 화면 대비 테이블의 폭을 %로 처리
+-->
+ <table align="center" cellpadding="15" cellspacing="1" border="1" width="80%">
+ <col width="20"> <col width="15"><col width="10"><col width="15">
+ <tr><th>사원번호</th><th>사원명</th><th>직책</th><th>관리자번호</th><th>입사일</th><th>부서번호</th><th>급여</th><th>보너스</th><th>부서</th></tr>
+ <tr><td>0001</td><td>이또치</td><td>과장</td><td>6000</td><td>2002/11/01</td><td>A01</td><td>700</td><td>500</td><td>인사</td></tr>
+ <tr><td>0002</td><td>이둘리</td><td>부장</td><td>5000</td><td>2012/11/01</td><td>A02</td><td>500</td><td>400</td><td>회계</td></tr>
+ <tr><td>0003</td><td>이희동</td><td>대리</td><td>3000</td><td>2022/11/01</td><td>A03</td><td>300</td><td>300</td><td>마케팅</td></tr>
+ </table>
+</body>
+</html>

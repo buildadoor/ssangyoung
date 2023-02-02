@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    import="java.util.*"    
+    import="jspexp.vo.*"
+    import="jspexp.a13_database.*"    
+    import="jspexp.a13_database.vo.*"   
+    import="jspexp.vo.Person, jspexp.vo.Product"   
+    session = "true"
+    %>
+    <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ form 하위 요소객체와 request.getParameterNames()를 이용하여
+ 
+ 
+ 사원명/사원번호/부서이름을 등록리스트하세요
+*/
+
+</script>
+
+</head>
+<body>
+<form>
+	학생1: <input type="text" name="student01" value="김이이"><br>
+	학생2: <input type="text" name="student02" value="박김김"><br>
+	학생3: <input type="text" name="student03" value="남송송"><br>
+	 <input type="submit" value="처리">
+</form>
+<table>
+	<tr><th>항목</th><th>내용</th></tr>
+	<%
+	Enumeration e = request.getParameterNames();
+	while(e.hasMoreElements()){
+		String key = (String)e.nextElement();
+	%>
+    
+    	<tr><td><%=key%></td><td><%=request.getParameter(key) %></td></tr>
+    
+    <%} %>
+    </table>
+
+  
+    
+    </body>
+<script type="text/javascript">
+
+
+
+</script>
+</html>
+
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+
+
+</script>
+</html>

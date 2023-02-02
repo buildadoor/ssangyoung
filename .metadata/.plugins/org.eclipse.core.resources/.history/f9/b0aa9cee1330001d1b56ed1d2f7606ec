@@ -1,0 +1,48 @@
+package homework;
+
+public class A00_Systemout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+/* 1차원 배열로 회원의 이름 5명을 선언하고 할당 출력하세요
+ * 		String [][] member = { {"황예지"},{"최지수"},{"신류진"},{"이채령"},{"신유나"}
+		};
+		System.out.println("#잇지#");
+		for(int idx=0;idx<member.length;idx++) {
+			System.out.print(idx+1+"번 멤버: ");
+			for (int jdx=0; jdx<member[idx].length;jdx++) {
+				System.out.print(member[idx][jdx]);
+			}
+				System.out.println();
+	}
+			}String [][][] member = new String [4][0][0];
+		member[0][0][0] = {{"황예지","서울","23"}};
+		member[1][0][0] = {{"최지수","대전","23"}};
+		member[2][0][0] = {{"신류진","천안","22"}}
+		member[3][0][0] = {{"이채령","대구","22"}}
+		member[4][0][0] = {{"신유나","부산","19"}}
+	}
+		
+ * 2차원 배열로 위 회원이름에 추가하여 나이와 사는 곳을 만들어 할당하고 출력하세요
+ * 
+		}
+		*/
+		String [][] member = { 
+								{"황예지","23살","서울"},
+								{"최지수","23살","대전"},
+								{"신류진","22살","천안"},
+								{"이채령","22살","대구"},
+								{"신유나","19살","부산"}
+				};
+			System.out.println("#잇지#");
+		for(int idx=0;idx<member.length;idx++) {
+			System.out.print(idx+1+"번 멤버: ");
+			for (int jdx=0; jdx<member[idx].length;jdx++) {
+				System.out.print(member[idx][jdx]+" ");
+			}
+				System.out.println();
+	}
+			}
+	
+	}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+ #시간정보 입력폼요소
+ 	1. <input type="month|week|date|datetime-local">
+ 		1)시간정보만 입력 가능한 폼요소
+ 		2) 속성 및 내용
+ 			month:년월
+ 			week: 년/몇번쨰주
+ 			date: 년/월/일
+ 			datetime-local : 해당 나라의 시간
+ 				년/월/일/오전,오후/시/분/초/100분의1초
+ 			time: 시/분
+ -->
+ 
+ <h2>날짜와 시간처리</h2>
+ <form>
+ 	년/월:<input type="month" name="time01" value="2010-12"/><br>
+ 	년/몇번쨰주:<input type="week" name="time02" value="2022-W52"/><br>
+ 	년/월/일:<input type="date" name="time03" value="2022-12-01"/><br>
+ 	해당 나라의 시간:<input type="datetime-local" name="time04" value="2022-12-31T12:12:32.01"/><br>
+ 	시/분:<input type="time" name="time05" value="12:12"/>
+ 	<input type="submit"/>
+ 	</form>
+ 	
+ <h3>EX)검색일을 기본으로 올해 1월1일부터 12월 31일을설정하고, 선택으로 오늘부터 일단 말까지 선택해서 요청값을 전달되겧세ㅏ요 </h3>
+ <h3>시작:[] ~종료[]</h3>
+ <form>
+ 	시작:<input type="date" name="expMonth" value="2022-01-01"> ~ 종료:<input type="date" name="expMonthend" vlaue="2022-12-31">
+ 	<input type="submit"/>
+ </form>
+</body>
+</html>

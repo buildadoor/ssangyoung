@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ 
+*/
+</script>
+
+</head>
+<body>
+	<h2></h2>
+	<h2></h2>
+	<h2></h2>
+	<h2></h2>
+	<h2></h2>
+	<h2></h2>
+	
+	<h4></h4>
+	<h4></h4>
+	<h4></h4>
+	
+<table id="tab01">
+ <thead>
+    <tr><th>이름</th><th>국어</th></tr>
+ </thead>
+  <tbody>
+    <tr><td></td><td></td></tr>
+    <tr><td></td><td></td></tr>
+    <tr><td></td><td></td></tr>
+  </tbody>
+</table>
+
+<table id = "tab02">
+	<thead><tr><td>물건명</td><td>가격</td><td>갯수</td><td>계</td></tr></thead>
+	<tbody>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	</tbody>
+</table>
+<script type="text/javascript">
+//ex) id로 tab02로 3x2테이블을 만들고 물건명과 가격이 3개 있는 json배열을 만들고 해당 테이블에 출력하세요
+var tds= document.querySelectorAll("#tab02 tbody td");
+var prods = [
+	{name:"사과",price:700,cnt:3},
+	{name:"딸기",price:17700,cnt:3},
+	{name:"바나나",price:1700,cnt:3}]
+//td 0 1 2 물건의 name price cnt 할당
+prods.forEach(function(prod,idx){
+	//var tdIdx = idx*4 //물건명
+	tds[idx*4].innerText = prod.name
+	tds[idx*4+1].innerText = prod.price
+	tds[idx*4+2].innerText = prod.cnt
+	tds[idx*4+3].innerText = prod.price*prod.cnt
+
+})
+
+</script>
+
+<!-- 
+	td 0 1 2 물건0 물건명 가격 갯수 총계
+	td 3 4 5 물건1 물건명 가격 갯수 총계
+	td 6 7 8 물건2 물건명 가격 갯수 총계
+ 물건index*3 ==> td의 index 물건명(0), 물건가격(+1), 물건갯수(+2) 계(+3)
+	td index Vs 물건정보 index
+	0 1 2 3  0 name price cnt price*cnt 
+	4 5 6 7  1 name price cnt price*cnt
+	8 9 10 11  2 name price cnt price*cnt
+
+	tIdx = pIdx*4+0 물건명
+	tIdx = pIdx*4+1 가격
+	tIdx = pIdx*4+2 갯수
+	tIdx = pIdx*4+3 계
+
+# 다중의 속성을 가진 배열을 위의 DOM에 처리하기 위해서 logic이 필요로 한다.
+var studs = [{name:"홍길동",kor:70},{name:"김길동",kor:80},{name:"박길동",kor:100}]
+
+var tds= document.querySelectorAll("#tab01 td");
+tds[0].innerText = studs[0].name
+tds[1].innerText = studs[0].kor
+tds[2].innerText = studs[1].name
+tds[3].innerText = studs[1].kor
+tds[4].innerText = studs[2].name
+tds[5].innerText = studs[2].kor
+
+
+for(var idx=0;idx<tds.length;idx++){
+	var stIdx = Math.floor(idx/2)//위 index를 확인하여 td와 studs의 index차이를 로직으로 처리한다.
+	if(idx%2==0){
+		tds[idx].innerText = studs[stIdx].name 
+	}else{
+		tds[idx].innerText = studs[stIdx].kor
+	}
+}
+ -->
+	<div id="container"></div>
+
+</body>
+<script type="text/javascript">
+
+	var h2Arry = document.querySelectorAll("h2")
+	h2Arry[0].innerText = "첫번째 데이터"
+	h2Arry[1].innerText = "두번째 데이터"
+	h2Arry[2].innerText = "h2의 길이:"+h2Arry.length
+	var colors = ["red","orange","yellow","green","blue","navy","purple"]
+	for(var idx=0;idx<h2Arry.length;idx++){
+		h2Arry[idx].innerText = colors[idx]
+		h2Arry[idx].style.color = colors[idx]
+		
+	}
+	//ex) h4를 3개 만들어 학생3명의 이름을 배열로 선언된 데이터를 출력하세요
+var h4Arry = document.querySelectorAll("h4")
+	var names = ["이루피","이둘리","이윤아"]
+for(var idx=0;idx<names.length;idx++){
+	h4Arry[idx].innerText = names[idx]
+}
+var tds = document.querySelectorAll("#tab01 td")
+for(var idx=0; idx<tds.length;idx++){
+	tds[idx].innerText=names[idx]
+}
+
+var studs = [{name:"홍길동",kor:70},{name:"김길동",kor:80},{name:"박길동",kor:100}]
+
+var tds= document.querySelectorAll("#tab01 td");
+tds[0].innerText = studs[0].name
+tds[1].innerText = studs[0].kor
+tds[2].innerText = studs[1].name
+tds[3].innerText = studs[1].kor
+tds[4].innerText = studs[2].name
+tds[5].innerText = studs[2].kor
+
+
+for(var idx=0;idx<tds.length;idx++){
+	var stIdx = Math.floor(idx/2)//위 index를 확인하여 td와 studs의 index차이를 로직으로 처리한다.
+	if(idx%2==0){
+		tds[idx].innerText = studs[stIdx].name 
+	}else{
+		tds[idx].innerText = studs[stIdx].kor
+	}
+}
+/* 
+# 여러가지 배열 데이터와 함께 DOM객체 활용하기
+1. DOM 다중 선택자
+	var domArry = document.querySelector("다중의 선택자")
+2. 배열문과 반복 처리
+	domArry[0] : 개별적인 단위
+	domArry[1] : 개별적인 단위
+	
+	for(var idx=0;idx<배열.length;idx++)
+		//각 DOM의 데이터 처리
+ 	domArry[idx].innerText = "입력데이터"
+		*/
+ var div = document.querySelector("#container")
+ div.innerHTML=""
+// 
+</script>
+</html>

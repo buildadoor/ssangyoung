@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+# overflow
+1. 지정된 화면의 크기보다 더 많은 내용을 컨테이너 요소에 포함될 때,
+	처리하는 속성
+2. 속성값
+	hidden : 보이지 않게 처리 
+	visible : 넘기게 보기에 처리
+	scroll : 스크롤 해서 보이게 처리 
+*/
+	div{
+		width:100px;height:100px;border:1px solid green;margin:100px;
+	}
+	div#opt01{
+		overflow:hidden;
+	}
+	div#opt02{
+		overflow:visible;
+	}
+	div#opt03{
+		overflow:scroll;
+	}
+/*
+ex) 물건에 대한 설명내용을 hidden과 scroll옵션을 통해서 처리하세요.
+*/
+	div#hidden{
+		overflow:hidden;
+	}
+	div#scroll{
+		overflow:scroll;
+	}
+</style>
+</head>
+<body>
+	<h3>물건 설명 내용 예제 </h3>
+	<div id="hidden">에어팟프로는 노이즈캔슬링이 된다.</div>
+	<div id="scroll">에어팟1,2세대는 노이즈캔슬링이 안된다.</div>
+	<div><h3>기본</h3>안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</div>
+	<div id="opt01">
+		<h3>hidden</h3>
+	안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</div>
+	<div id="opt02">
+		<h3>visible</h3>
+		안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</div>
+	<div id="opt03">
+		<h3>scroll</h3>
+	안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+package springweb.z01_vo;
+
+public class ovMember {
+	private String id;
+	private String pass;
+	private String auth;
+	private String nickname;
+	private String address;
+	private int point;
+	
+}

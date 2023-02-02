@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>회원가입</title>
+</head>
+<style>
+input[type=button], input[type=submit] {
+  display: flex;
+  width: 30%;
+  padding: 12px;
+  border: 1px solid indigo;
+  border-radius: 4px;
+  resize: vertical;
+  margin : 0 auto;
+}
+</style>
+<body>
+<form name="Join" action="log2.jsp" method="post">
+<center>
+<table border=1>
+<tr>
+ <td colspan="2" align=center>
+ <b><font size=5>회원가입</font></b>
+ </td>
+</tr>
+ 
+ <tr><td>구분 : </td><td><input type="text" name="div"></td></tr>
+ <tr><td>아이디 : </td><td><input type="text" name="id"></td></tr>
+ <tr><td>비밀번호 : </td><td><input type="password" name="password"></td></tr>
+ <tr><td>이름 : </td><td><input type="text" name="uname"></td></tr>
+ <tr><td>주민등록번호 : </td><td><input type="text" name="rrn" ></td></tr>
+ <tr><td>핸드폰번호 : </td><td><input type="text" name="phonenumber" ></td></tr>
+ <tr><td>주소 : </td><td><input type="text" name="address"></td></tr>
+ <tr><td>포인트 : </td><td><input type="text" name="pount"></td></tr>
+  
+	
+ <tr>
+  <td colspan="2" align=center>
+   <a href="javascript:Join.submit()">회원가입</a>
+   <a href="javascript:Join.reset()">다시작성</a>
+  </td>
+ </tr>
+ 
+</table>
+</center>
+</form>
+</body>
+</html>

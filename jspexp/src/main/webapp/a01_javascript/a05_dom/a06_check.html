@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+   <h2>좋아하는 과일 선택</h2>
+   <input type="checkbox" name="favFoods" value="사과"/>사과
+   <input type="checkbox" name="favFoods" value="딸기"/>딸기
+   <input type="checkbox" name="favFoods" value="바나나"/>바나나
+   <input type="checkbox" name="favFoods" value="망고"/>망고
+   <input type="checkbox" name="favFoods" value="수박"/>수박<br>
+   <input type="checkbox" name="ckAll" onclick="ckAllFn(this)"/>전체
+
+
+	<h2>자주보는 TV 프로그램</h2>
+   <input type="checkbox" name="favpg" value="드라마"/>드라마
+   <input type="checkbox" name="favpg" value="영화"/>영화
+   <input type="checkbox" name="favpg" value="음악"/>음악
+   <input type="checkbox" name="favpg" value="토크"/>토크<br>
+   <p id="show"></p>
+   <div id="container"></div>
+<!-- 
+ex) 주로 보는 TV 시청 프로그램 종류
+	[]드라마 []영회 []음악 []토크
+	클릭시 , 하단에 해당 내용을 출력되게 처리하세요.
+ -->
+
+</body>
+<script type="text/javascript">
+var div = document.body.querySelector("#container")
+var favFoods = document.querySelectorAll("[name=favFoods]")
+//favFoods[1].checked=true //두번째 체크박스를 기본적으로 지정해놓음
+   for(var idx=0; idx<favFoods.length;idx++){
+      // 각요소 객체를 이벤트 할당
+      favFoods[idx].onclick=function(){
+         ckData();
+      }
+   }
+   function ckData(){
+      var add="";
+      for(var idx=0;idx<favFoods.length;idx++){
+         if(favFoods[idx].checked){
+            add+=favFoods[idx].value+",";
+         }
+      }
+      div.innerText=add
+   }
+   function ckAllFn(obj){
+	   //해당 내용이 checked가 true이면 전체 checked 
+	   //false이면 전체 unchecked 
+      for(var idx=0; idx<favFoods.length;idx++){
+         favFoods[idx].checked = obj.checked   
+      }   
+   }
+   
+   
+   
+   
+   var favpg = document.querySelectorAll("[name=favpg]")
+   var show = document.body.querySelector("#show")
+ //favFoods[1].checked=true //두번째 체크박스를 기본적으로 지정해놓음
+    for(var idx=0; idx<favpg.length;idx++){
+       // 각요소 객체를 이벤트 할당
+       favpg[idx].onclick=function(){
+			var add= ""
+			//여러개가 선택되어지기 때문에 체크된 것만 for문으로 확인
+			for(var idx=0;idx<favpg.legnth;idx++){
+				if(favTV[idx].checked){
+					add+=favTV[idx].value+","
+			}
+			}
+			show.innerText=add;
+       }
+    }
+    function ckData(){
+       var add="";
+       for(var idx=0;idx<favpg.length;idx++){
+          if(favpg[idx].checked){
+             add+=favpg[idx].value+",";
+          }
+      
+       show.innerText=add
+    }
+   }
+    
+
+
+
+// 
+</script>
+</html>

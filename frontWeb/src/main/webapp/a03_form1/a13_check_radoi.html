@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <!-- 
+ 	#선택형 입력: 체크박스와 라이도박스
+ 		1. <input type ="checkbox">
+ 			1) 체크박스 만들기
+ 			2) 동일한 이름의 여러개의 다중 선택이 가능하다.
+ 			3) 요청값으로 전달되는 경우 체크된 값만 전달된다.
+ 		2. <input type="radio">
+ 			1)라디오 박스 만들기
+ 			2) 동일한 name으로 설정하면 하나만 선택이 되어진다.
+ 				-하나의 그룹을 생성
+ 			3) 여러개의 name에 동일한 값이 설정되는 경우
+ 				check된 단일 값이 요청값으로 전달된다.
+ 		
+ 		3. 기본형식
+ 			<input type="checkbox|radio"
+ 				name="요소이름" value="요소값" checked>
+ 			1) value : 폼요소가 선택된 상태일 때, 웹서버에 전송되는 값
+ 			2) checked : 이 속성이 있으면, 초기에 선택 상태로 출력됨 
+  -->
+  
+  <p>
+  <form>
+ 짜짱면 <input type="checkbox" name="menu" value="짜짱면">
+ 짬뽕 <input type="checkbox" name="menu" value="짬뽕">
+ 탕수육 <input type="checkbox" name="menu" value="탕수육">
+ 	<button>선택완료</button>
+ 	</form>
+ </p>
+ 
+ <form>
+ 발리<input type="checkbox" name="trip" value="발리">
+ 코타키나발루<input type="checkbox" name="trip" value="코타키나발루">
+ 미쿡<input type="checkbox" name="trip" value="미쿡">
+ 	<button>제출</button> 버튼1
+ 	<input type="submit" value="제출">버튼2
+ </form>
+ <hr>
+ <h3>사는곳 체크</h3>
+ <form>
+ <h4>국내/외 여부</h4>
+ <input type="radio" name="part" checked value="국내">국내외
+ <input type="radio" name="part"  value="국외">국외<br>
+  <h4>거주지역 체크</h4>
+ <input type="radio" name="loc" checked value="서울">서울
+ <input type="radio" name="loc"  value="부산">부산
+ <input type="radio" name="loc"  value="경기">경기
+ <input type="radio" name="loc"  value="충청">충청
+ <input type="radio" name="loc"  value="전라">전라
+ <input type="radio" name="loc"  value="경상">경상
+ </form>
+ <hr>
+ <h3>ex)성별과 오늘의 점심메뉴 단일선택</h3>
+ <form>
+ <h4>성별</h4>
+ <input type="radio" name="gender" checked value="남자">남
+ <input type="radio" name="gender" value="여자">여
+ <h4>오늘메뉴</h4>
+ <input type="radio" name="menu" checked value="한식">한식
+ <input type="radio" name="menu" value="중식">중식
+ <input type="radio" name="menu" value="양식">양식
+ <input type="radio" name="menu" value="일식">일식<br>
+ <input type="submit" value="제출버튼1"> 
+ <button>제출버튼2</button>
+ </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.tomato.exerd.core.wizard.NewEXerdWizard">
+	</section>
+	<section name="solution">
+	</section>
+	<section name="solutionSelectionDialog">
+		<item key="applyScope" value="1"/>
+	</section>
+	<section name="com.tomato.exerd.export.ExportModelWizard">
+		<list key="templateNames">
+		</list>
+		<list key="templateContents">
+		</list>
+	</section>
+	<section name="com.tomato.exerd.export.ModelExportWizardDialog">
+		<item key="lastUsedTemplateName" value="HTML 표(기본)"/>
+		<item key="sendType" value="clipboard"/>
+		<item key="destinationPath" value=""/>
+		<item key="DIALOG_X_ORIGIN" value="480"/>
+		<item key="DIALOG_Y_ORIGIN" value="11"/>
+		<item key="DIALOG_WIDTH" value="982"/>
+		<item key="DIALOG_HEIGHT" value="766"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

@@ -1,0 +1,17 @@
+package springweb.a03_ajax;
+
+import javax.swing.Spring;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class A03_JsonViewCtrl {
+	
+	@GetMapping("callJson01.do")
+	public Spring calljson01(Model d) {
+		d.addAttribute("json01",new Dept());
+		return "pageJsonReport";
+	}
+}

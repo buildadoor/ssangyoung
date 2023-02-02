@@ -1,0 +1,181 @@
+<!-- 
+2022-11-02
+[1단계:확인] 1. 온라인 쇼핑몰에 있는 내용과 같이 특정한 물품 2개 이미지와 함께 상세 설명 내용과 함께 표시되는
+            형식으로 테이블(3X3)을 구성하여 출력하세요
+           no  물품이미지 물품정보(물품명/가격/기타정보표기) 
+           O
+           img src 지우기 
+           <h3 align="center">판매 물품 정보(이미지링크)</h3>
+	<table align="center" width="50%" cellpadding="5px">
+	<col width="10%">	
+	<col width="45%">	
+	<col width="45%">
+	<thead>
+		<tr>
+			<th>no</th>
+			<th>물건이미지</th>
+			<th>물건정보</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>
+			<a href="z01_detail.jsp?img=grape&pname=포도">
+				<img src="/a00_img/grape.jpg" width="100%" height="100">
+			</a>
+			</td>
+			<td>포도<br>
+				3000원<br>
+		</tr>
+			<tr>
+			<td>2</td>
+			<td><a href="z01_detail.jsp?img=peach&pname=복숭아"><img src="/a00_img/peach.jpg" width="100%" height="100">
+			</a>
+			</td>
+			<td>복숭아<br>
+				5000원<br>
+		</tr>
+		</tr>
+			<tr>
+			<td>2</td>
+			<td><a href="z01_detail.jsp?img=orange&pname=오렌지"><img src="/a00_img/orange.jpg" width="100%" height="100">
+			</a>
+			</td>
+			<td>오렌지<br>
+				2000원<br>
+		</tr>
+	</tbody>	
+	</table>
+	
+[1단계:개념] 2. 하이퍼링크의 기본 속성을 예제와 함께 기술하세요.
+	하이퍼링크의 기본 속성
+	<a href="url|url1#앵커이름|#앵커이름" target="대상 윈도우|frame"/>링크문자</a>
+	1) url : 외부 또는 내부 자원에 대한 주소 호출 
+		- 외부 : www.naver.com 와 같이 웹서버를 외부에서 접근이 가능한 사이트 자원
+		- 내부 : 절대주소/상대주소를 이용하여 현재 서버와 연결된 자원을 접근하는 것 
+	2) #앵커이름 : 해당 페이지에서 특정한 위치를 id="앵커명"으로 속성을 정해서 
+		해당 위치로 이동하게 하는 것을 말한다. 
+		페이지가 길고 양이 많을 때, 특정한 위치로 바로 이동하여 해당 내용을 살펴볼 수 있다.
+	3) target : 링크가 된 자원을 로딩하는 방식을 말한다.
+				기본적으로 전체 페이지가 대체되는데, 특정한 경우에는 새로운 윈도우 창이나,
+				현재 페이지에서 특정한 부분만 변경되는 경우가 있다.
+
+[1단계:확인] 3. 정렬리스트로 목차 3가지를 만들고 해당 목차에 이동하는 페이지 안에 특정 위치로 이동했다가 다시 돌아 올수 있게 처리하세요.
+				O
+[1단계:확인] 4. 테이블 안에 이미지를 포함시켜서, 해당 이미지를 클릭시 링크된 내용이 출력되게 처리해보세요.
+           (내부, 외부, 내부에 특정 위치)
+           		
+[1단계:개념] 5. 하이프 링크 색상옵션 변경에 대하여 예제를 통해서 기술하세요. 
+태그명:link - 모든 ax= 태그에 적용시, 선택자로 처리
+#아이디명 - id명으로 지정된 내용을 적용시, 선택자로 처리.
+.클래스명 - class명으로 지정된 내용을 적용시, 선택자로 처리
+
+	초기의 link
+	#a:link{
+		color:색상;
+		text-decoration:none; 밑줄 없애기 
+		background-color:색상; 배경 색상
+	}
+	방문 후 link 
+	#a:visited{
+		color:색상;
+	}
+	마우스 클릭하고 있을 때(이동 직전)
+	#a:active{
+		color:색상;
+	}
+[1단계:개념] 6. 하이프 링크의 target 옵션을 기술하세요.
+	a) _blank : 새로운 윈도우 창을 로딩하면서 페이지 출력
+	b) _self : 현재 윈도우 창에서 변경(default)
+	c) _parent : 부모 윈도우 창을 변경 
+	d) _top : 브라우저 윈도를 변경 처리 
+[1단계:확인] 7. 전체페이지,상단페이지,왼쪽페이지,메인페이지(위쪽/아래쪽페이지)를 하나의 폴드에서 만들어
+           페이지를 파일로 만들고, 왼쪽페이지에서 _blank, _self, 프레임명 호출로 링크 확인을하고,
+           메인페이지 안에 아래쪽페이지에서 _parent, _top 옵션으로 구분하여 링크페이지가 열리는 것을 확인하세요.
+           △
+[1단계:확인] 8. 다운로드할 자료를 webapp 하위에 z01_download 폴드에 위치시키고, 다운로드 리스트를 3개
+          만든 후, 다운로드가 되게 처리하세요.
+          O
+[1단계:개념] 9. 서버에 데이터를 전송하는 form의 속성과 하위 구성요소들의 특징을 기술하세요.
+	1. 웹폼
+		1) 웹 페이지에서 사용자 입력을 받는 폼
+		2) 로그인, 등록, 검색, 예약, 쇼핑 등
+	2. 폼 요소
+		1) 폼을 만드는 다양한 태그
+		2) input, textarea, select 등
+	action : 서버단에 있는 요청값을 처리해줄 자바프로그램을 지정
+	name: jsp와 동일하게 작성해야 값이 넘어감 
+	value: 받는 값 
+	
+[1단계:확인] 10. 회원등록 form으로 아이디 패스워드 회원명 포인트 권한을 input으로 만들고, 등록버튼을 
+         클릭시, 다음페이지에서 입력된 내용을 출력하는 프로그램을 만드세요.
+         O
+--> 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	th{text-align:"center"}
+	td{text-align:"center"}
+</style>
+</head>
+<body>
+<!-- 1. 온라인 쇼핑몰에 있는 내용과 같이 특정한 물품 2개 이미지와 함께 상세 설명 내용과 함께 표시되는
+            형식으로 테이블(3X3)을 구성하여 출력하세요
+           no  물품이미지 물품정보(물품명/가격/기타정보표기)  -->
+<h2>1번 문제</h2>
+  <table border="1" width="300" height="300">
+ 	<col width="20%"><col width="30%"><col width="50%">
+ 	<tr><th>no</th><th>물건이미지</th><th>물품정보</th></tr>
+ 	<tr><td>1</td><td><img src="/a00_img/keyboard.jpg" width="100" height="100"/></td><td>키보드/89000원/마이크로소프트</td></tr>
+ 	<tr><td>2</td><td><img src="/a00_img/mouse.jpg" width="100" height="100"/></td><td>마우스/100000원/애플</td></tr>
+</table>
+
+<h2 id="b1">3번 문제</h2> 
+<ol type="a">
+<li><a href="/a01_start/a01_tag_basic.html">절대 주소 이동(내부)</a>
+<li><a href="a03_page.html">내부페이지 이동</a>
+<li><a href="#a1">화면 맨 아래로 이동 (앵커로 이동 처리)</a>
+</ol>
+<!-- 4. 테이블 안에 이미지를 포함시켜서, 해당 이미지를 클릭시 링크된 내용이 출력되게 처리해보세요.
+           (내부, 외부, 내부에 특정 위치) -->
+<h2>4번 문제</h2>
+  <table border="1" width="80%" height="80%">
+ 	<col width="33%"><col width="34%"><col width="33%">
+<table>
+ <thead>
+   <tr><td><a href="https://search.pstatic.net/common/?src=http%3A%2F%2Fimage.nmv.naver.net%2Fcafe_2022_04_25_524%2F063bca55-c467-11ec-8a91-505dac8c38f5_01.jpg&type=ofullfill340_600_png">
+   판다<br>
+   <img src="/a00_img/img03.jpg" 
+   width="300" height="300"></a></td>
+ 	
+ 	
+ 	
+</table>
+<h2>8번 문제</h2>
+<hr>
+<ul>
+<li><a href="/z01_download/panda1.jpg" download>판다1 다운로드<img src="/z01_download/panda1.jpg" width="100" height="100"></a>
+<li><a href="/z01_download/panda2.jpg" download>판다2 다운로드<img src="/z01_download/panda2.jpg" width="100" height="100"></a>
+<li><a href="/z01_download/panda3.jpg" download>판다3 다운로드<img src="/z01_download/panda3.jpg" width="100" height="100"></a>
+<h3>10번 문제</h3>
+<hr>
+<form action="a03_login.jsp">
+	ID : <input type="text" name="id" size="20" value=""> <br>
+	PW : <input type="password" name="pw" size="20" value="">
+	<input type="submit" value="로그인"> 
+</form>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h2 id="a1">앵커로 이동된 곳</h2>
+<a href="#b1">다시 초기 화면으로 이동</a>
+</ul>
+</body>
+</html>

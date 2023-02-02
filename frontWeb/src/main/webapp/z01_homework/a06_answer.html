@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="\z01_homework\a00_sytle11.css" type="text/css" rel="stylesheet">
+<style>
+	@import url(a00_sytle10.css)
+</style>
+</head>
+<body>
+<h2>외부 css에 의해 적용~!(10번)</h2>
+<!-- 2번 -->
+<h1 align="center">빨<input type="color" onchange="document.querySelectorAll('h1')[0].style.background=this.value"/></h1>
+<h1 align="center">주<input type="color" onchange="document.querySelectorAll('h1')[1].style.background=this.value"/></h1>
+<h1 align="center">노<input type="color" onchange="document.querySelectorAll('h1')[2].style.background=this.value"/></h1>
+<h1 align="center">초<input type="color" onchange="document.querySelectorAll('h1')[3].style.background=this.value"/></h1>
+<h1 align="center">파<input type="color" onchange="document.querySelectorAll('h1')[4].style.background=this.value"/></h1>
+<h1 align="center">남<input type="color" onchange="document.querySelectorAll('h1')[5].style.background=this.value"/></h1>
+<h1 align="center">보<input type="color" onchange="document.querySelectorAll('h1')[6].style.background=this.value"/></h1>
+
+<!-- 4번
+  입사일(년/월/일) : [     ]
+  다음프로젝트(년/@주째) : [     ]
+  회원룸 예약:
+  방번호 : []1~10
+  날짜(년/월/일) :[    ] 
+  시간(@@:@@) : [    ]
+-->
+<form action="z02_show.jsp">
+	  입사일 :<input type="date" name="hiredate"/><br>
+	  다음프로젝트 :<input type="week" name="nextProject"/><br> 
+	  <fieldset>
+	  <legend>회의룸 예약 </legend>
+	  방 번호:<input type="number" min="1" max="10" name="roomnum"/><br>
+	  날짜 :<input type="date" name="meetdate"/><br>
+	  시간 : <input type="time" name="meettime"/>
+	  </fieldset>
+	  <input type="submit"/>
+</form>
+
+<!-- 5번 -->
+<script>
+		function chRatio(val){
+			document.querySelector("#shDis").innerText=val;
+		}
+</script>
+<h3>놀이공원 매표소에서</h3>
+<form>
+	기본 입장료:<input type="number" value="50000"/><br> 
+	나이:<input type="number" min="1" max="120" value="1"/><br> 
+	할인율:<input type="range" min="0" max="100" step="5" 
+			onchange="chRatio(this.value)" value="0"/><span id="shDis"></span>%<br> 
+	<input type="submit" value="입장">
+</form>
+<!-- 10번 -->
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>구구단</title>
+    <!-- vue.js 웹 모듈 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div> {{firstNum}} X {{secondNum}} = </div>
+        <form v-on:submit="onSubmitForm">
+            <input type="number" ref="answer" v-model="value" /> <!-- v-model => vue와 html 바인딩!! data value를 input 과 연결 -->
+            <button type="submit">정답입력</button>
+        </form>
+        <div id="result">{{result}}</div>
+    </div>
+</body>
+    <script>
+        const app = new Vue({
+           el: '#root',
+           data: {
+               firstNum: Math.ceil(Math.random() * 9),
+               secondNum:Math.ceil(Math.random() * 9),
+               value:'',
+               result:'',
+           },
+           methods:{
+               onSubmitForm(e){
+                   e.preventDefault(); 
+                   if(this.firstNum * this.secondNum === parseInt(this.value)){
+                       this.result = '정답';
+                       this.firstNum = Math.ceil(Math.random() * 9);
+                       this.secondNum = Math.ceil(Math.random() * 9);
+                       this.value = '';
+                       this.$refs.answer.focus();
+                   } else {
+                       this.result = '오답';
+                       this.value = '';
+                       this.$refs.answer.focus(); 
+                   }
+               },
+           },
+        });
+    </script>
+
+</html>

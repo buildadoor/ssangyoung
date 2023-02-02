@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ 
+*/
+function calcu(){
+	var seat = document.querySelector("[name=seat01]").value
+	var hit = document.querySelector("[name=hit01]").value
+	var reObj = document.querySelector("#record")
+	reObj.innetText="0"//초기값 설정 아래에 나타내는 정상적이지 않은 입력시 모두-처리 
+	if(!isNaN(seat) && !isNaN(hit)){//숫자형일때 
+		var result = hit/seat		
+		if(isFinite(result)){// /0 예외 
+			reObj.innerText=result.toFixed(3)//소숫점3자리 입력
+		}
+	}
+}
+</script>
+
+</head>
+<body>
+DOM<br>
+<!-- onkeyup:입력할 떄 바로 이벤트가 발생 -->
+타석:<input type="text" name="seat01" value="0" onkeyup="calcu()"/>
+안타:<input type="text" name="hit01" value="0" onkeyup="calcu()"/>
+타율:<span id="record">0</span>
+	<div id="container"></div>
+
+
+</body>
+<script type="text/javascript">
+/*
+#js의 내장 객체
+1. Number 객체 : 숫자형 데이터 처리하는 객체를 말한다.
+	1) toExponential(): 숫자를 지수 표시로 나타낸 문자열 
+	2) toFixed(소숫점 자리수): 숫자를 고정 소숫점 표시로 나타낸 문자
+	3) toPrecision() : 숫자를 길이에 따라 지수 표시 또는 고정 소수점 표시 문자열 
+2. 속성
+	1) MAX_VALUE: 숫자가 나타낼 수 있는 최대의 숫자
+	2) MIN_VALUE: 숫자가 나타낼 수 있는 최소의 숫자
+	3) NaN: 숫자로 나타낼 수 없는 숫자
+		숫자형 문자열이 아닌 데이터를 숫자와 같이 연산할 때, 발생하는
+		에러 코드 
+ */
+var div = document.querySelector("#container")
+var num01 = 2432.2533 
+ div.innerHTML="typeof(num01):"+typeof(num01)+"<br>"
+ div.innerHTML+="toExponential():"+num01.toExponential()+"<br>"
+ div.innerHTML+="toFixed(2):"+num01.toFixed(2)+"<br>"
+ div.innerHTML+="toPrecision():"+num01.toPrecision()+"<br>"
+
+ 
+// ex) 타석과 안타수를 prompt로 입력받아서 타율을 출력하되 소숫점 3자리로 표현되게 하세요.
+var bat = 23
+var hit = 6
+var avg = hit/bat
+div.innerHTML+="<br>타율:"+avg.toFixed(3)+"<br>"
+</script>
+</html>

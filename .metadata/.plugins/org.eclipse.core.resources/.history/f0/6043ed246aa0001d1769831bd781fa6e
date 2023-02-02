@@ -1,0 +1,24 @@
+package springweb.a03_ajax;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import springweb.z01_vo.Dept;
+import springweb.z01_vo.Person;
+
+@Controller
+public class A03_JsonViewCtrl {
+	
+	@GetMapping("callJson01.do")
+	public String calljson01(Model d) {
+		d.addAttribute("json01",new Dept(10,"인사","서울"));
+		return "pageJsonReport";
+	}
+	//ex) callJson02.do Person객체를 json데이터로 출력하세요.
+	@GetMapping("callJson02.do")
+	public String calljson02(Model d) {
+		d.addAttribute("json02",new Person("홍길동",27,"서울"));
+		return "pageJsonReport";
+	}
+}

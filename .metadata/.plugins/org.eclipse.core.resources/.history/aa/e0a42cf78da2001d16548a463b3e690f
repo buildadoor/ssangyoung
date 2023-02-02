@@ -1,0 +1,107 @@
+# 웹 개발 환경 설정
+1. network환경
+	서버에 고정ip//도메인
+2. 처리한 내용 
+	1) 소스공유: svn/git
+	2) 웹서버 : tomcat
+	3) 배포 : source==> tocat
+		서버용 eclipse에서 svn/git 연동해서 처리
+	4) DB서버 : 
+		- 서버 설치 : 계정생성, table생성, 데이터입력, sql 작성
+		- 1521 포트를 방화벽에서 로딩 
+	5) 클라이언트 테스트
+	 	svn 
+	 	브라우저 (웹서버)
+	 	DB서버 
+3. 서버 처리
+	1) svn 서버 만들기 
+	 	visual svn server
+	 	다운로드 
+	2) web 서버 만들기 (서버pc에/client)
+		a02_javaexp 
+			eclipse# 웹 개발 환경 설정
+1. network환경
+	서버에 고정 ip//도메인
+2. 처리한 내용
+	1) 소스공유 : svn/git
+	2) 웹서버 : tomcat,
+	3) 배포 : source ==> tomcat
+		 서버용 eclipse에서 svn/git 연동해서 처리
+	4) DB서버 :
+		- 서버 설치 : 계정생성, table생성, 데이터입력, sql 작성
+		- 1521 포트를 방화벽에서 로딩
+	5) 클라이언트 테스트
+		svn
+		브라우저(웹서버)
+		http://고정아이피주소:5080/project01/index.html
+		고정아이피주소 ==> 도메인 기관 kb.co.ko mapping
+			http://kb.co.ko/project01/index.html
+		
+		
+		
+		DB서버
+3. 서버 처리(서버pc) 
+	1) svn 서버 만들기
+		visual svn server
+		다운로드
+	2) web 서버 만들기(서버pc에)
+		c:\a02_javaexp
+			eclipse
+			workspace
+		svn이 설치된 eclipse에서 DBeaver
+		기존에 있는 eclipse의 DBEAVER로 프로젝트 공통
+			DB사용..
+					
+
+		
+	
+
+
+
+				 # 웹 개발 환경 설정
+1. network환경
+	서버에 고정 ip//도메인
+2. 처리한 내용
+	1) 소스공유 : svn/git
+	2) 웹서버 : tomcat,
+	3) 배포 : source ==> tomcat
+		 서버용 eclipse에서 svn/git 연동해서 처리
+	4) DB서버 :
+		- 서버 설치 : 계정생성, table생성, 데이터입력, sql 작성
+		- 1521 포트를 방화벽에서 로딩
+	5) 클라이언트 테스트
+		svn
+		브라우저(웹서버)
+		http://고정아이피주소:5080/project01/index.html
+		고정아이피주소 ==> 도메인 기관 kb.co.ko mapping
+			http://kb.co.ko/project01/index.html
+		
+		
+		
+		DB서버
+3. 서버 처리(서버pc) 
+	1) svn 서버 만들기
+		visual svn server
+		다운로드
+	2) web 서버 만들기(서버pc에)
+		c:\a02_javaexp
+			eclipse
+			workspace
+		svn이 설치된 eclipse에서 DBeaver
+		기존에 있는 eclipse의 DBEAVER로 프로젝트 공통
+			DB사용..
+					
+
+		
+	
+
+
+
+				 
+			workspace
+	svn이 설치된 eclipse에서 DBeaver
+	기존에 있는 eclipse의 디비버로 프로젝트진행 
+	
+	
+	
+	 	

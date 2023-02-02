@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+2022-11-09
+[1단계:개념] 1. box형태의 태그가 가지고 있는 요소(margin, border, padding)의 범위를 기술하고,
+           각, 기능별로 설정할 수 있는 내용을 예제를 통해서 기술하세요
+	margin 여백 : 박스의 맨 바깥 영역이면 테두리 바깥의 공간으로는 인접한 아래의
+		이웃 태그의 박스와의 거리
+	border 테두리 : 패딩 외부의 테두리로서, 직선이나 점선 혹은 이미지로 테두리를 그릴 수 있다.
+	padding 내부 여백 : 컨텐츠를 직접 둘러싸고 있는 내부 여백
+[1단계:개념] 2. border 상하좌우 위치와 형태를 설정하는 속성과 속성값을 기술하세요..
+		border-left-width
+		left, right, top, bottom
+[1단계:확인] 3. border의 4가지 방향 모두 다른 style과 색상을 설정하여 출력하세요
+O
+	
+[1단계:개념] 4. border-radius의 속성 옵션을 기술하세요.
+	테두리의 모서리를 둥글게 만듦
+	1)border-radius:50px
+		왼쪽 상단부터 시계방향으로 모든 테두리에 둥글기 설정
+	2)boder-radiusL 0px 20px 40px 60px;
+		왼쪽 상단부터 시계방향으로 둥글기 설정 처리 
+		
+[1단계:개념] 5. 배경이미지 관련 속성을 예제를 통해 기술하세요.
+1. 배경 색이나 이미지 지정
+	1) background-color : 배경색상
+	2) background-image : 배경이미지지정
+		ex) background-image:url("해당이미지(상대/절대주소)")
+2. 배경 이미지의 위치
+	1) background-position : center center;
+		박스 중간에 이미지 출력
+3. 배경 이미지 반복 출력
+	1) background-repeat:repeat-y : 위에서 아래로 이미지 반복 출력
+						no-repeat : 반복X
+[1단계:확인] 6. 상품을 소개하는 문자열과 상품이미지를 box에서 문자열과 배경이미지로 처리해보세요.
+O
+[1단계:개념] 7. text-shadow와 box-shadow의 옵션을 기술하세요.
+ text-shadow
+1. 형식
+	text-shadow:h-shadow v-shadow blur_radius color|none
+2. 속성
+	h-shadow/v-shadow : 원본 텍스트와 그림자 텍스트 사이의 수평/수직 거리 (필수)
+	blur-radius : 흐릇한 그림자를 만드는 효과로 흐릿하게 번지는 길이 (선택)
+	color : 그림자 색
+	none : 그림자 효과 없음. 
+	
+box-shadow
+1. 박스 전체에 그림자 효과
+2. box-shadow : h-shadow v-shadow 
+		blur-radius spread-radius color |none|inset
+	-spread-radius : 그림자 크기(선택, 디폴트 0)
+	- inset : 음각 박스로 보이게 박스 상단 안쪽(왼쪽과 위쪽)에 그림자 형성	
+[1단계:확인] 8. border-radius와 text-shadow, border를 혼합하여 문자열이 버튼이미지 모양이 되게 둥근 테두리로 처리해보세요
+O
+[1단계:개념] 9. display의 3가지 속성의 특성을 설명하세요.
+- 원래 태그가 가지고 있던 block, inline속성을 변경을 하게 해준다.
+1. block box(display:block;)
+	1) 항상 새 라인에서 시작
+	2) 블록 박스 내에만 배치
+	3) 옆에 다른 요소 배치 불가능
+	4) width, height으로 크기 조절
+	5) padding, border, margin 조절 가능
+2. inline box(display;inline;)
+p	1) 새 라인에서 시작 못함. 라인 안(inline)에 있음
+	2) 모든 박스 내 배치 가능 
+	3) 옆에 다른 요소 배치 가능
+	4) width와 height으로 크기 조절 불가능
+	5) margin-top, margin-bottom 조절 불가능 
+3. inline block box(display:inline-block;)
+	1) inline의 속성
+		- 새 라인에서 시작 못함	
+		- 라인 안(inline)에 있음
+		- 모든 박스 내 배치 가능 
+		- 옆에 다른 요소 배치 가능
+	2) block 속성
+		- width와 height 크기 조절 가능
+		- padding, border, margin의 조절 가능 
+[1단계:확인] 10. li 태그를 inline으로  h3를 block으로  span을 line-block으로 설정하여 출력하세요
+[1단계:확인] 11. div 하위에 h2를 안녕하세요를 문자 하나하나 마다 inline-block으로 나열하고
+            class로 up/down으로 선언 후, 가상클래스로 커서를 위치할 때 마다 위/아래로 움직이게 처리하세요.
+*/
+</style>
+</head>
+<body>
+<!-- 3. border의 4가지 방향 모두 다른 style과 색상을 설정하여 출력하세요-->
+<style>
+		.ex1{
+ 			border-left-width:3px;
+ 			border-left-style:none;
+ 		}
+		.ex2{
+		 	border-right-width:3px;
+ 			border-right-style:dotted;
+ 			border-right-color:pink;
+ 			
+ 		}
+		.ex3{
+ 			border-top-width:3px;
+ 			border-top-style:dotted;
+ 			border-top-color:green;
+ 		}
+		.ex4{
+ 			border-bottom-width:3px;
+ 			border-bottom-style:dotted;
+ 			border-bottom-color:red;
+ 		}
+ 		
+ 			div.ex5{
+		width:200px; height:200px;
+		margin:1.5cm;
+		background-size:100px 100%;
+		background-image:url("./watch.jpg");
+		background-repeat:no-repeat;
+		background-position:center right;
+}
+
+ 		</style>
+	<h4>3번 문제 </h4>
+	<h5 class="ex1">예제</h5>
+	<h5 class="ex2">예제</h5>
+	<h5 class="ex3">예제</h5>
+	<h5 class="ex4">예제</h5>
+
+<!--6. 상품을 소개하는 문자열과 상품이미지를 box에서 문자열과 배경이미지로 처리해보세요. -->
+	<div class="ex5">애플워치se2입니다.</div>
+<!--8. border-radius와 text-shadow, border를 혼합하여 문자열이 버튼이미지 모양이 되게 둥근 테두리로 처리해보세요
+		-->
+
+<style>
+		p{
+		width:30px;
+		padding:30px;
+  		box-shadow:10px 10px 5px black;
+		text-shadow:2px 2px 4px white;
+		background:yellowgreen;
+		border:2px solid black;
+		color:green;
+	}
+</style>
+	<p style="border-radius:50%"><strong>8번</strong></p>
+<!-- 10. li 태그를 inline으로  h3를 block으로  span을 line-block으로 설정하여 출력하세요-->
+<style>
+		li span{
+			display:inline-block;
+			border:12px black;
+			background:powderblue;
+			margin:20px;
+			width:160px;height:80px;
+		}
+		li h3{ display:inline-block;border:1px solid green;
+		width:100px;height:100px;background:pink;}
+		
+</style>
+	<li>
+	<span><h3 style="background:yellow">h3넣기</h3></span>
+</div>
+<!-- 11. div 하위에 h2를 안녕하세요를 문자 하나하나 마다 inline-block으로 나열하고
+            class로 up/down으로 선언 후, 가상클래스로 커서를 위치할 때 마다 위/아래로 움직이게 처리하세요. -->
+  <style>
+  div h2{ display:inline-block;
+		height:150px;width:150px;
+		text-align:center;
+		vertival-align:middle;
+		color:yellow;
+		background:black;
+		}
+	#ex01:hover{ 
+		position:relative;
+		width:150px;
+		height:150px;
+		top:50px;
+		bottom:50px;
+		background:blue;
+	}
+  </style>
+  <div>
+  <h2 id="ex01">안녕하세요</h2>
+  <h2 id="ex01">안녕하세요</h2>
+  <h2 id="ex01">안녕하세요</h2>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+# 리스트 모양을 꾸미는 css3 속성들
+1. list-style-type : 아이템 마커 타입 지정
+	정렬  : decimal,armenia, georgian, cjk-ideographic, lower-alpha, lower-roman, upper-roman
+	비정렬 : desc, circle, square
+	삭제 : none
+2. list-style-image : 아이템 마커 이미지 지정
+3. list-style-postition : 아이템 마커의 출력 위치 지정 (아이템 영역 내 혹은 영역 바깥)
+	outside : default
+	inside : 마커가 안쪽으로 출력 
+	
+4. list-style : 위의 3개의 속성 값을 한 번에 지정하는 단축 속성
+*/
+ul{ background:goldenrod;padding:20px 30px 20px 20px;
+	list-style-position:inside;
+	list-style-type:square;
+	display:inline-block;
+		}
+	
+ul li{
+	background:linen;margin-bottom:5px;
+	
+}
+</style>
+</head>
+<body>
+<h3>커피 메뉴</h3>
+<ul style="list-style-image:url('/a00_img/marker.png')"><li>에스프레소<li>카푸치노<li>아메리카노</ul>
+<ul style="list-style-type:none"><li>에스프레소<li>카푸치노<li>아메리카노</ul>
+<ul style="list-style-type:circle"><li>에스프레소<li>카푸치노<li>아메리카노</ul>
+<ul style="list-style-type:armenian"><li>에스프레소<li>카푸치노<li>아메리카노</ul>
+<ul style="list-style-type:georgian"><li>에스프레소<li>카푸치노<li>아메리카노</ul>
+<ul style="list-style-type:cjk-ideographic"><li>에스프레소<li>카푸치노<li>아메리카노</ul>
+<ul style="list-style-type:upper-roman"><li>에스프레소<li>카푸치노<li>아메리카노</ul>
+</ul>
+</body>
+</html>

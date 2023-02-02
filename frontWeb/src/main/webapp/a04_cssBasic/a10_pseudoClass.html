@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+# 가상 클래스(pseudo-class) 선택자
+1. 어떤 조건이나 상황에서 스타일을 적용하도록 만든 선택자
+	1) 40개 이상의 많은 가상 클래스 선택자가 있음
+		ex1) a:visited{color:green;}
+		ex2) li:hover{background:yellow;}
+2. 가상 클래스의 유형과 내용
+	1) 마우스
+		:hover - 마우스가 올라갈 때, 스타일 적용
+		:active - 마우스로 누르고 있는 상황에서 스타일 적용
+	2) 폼하위 요소
+		:focus - 폼 요소가 키보드나 마우스 클릭으로 포커스를 받을 때
+				스타일 적용
+		ex) 아이디:<input
+			아이디:[ ] ==> 입력하려고 클릭시 .. ==> focus
+	3) 링크
+		:link - 방문하지 않은 링크에 스타일 적용
+		:visited - 방문한 링크에 스타일 적용
+	4) 블록
+		:first-letter -<p>,<div>등과 같은 블록형 태그의 첫 글자에
+			스타일 적용 : first-letter과 동일하면 span과 같은 인라인 
+			태그에는 적용되지 않음
+		:first-line- <p>.<div>등과 같은 블록형 태그의 첫 라인에 
+			스타일 적용 : first-line과 동일
+	5) 구조
+		:nth-child(even|odd) - 짝수/홀수 번째 모든 자식 태그에 스타일 적용
+		:nth-child(1) - 첫번째 자식 태그에 스타일 적용
+		:nth-child(3n+1) - 동일한 태그를 3개 단위로 그룹되어 처리할 때,
+							첫번째에 대한 스타일 적용
+							ex) h2:nth-child(3n+1)
+							<h2>3n+1
+							<h2>3n+2
+							<h2>3n
+							<h2>3n+1
+							<h2>3n+2
+							<h2>3n
+							<h2>3n+1
+*/
+	h3:first-letter{color:red;font-size:20pt;}
+	li:hover{background:yellowgreen;}
+	h4:first-letter{color:red;font-size:15pt}
+	h4:hover{background:aquablue;}
+	h2:nth-child(3n+1){background:orange;}
+	h2:nth-child(even){color:blue;}
+	tr:hover{color:yellowgreen;font-size:30px;}
+	tr:nth-child(even){background:powderblue}	
+	input:focus{background:pink;}
+	
+	/*
+	ex) 5x5 테이블을 만들어 tr행단위 짝수에 대한 배경 색상을 처리하고,
+		tr 행단위로 마우스 커서의 글자색상을 변경하게 처리하세요. 
+	ex) h4로 영문으로 무지개 색상(첫자대문자) 리스트 처리하되, 마우스를 지나갈때, 
+		배경색상과 글자색상이 변경되게 처리하세요.
+	*/
+	
+</style>
+</head>
+<body>
+	<h3>form요소 객체 focus처리</h3>
+	물건명:<input type="text"/>
+<table border="5">
+	<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+	<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+	<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+	<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+	<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+	<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+</table>
+	<h2>안녕</h2>
+	<h2>안녕</h2>
+	<h2>안녕</h2>
+	<h2>안녕</h2>
+	
+	<h3>RAINBOWCOLOR</h3>
+	
+		<h4>red</h4>
+		<h4>orange</h4>
+		<h4>yellow</h4>
+		<h4>green</h4>
+		<h4>blue</h4>
+		<h4>navy</h4>
+		<h4>purple</h4>
+		
+	</ul>
+	<h3>Web programming!~!</h3>
+	<ul>
+		<li>HTML5</li>
+		<li><strong>css3</strong>
+		<li>javascript</li>
+		<li>jquery</li>
+		
+	</ul>
+</body>
+</html>

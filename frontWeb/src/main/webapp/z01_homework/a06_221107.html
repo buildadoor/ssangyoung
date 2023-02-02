@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+2022-11-07
+[1단계:개념] 1. 색상 처리 16코드에 대한 설명과 기본 색상 객체의 활용 코드를 기술하세요.
+# 색코드 
+1. 문자열 또는 rgb 조합 형태로 색상을 지원하여 설정할 수 있다.
+2. 색코드 처리
+	#rrggbb
+	rr:빨간색
+	gg:초록색
+	bb:파란색
+	각 코드 값을 16진수로 0~255가지(00~FF)의 내용을 선택가능 
+3. 해당 색 코드는 영문으로 매핑되는 색상명 있다.
+	-구글 색상 코드 참고
+	ex) brown : #A52A2A
+		darkorange: #FF8C00
+# 색입력 폼
+1. <input type="color">
+	1) 컬러 다이얼로그 출력, 사용자로부터 색 선택
+	2) 사용 예
+		<input type="color" value="#00FF00">
+
+
+[1단계:확인] 2. h1를 빨주노초파남보 7가지를 선언하고, 색상 폼에 의해 선택되어 배경색이 변경되게 하세요.
+-->
+		<form>
+	 	<h1>빨</h1><h1>주</h1><h1>노</h1><h1>초</h1><h1>파</h1><h1>남</h1><h1>보</h1>
+	 	<input type="submit"/>
+	 	빨<input type="color" name="r01" value="#000000"
+		onchange="document.querySelectorAll('h1')[0].style.background=this.value"/><br>
+		<input type="submit"/>
+	 	주<input type="color" name="r02" value="#000000"
+	 	onchange="document.querySelectorAll('h1')[1].style.background=this.value"/><br>
+		<input type="submit"/>	 	
+	 	노<input type="color" name="r03" value="#000000"
+	 	onchange="document.querySelectorAll('h1')[2].style.background=this.value"/><br>
+	 	<input type="submit"/>
+	 	초<input type="color" name="r04" value="#000000"
+	 	onchange="document.querySelectorAll('h1')[3].style.background=this.value"/><br>
+	 	<input type="submit"/>
+	 	파<input type="color" name="r05" value="#000000"
+	 	onchange="document.querySelectorAll('h1')[4].style.background=this.value"/><br>
+	 	<input type="submit"/>
+	 	남<input type="color" name="r06" value="#000000"
+	 	onchange="document.querySelectorAll('h1')[5].style.background=this.value"/><br>
+	 	<input type="submit"/>
+	 	보<input type="color" name="r07" value="#000000"
+	 	onchange="document.querySelectorAll('h1')[6].style.background=this.value"/><br>
+	 </form>
+<!--
+[1단계:개념] 3. 날짜 처리의 요소객체의 기본 형식을 기술하세요.
+<input type="month|week|date|datetime-local">
+	1) 시간 정보만 입력 가능한 폼 요소
+	2) 속성 및 내용
+		month : 년월
+		week : 년/몇번째주
+		date : 년/월/일
+		datetime-local : 해당 나라의 시간
+			년/월/일/오전,오후/시/분/초/100분의 1초
+
+[1단계:확인] 4. 사원의 정보를 아래와 같이 입력하여 다음 페이지에서 출력되게 처리하세요.
+            입사일(년/월/일) : [     ]
+            다음프로젝트(년/@주째) : [     ]
+             회원룸 예약:
+               방번호 : []1~10
+               날짜(년/월/일) :[    ] 
+               시간(@@:@@) : [    ]
+-->
+<hr>
+<h3>4번 문제</h2>
+ 	<form>
+ 		입사일(년/월/일) :<input type="date" name="hiredate"/><br>
+ 		다음프로젝트(년/@주째) :<input type="week" name="nextproject" value="2022-W11"/><br>
+ 		회원룸 예약 <br>
+ 			날짜(년/월/일) :<input type="date" name="bookingdate"/><br>
+ 			시간:<input type="time" name="bookingtime" value="01:01"/><br>
+ 			방번호 : <input name="roomno" type="number" min="1" max="10" step="1"/><br>
+ 		<input type="submit" value="예약"/>
+ 	</form>
+<!-- 
+[1단계:확인] 5. 나이에 따른 할인율을 선택해서 놀이 공원 입장료를 처리하세요.
+            기본 입장료:[   ]
+            나이:[   ] ==> number
+            할인율:[    ] ==> %표기
+            [입장]
+            -->
+            <hr>
+            <h3>5번 문제</h3>
+           <script type="text/javascript">
+		function chDis(val){
+			document.querySelector("#showDis").innerText=val;
+		}
+	</script>
+             <form>
+	 	기본 입장료 : <input name="pname" type="text"/><br>
+	 	나이: <input name="price" type="number"/><br>
+		할인율 :<input type="range" onchange="chDis(this.value)" 
+			name="discount" min="0" max="100" list="discount">
+			<span id="showDis"></span>%
+			<br>
+		<input type="submit" value="입장!"/><br>
+	 </form>
+            <!-- 
+[1단계:확인] 6. 회원가입을 일반회원과 관리자를 구분해서 가입화면을 구성(타이틀과 그룹처리)해보세요.
+           일반회원 : 아이디 패스워드 이름 나이 포인트 일반주소 
+           관리자 : 아이디 패스워드 이름 권한 소속사 이메일
+  -->
+  <hr>
+  <h3>6번 문제</h3>
+  <form>
+ 	<fieldset>
+ 		<legend>일반회원</legend>
+ 		아이디:<input><br>
+ 		패스워드:<input type="password"><br>
+ 		이름:<input><br>
+ 		나이:<input><br>
+ 		포인트:<input type="number"><br>
+ 		일반 주소:<input><br>
+ 	</fieldset>
+ 	<fieldset>
+ 		<legend>관리자</legend>
+ 		아이디:<input><br>
+ 		패스워드:<input type="password"><br>
+ 		이름:<input><br>
+ 		권한:<input><br>
+ 		소속사:<input><br>
+ 		이메일:<input><br>
+ 	</fieldset>
+ 	<input type="submit" value="회원가입">
+ </form>
+  
+   <!-- 
+[1단계:개념] 7. css선언 기본 구성요소과 속성 형식을 예제를 통해 기술하세요.
+# css(Cascading Style Sheet)
+ html 문서의 색이나 모양 등 외관을 꾸미는 언어이다.
+- css로 작성한 코드를 스타일 시트라고 부른다.
+- 기능
+	1) 색상과 배경
+	2) 텍스트
+	3) 폰트
+	4) 박스 모델
+	5) 비주얼 포맷 및 효과
+	6) 리스트
+	7) 테이블
+	8) 사용자 인터페이스 
+-->	<hr>
+ 	<style>
+ 		div h3{color:yellow}
+ 		div{background-color:powderblue;}
+ 		div hr{boder:10px solid yellowgreen;}
+ 		div span{color:brown;font-size:13px;}
+ 	</style>
+ 	<div>
+ 	<h3>7번 문제</h3>
+ 	<hr>
+ 	<p>나는<span>말하는</span>감자입니다.</p>
+ 	</div>
+<!-- 
+[1단계:확인] 8. 음악 가사를 카피해와 css3를 통해 여백과 색상이 처리된 화면을 구성하세요.
+-->
+<style type="text/css">
+	
+
+	h4{
+		background-color:green;
+		margin-left:50px;
+		margin-right:50px; 
+	}
+	p{
+		text-align:center;
+	}
+</style>
+<p><h4>
+꿈을 꾸고 있나 봐
+흐린 풍경 속에 작은 문 하나
+I wanna go home
+저 문을 열어보면
+다시 나의 집으로 가는 길 있을까
+깨어나는 나를 느껴
+선명해져가는 문 앞에 서있어
+So maybe I'm home
+멀지 않은 곳에서
+나를 기다리는 너의 기척이 들려
+And I fly high
+I'm in sky high
+너를 안고서
+And I'm so alive,
+seems like I belong here
+나의 세상은 너,
+너의 세상은 나인 거야
+구름 위를 걷는 거야
+불확실한 삶을 살아간다는 건
+우리가 걸어나갈 한 걸음 한 걸음
+날 잡고 있는 그 손을 놓지 않을 거야
+</p><p>
+And I fly high
+I'm in sky high
+너를 안고서
+And I'm so alive,
+seems like I belong here
+나의 세상은 너,
+너의 세상은 나인 거야
+지금 이 순간에도 세상은 변해가고
+그 안에 있는
+너와 나의 모습도 변해가고
+오늘은 걷더라도 내일은 달려갈래
+If you are there besides me
+Oh Home Oh Home
+And I fly high
+I'm in sky high
+너를 안고서
+And I'm so alive,
+seems like I belong here
+나의 세상은 너,
+너의 세상은 나인 거야
+</p><p>
+And I fly high
+I'm in sky high
+너를 안고서
+And I'm so alive,
+seems like I belong here
+나의 세상은 너,
+너의 세상은 나인 거야
+Fly high
+I feel alright
+I'm so alive
+If you,
+if you are there beside me
+I fly high
+I'm in sky high
+Fly high
+I feel alright
+I'm so alive
+I will fight
+And I fly high
+I'm in sky high
+너를 안고서
+And I'm so alive,
+seems like I belong here
+나의 세상은 너,
+너의 세상은 나인 거야
+</p></h4>
+<!-- 
+[1단계:개념] 9. css선언 형식3가지(현재 페이지, inline, 외부파일)을 기본예제를 통해서 선언하세요.
+	1) link 태그 사용
+		link href="불러올 파일(절대경로/상대경로)" type="text/css" ref="stylesh"
+	2) @import 이용
+		@import url(절대/상대경로)
+[1단계:확인] 10. 외부파일 선언 및 호출로 a00_sytle10.css, a00_sytle11.css에 선언하고
+            해당 파일에서 적용된 내용을 확인하세요.
+            -->
+		<link href="a00_style10.css" type="text/css" rel="stylesheet">
+
+		<style type="text/css">
+@import url(a00_style11.css);
+</style>
+
+
+		</head>
+		<body>
+			<h2>10번 문제입니다</h2>
+			<!-- 
+[1단계:개념] 11. css선언의 우선 순위를 예제를 통해 기술하세요. 
+	1) inline으로 해당 태그에 선언된 style속성이 최우선 순위
+	2) 한페이지당 선언한 <style>에 선언된 css
+	3) 외부파일로 선언한 <link href="외부파일">선언한 태그
+	4) 브라우저의 디폴트 스타일 
+ -->
+		</body></html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kurly 마켓컬리/뷰티컬리</title>
+<link href="logo.ico" rel="shortcut icon" type="image/x-icon">
+<style type="text/css">
+h1{text-align : center;}
+h2{text-align : left;}
+#box{
+	accent-color:indigo;
+}
+table{
+font-size:18px;}
+p{
+text-align:center;
+text-color:darkgray;}
+
+button{
+font-size:15px; padding:20px;height:20px;
+background: white; 
+}
+button:hover {
+  background: indigo; 
+  color: white;
+}
+/*
+
+*/
+
+</style>
+
+</head>
+<body>
+<h1>주문서</h1>
+<h2>주문상품</h2><hr>
+[미트클레버] 소갈비찜 상품을 주문합니다.<br>
+<h2>주문자 정보</h2><hr>
+보내는 분 				이윤아<br>
+휴대폰				010-0220-0220<br>
+이메일				yoonah@naver.com<br>
+<h2>배송 정보</h2><hr>
+배송지 				이윤아<br>
+상세 정보				이윤아,010-0220-0220<br>
+					문 앞 | 자유 출입 가능<br>
+					배송완료 메시지 | 배송 직후<br>
+					<input type="button" value="수정" onclick="location.href='changead.html'" >
+
+			
+<h2>쿠폰 / 적립금</h2><hr>
+ <form>
+쿠폰 적용　　 
+ <select name="coupon">
+ 	<option>2만원 결제시 무료배송</option>
+ 	<option>5만원 결제시 1만원 할인</option>
+ 	<option>4만원 결제시 7천원 할인</option>
+ </select></form> <br>
+
+적립금 적용　 
+<input type="number" min=100 max=3000 placeholder="0">  
+<input type="submit" style="background:white;" onclick="alert('선택하신 적립금을 사용합니다.')" value="모두사용"><br>
+현재 사용가능한 적립금 <strong>3000</strong>원<br>
+적립금 내역: 마이컬리>적립금
+<h2>결제 수단</h2><hr>
+결제수단 선택 
+<button class="button" onclick="alert('카카오페이 결제를 선택하셨습니다.')">카카오페이</button><br><br>
+<button class="button" onclick="alert('신용카드 결제를 선택하셨습니다.')">신용카드</button>
+<button class="button" onclick="alert('간편 결제를 선택하셨습니다.')">간편결제</button>
+<button class="button" onclick="alert('휴대폰 결제를 선택하셨습니다.')">휴대폰결제</button><br><br>
+
+*카카오페이, 토스, 네이버페이, 페이코 결제시, 결제하신 수단으로만 환불되는 점 양해부탁드립니다.<br>
+*고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 토스 페이먼츠의 구매안전(에스크로)서비스를 이용하실 수 있습니다.
+<h2>개인정보 수집/제공</h2><hr>
+<h3><input type="checkbox" id="box"> 결제 진행 필수 전체 동의</h3>
+<h3><input type="checkbox" id="box"><u> (필수) 개인정보 수집, 이용 및 처리 동의</h3>
+<h3><input type="checkbox" id="box"> (필수) 개인정보 제3자 제공 동의</h3>
+<h3><input type="checkbox" id="box"> (필수) 전자지급 결제대행 서비스 이용약관 동의</h3></u><br>
+
+<p> *마켓컬리에서 판매되는 상품 중에는 마켓컬리에 입점한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.<br>
+ 마켓플레이스(오픈마켓)상품이 경우 컬리는 통신판매업중개자로서 통신판매의 당사자가 아닙디다. 컬리는 해당 상품의 주문,품질,교환/환불 등 의무와 책임을 부담하지 않습니다.<br><br>
+<input type="button" id="2" style="background:indigo; color:white; font-size:20px;" onclick="alert('결제창으로 이동합니다.')" value="35000원 결제하기"><br><br>
+[주문완료] 상태일 경우에만 주문 취소 가능합니다.<br>
+미성년자가 결제 시 법정대리인이 그 거래를 취소할 수 있습니다.<br>
+배송 불가 시, 결제수단으로 환불됩니다. 일부 또는 전체 상품이 품절 등의 사유로 배송 되지 못할 경우, 신속하게 환불해드리겠습니다.<br>
+카카오페이, 토스, 네이버페이, 페이코 결제시, 결제하신 수단으로만 환불됩니다.
+</p>
+</body>
+
+</script>
+</html>

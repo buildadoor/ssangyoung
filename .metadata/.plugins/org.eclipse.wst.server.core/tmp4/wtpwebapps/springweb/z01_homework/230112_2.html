@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/springweb/a00_com/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#tab01 td").css({
+    	background:"blue",
+    	color:"yellow",
+    	textAlign:"center",
+    	fontSize:"30pt"
+    }).click(function(){
+    	var fruit = $(this).text()
+    	$("#buyList").text($("#buyList").text()+fruit+",")
+    	//$("#buyList").append(fruit+",")
+    })
+});
+</script>
+</head>
+<body>
+  <h2>물건구매</h2>
+
+  <table id="tab01" height="100" border>
+	<tbody>
+		<tr><td>사과</td><td>바나나</td>
+		<td>딸기</td><td>오렌지</td></tr>
+	</table>
+	</tbody>
+	<p id="buyList"></p>
+</body>
+</html>

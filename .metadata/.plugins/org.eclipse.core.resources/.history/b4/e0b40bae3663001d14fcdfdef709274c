@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kurly 마켓컬리/뷰티컬리</title>
+<link href="logo.ico" rel="shortcut icon" type="image/x-icon">
+<style type="text/css">
+h2{font-size:20px;}
+h6{font-size:18px;}
+span#ttop{font-size:18px;color:indigo;}
+span#ttop1{font-size:18px;color:gray;}
+span#top{font-size:24px;color:indigo;}
+span{font-size:22px;color:darkgray;}
+table#like{margin-left:200px;}
+#logo{margin-top:10px;}
+#img{width:100px;height:150px;}
+#category{margin-left:100px;}
+#category2{margin-right:30px;
+			font-size:15px;}
+
+#menubar{ background:white;float:left;}
+	#menubar ul{
+		margin:0;
+		padding:0;
+		width:100%;
+	}
+	#menubar ul li{
+		display:inline-block;
+		list-style-type:none;
+		padding:5px 5px;	
+	}
+	#menubar ul li a{
+		color:black;
+		text-decoration:none;	
+	}
+	#menubar ul li a:hover{
+		color:indigo;
+		}
+</style>
+</head>
+<body>
+<h6 align="right"><span id="ttop">회원가입&ensp;</span>|<span id="ttop1">&ensp;로그인&ensp;|&ensp;고객센터</h6></span>
+<p>
+<img src="kurly.jpg" id="logo"><strong><span id="top">&ensp;&ensp;마켓컬리</strong></span>|<span>뷰티컬리</span>
+
+
+
+
+
+
+
+</p><br><br>
+<nav id = "menubar">
+	<ul><h2>
+		<li><a href="#">
+		≡ 카테고리&emsp;&emsp;&emsp;&emsp;&emsp;
+		
+		</a>
+		<li id="category"><a href="#">신상품&emsp;&emsp;&emsp;</a>
+		<li id="category"><a href="#">베스트&emsp;&emsp;&emsp;</a>
+		<li id="category"><a href="#">알뜰쇼핑&emsp;&emsp;&emsp;</a>
+		<li id="category"><a href="#">특가/혜택&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a>
+		<li id="category2"><a href="#">샛별·낮 배송안내</a><br>
+	</ul></h2>
+</nav>
+갯수:<input type="text" name="cnt" size="1" maxlength="2" style="width:10px;"/><br>
+<br><br><br><br>
+<h2 align="center">찜한 상품(3)&nbsp;<span>찜한 상품은 최대 200개까지 저장됩니다.</span></h2>
+<hr>
+ <table id="like" width="100%" height="100%">
+ 	<col width="100px"><col width="500px"><col width="300px">
+ 	
+ 	<tr><td><img src="product01.jpg" id="img"/></td>
+ 	<td align:"left" text-color:"darkgray">[미트클레버] 소갈비찜<br>35,000원</td>
+ 	<td><input type="button" value="삭제" onclick="alert('찜한 목록에서 삭제되었습니다.')"><br>
+ 	<input type="button" value="담기" onclick="location.href='basket.html'"></td></tr>
+ 	
+ 	<tr><td><img src="product02.jpg"id="img"/></td>
+ 	<td align:"left" text-color:"darkgray">[이치류] 드라이에이징 양갈비 구이<br>23,900원</td>
+ 	<td><input type="button" value="삭제" onclick="alert('찜한 목록에서 삭제되었습니다.')"><br>
+ 	<input type="button" value="담기" onclick="location.href='basket.html'" ></td></tr>
+ 	
+ 	<tr><td><img src="product03.jpg" id="img"/></td>
+ 	<td align:"left" text-color:"darkgray">김장용 평창 고랭지 절임 배추 10kg<br>38,703원</td>
+ 	<td><input type="button" value="삭제" onclick="alert('찜한 목록에서 삭제되었습니다.')"><br>
+ 	<input type="button" value="담기" onclick="location.href='basket.html'"></td></tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+</style>
+<script type="text/javascript">
+/*
+
+*/
+//
+ 
+</script>
+</head>
+<body>
+<h2>사원정보 조회</h2>
+<table>
+<col width="40%">
+<tr><th>사원명</th><td colspan="2"><input class="sch" type="text" name="ename" value=""></td></tr>
+<tr><th>직책명</th><td colspan="2"><input class="sch" type="text" name="job" value=""></td></tr>
+<tr><th>급여</th>
+   <td><input class="sch" type="text" name="frSal" value="0"></td>
+   <td><input class="sch" type="text" name="toSal" value="9999"></td>
+</tr>
+<tr><td colspan="3">
+   <input type="button" id="schBtn" value="검색">
+</td></tr>
+</table>
+   <div id="container"></div>
+</body>
+<script type="text/javascript">
+/*
+#처리프로세스
+1. 화면 구현(FORM)
+	입력 처리 폼
+2. 폼에 있는 객체에 입력된 내용 QUERY string만들기
+	1) DOM객체 선언
+		각각의 입력하는 요소 객체	
+		이벤트가 일어나는 요소 객체
+		결과값을 출력할 요소 객체
+	2) 입력시 처리할 이벤트 핸들러 함수 구현
+		이벤트 요소객체.onkeyup = function(){이벤트 핸들러 처리함수 }
+	3) 이벤트 핸들러 함수에서 query string 문자만들기(요청값 전달을 위해)
+3. ajax처리를 위한 XMLHttpRequest 객체 사용 
+	1) 객체 생성 및 옵션 설정
+		xhr.open("get","서버에서처리되는 화면 + 요청값", true)
+		xhr.onreadystatechange=function(){
+			상태값 조건 처리 : xhr.readyState==4, xhr.status==200
+	}비동기 함수 처리
+	2) 서버에서 온 화면 데이터, 출력 div에 할당
+	div.innerHTML = xhr.responseText
+
+*/
+var enameOb = document.querySelector("[name=ename]")
+var jobOb = document.querySelector("[name=job]")
+var frSalOb = document.querySelector("[name=frSal]")
+var toSalOb = document.querySelector("[name=toSal]")
+var schArr = document.querySelectorAll(".sch")//키를 입력하는 대상객체를 클래스로 지정
+var schBtn = document.querySelector("#schBtn")//클릭을 했을 때, 처리하는 대상 객체 지정
+schArr.forEach(function(sch){
+   sch.onkeyup=function(){
+      if(event.keyCode==13) //enter key 입력시
+         search()
+   }
+})
+schBtn.onclick = search //검색버튼 클릭시
+//schBtn.onclick = function(){
+//		search()
+//	} //검색버튼 클릭시
+
+function search(){
+      var ename = enameOb.value
+      var job = jobOb.value
+      var frSal = frSalOb.value
+      var toSal = toSalOb.value
+      var qstr = "?ename="+ename+"&job="+job+"&frSal="+frSal+"&toSal="+toSal
+      console.log(qstr)
+      loadData(qstr)
+   }
+var div = document.querySelector("#container");
+function loadData(qstr){
+   var xhr = new XMLHttpRequest()
+   xhr.open("get","z05_EmpList.jsp"+qstr,true) // 비동기 방식으로 화면 처리
+   xhr.send()
+   
+   
+   // 비동기 이벤트 선언 및 핸들러 할당
+   xhr.onreadystatechange=function(){
+      // 전송 상태 check : readyState
+      // http 반응 코드가 에러가 없는 200일 때
+      if(xhr.readyState == 4 && xhr.status == 200){
+         console.log(xhr.responseText)
+         div.innerHTML = xhr.responseText
+      }
+   }
+}
+</script>
+</html>

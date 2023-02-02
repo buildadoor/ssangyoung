@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+	# label로 폼 요소의 캡션 만들기
+		1. 캡션이란?
+			ex) 사용자id:<input type="text">
+				 캡션 		  폼요소
+		
+		2. label태그로 캡션과 폼요소를 한단위로 묶음
+			1) 캡션 텍스트를 명료하게 하는 장점
+			2) 2가지 방법
+				<label>사용자id<input type="text"></label>
+				<label for=loginID">사용자 아이디</label>
+				<input type="text" id="loginID"/>
+ -->
+ <h2>로그인 폼</h2>
+ <form name="ko" method="get">
+ 	<label>사용자ID:<input type="text" name="id" size="15"></label><br>
+ 	<label for="pass">비밀번호:</label>
+ 	<input id="pass" type="password" name="pass" size="15">
+ 	<input type="submit">
+ </form>
+ <hr>
+ <h3>물건명과 가격을 위 두가지 캡션처리를 하고 확인</h3>
+ 	<form name="product" method="get">
+ 		<label>물건명:<input type="text" name="pname" size="15"></label><br>
+ 		<label for="pprice">물건가격:</label>
+ 		<input id="pprice" type="text" name="pprice" size="15">
+ 		<input type="submit" value="구매">
+ 	</form>
+ 
+ <!-- 
+ 	#선택형 요소에 label태그 사용 
+ 		1.캡션 텍스트나 이미지를 선택해도 폼요소를 선택한 것으로 처리
+ -->
+ <hr>
+ <h2>캡션 라벨에 사진넣기전</h2>
+ 	<form>
+ 		<label>짜장면<input type="radio" name="china" value="짜장면"/></label>
+ 		<label for="china2">짬뽕</label>
+ 			<input type="radio" id="china2" name="china2" value="짬뽕"/>
+ 			<input type="submit"/>
+ 	</form>
+ <h2>캡션 라벨에 사진넣기 후</h2>
+ <style>
+ 	/* [type=raiod]{visibility:hieen;} */
+ 	.cls{display:none;} /*라디오 박스가 보이지 않게 된다.*/
+ </style>
+ <script>
+ 	function chColor(obj){
+ 		//alert(this.style.backgroundColor);
+ 		obj.style.color="orange";
+ 	}
+    function chColor2(obj){
+        var china6 = document.querySelectorAll("[name=china6]")
+        var lb = document.querySelectorAll(".lb")
+        lb[0].style.backgroundColor="";
+        lb[1].style.backgroundColor="";
+        console.log(lb[0].style.backgroundColor+":"+china6[0].checked)
+        console.log(lb[1].style.backgroundColor+":"+china6[1].checked)
+        if(china6[0].checked) lb[0].style.backgroundColor="orange";
+        if(china6[1].checked) lb[1].style.backgroundColor="orange";
+     }
+ </script>
+  	<form>
+로 이미지나 텍스트 내용만 보이게하고 이것을 클릭햇을때, 해당 데이터를 서버에 전송하도록 하는 방식이다.
+  	 -->
+ 		<label onclick="chColor(this)">짜장면<input class="cls" type="radio" name="china4" value="짜장면"/></label>
+ 		<label onclick="chColor(this)" for="china5">짬뽕</label>
+ 			<input class="cls" type="radio" id="china5" name="china6" value="짬뽕"/>
+ 			<input type="submit"/>
+ 	</form>
+  	<form>
+
+ 		<label class="lb" onclick="chColor2(this)">짜장면<input class="cls2"  type="radio" name="china6" value="짜장면"/></label>
+ 		<label class="lb" onclick="chColor2(this)" >짬뽕</label>
+ 			<input class="cls2" type="radio"  name="china6" value="짬뽕"/>
+ 			<input type="submit"/>
+ 	</form>
+</body>
+</html>

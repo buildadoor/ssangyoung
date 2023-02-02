@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ 
+*/
+</script>
+
+</head>
+<body>
+	<h2>회원등록</h2>
+	아이디:<input type="text" name="id"/>
+	<input type="button" id="ckIdBtn" value="등록여부"/>
+	<div id="container"></div>
+
+
+</body>
+<script type="text/javascript">
+var idOb = document.querySelector("[name=id]")
+var ckIdBtnOb = document.querySelector("#ckIdBtn")
+var containerOb = document.querySelector("#container")
+
+function callAjax(){
+	   var xhr = new XMLHttpRequest()
+	   xhr.open("get","z16_checkId.jsp",true)
+	   xhr.send()
+	   xhr.onreadystatechange=function(){
+	      if(xhr.readyState==4&&xhr.status==200){
+	    	 console.log(xhr.responseText)
+	         var data = JSON.parse(xhr.responseText)
+	         //{"hasMember":false}
+	         var dlist = data.contacts
+	         var adHTML=""
+	         dlist.forEach(function(p){
+	            adHTML+="<tr>"
+	            adHTML+="<td>"+p.no+"</td>"
+	            adHTML+="<td>"+p.name+"</td>"
+	            adHTML+="<td>"+p.tel+"</td>"
+	            adHTML+="<td>"+p.address+"</td>"
+	            adHTML+="<td><img width='25%' height='25%' src='"+p.photo+"'/></td>"
+	            adHTML+="</tr>"
+	         })
+	         tbOb.innerHTML = adHTML
+	      }
+	   }
+	}
+/*
+# 회원등록시, id로 회원 등록 여부 check ajax처리
+1. 화면구성
+2. DOM처리
+3. 데이터 처리 jsp 구현 : 요청값에 의해서 
+4. ajax 선언 및 이벤트 처리 
+ 	1) 넘겨오는 결과로 등록 여부 확인
+
+ */
+</script>
+</html>

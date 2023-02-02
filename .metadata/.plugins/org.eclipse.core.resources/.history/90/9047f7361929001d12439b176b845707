@@ -1,0 +1,32 @@
+package homework;
+
+public class A00_Systemout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int budget = 10000;
+		int in01 = 3000;
+		int out01 = 0;
+		int in02 = 0;
+		int out02 = 5000;
+
+		String date01 = "8/31";
+		String date02 = "9/1";	
+		String con01 = "용돈"; 
+		String con02 = "식사"; 
+		System.out.print("날짜\t");		
+		System.out.print("내용\t");		
+		System.out.print("입금액\t");		
+		System.out.print("출금액\t");		
+		System.out.print("잔액\n");		
+		System.out.print(date01+"\t");
+		System.out.print(con01+"\t");
+		System.out.print(in01+"\t");
+		System.out.print(out01+"\t");
+		System.out.print(out01+"\t");
+		int rest01 = (budget-out01+in01);
+		System.out.println(rest01);
+
+	}
+
+}

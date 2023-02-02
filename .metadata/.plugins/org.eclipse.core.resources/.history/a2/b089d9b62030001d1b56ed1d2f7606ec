@@ -1,0 +1,53 @@
+package homework;
+
+public class A00_Systemout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 4. [continue 활용]1~12월까지 마지막일수10으로 월급여 산정하되,
+31일만 있는 월만 산정해서 출력하고 나머지 월(30일, 28일까지 있는 달)은 산정 처리하지 않고 총 급여을 아래와 같이 출력하세요\
+월  일수   월급여 누적연봉
+1월 31일  310만 310만원
+3월 31일  310만 620만원
+5월 31일  310만 930만원
+..
+12 31일  ..
+
+		//ex) 1~12 전기 요금 (120000)출력하되
+		//5월은 제외하여 출력하고, 각 월별 누적금액과
+		//ex1)함께 출력하되, 총 금액이 800000이상일떄 
+		//중단처리 하세요 
+		 * int elePay = 120000;
+		int eleTot = 0;
+		System.out.println("월\t요금\t누적금액");
+		for(int mt= 1;mt <= 12;mt++){
+			if(mt==5) continue; //5월만 pass
+			eleTot+=elePay;
+			System.out.println(mt+"\t"+elePay+"\t"+eleTot);
+			if(eleTot>=800000) break;//800000만 이상일때
+		}
+		}
+1,3,5,7,8,10,12
+}
+	*/
+	 int salary = 3100000;
+		int saTot = 0;
+		System.out.println("월\t일수\t월 급여\t누적 연봉");
+		for(int mt= 1;mt <= 12;mt++){
+			if(mt==2)
+			if(mt==4)
+			if(mt==6)
+			if(mt==9)
+			if(mt==11) continue; 
+			saTot+=salary;
+			System.out.println(mt+"월\t"+31+"일\t"+salary+"\t"+saTot);
+			
+	
+
+	
+	
+	}
+	}
+	}
+		

@@ -1,0 +1,19 @@
+package javaexp.a01_begin;
+
+public class A04_VarBasic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 숫자형 변수 선언
+		int num01; // num01이란 변수에 정수를 할당 하겠다고 선언
+		num01 = 30; // 데이터 30을 할당..
+		int num02 = 40; // num02를 선언과 할당.
+		String name = "홍길동";
+		// name 이라는 변수에 홍길동이라는 문자열 데이터를 선언과
+		// 할당 처리..
+		System.out.printIn("이름:"+name);
+		System.out.printIn("합산:"+(num01+num02));
+		
+	}
+
+}

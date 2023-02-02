@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ 
+*/
+</script>
+
+</head>
+<body>
+	<div id="container"></div>
+2022-11-30
+[1단계:개념] 1. [js] 배열과 반복문 처리형식 4가지를 예제를 통해서 설명하세요.<hr>
+<!-- 
+	-배열 선언 형식
+	1) var array = new Array(); //빈 배열
+		new Array(5); //배열의 크기를 지정  
+		new Array(50,30,400) //구성 요소 포함
+	2) var array2 = []
+		[10,20,30]
+	-반복문 처리
+1. for문
+	1) for(var idx=0;idx<배열.length;idx++){
+		배열[idx] : 배열의 index로 접근해서 가져온다.
+	2) for(var idx in 배열)
+		idx : 배열의 index를 문자열로 가져온다.
+		배열[idx] : 배열에 할당된 값을 가져온다.
+	3) for(var 단위데이터 of 배열)
+		배열의 단위데이터를 변수에 할당하여 가져온다.
+	4) 배열.forEach(function(단위데이터, index, 배열전체){})	
+	-->
+[1단계:확인] 2. [js] Math.random(), parseInt()를 이용해서 학생 10명의 국어점수를 임의로 발생하여 배열 할당하여 테이블로 출력하세요.<hr>
+<!-- 
+var div = document.querySelector("#container")
+var show="학생 국어 성적<br>"
+		var studs = []
+for(var no=1;no<=10;no++){
+	var stud = {}
+	stud.no = no
+	stud.kor= parseInt(Math.random()*101)
+	
+	studs.push(stud)	
+	show+=stud.no+"번 "+stud.kor+"점<br>"
+	}
+ div.innerHTML=show
+ -->
+[1단계:확인] 3. [js] 위 2번 문제를 기능메서드를 활용하여 1~3등을 출력하세요.<hr>
+ㅠㅠ
+[1단계:확인] 4. [js] 위 2번 문제를 메서드를 활용하여 최대점수와 최저점수를 삭제처리하고 출력하세요.<hr>
+ㅠㅠ
+[3단계:확인] 5. [js] 영어점수 10명을 초기화면에 테이블로 만들고 기능버튼에 따라 처리한 테이블 내용을 출력하세요
+               [임의점수생성][내림차순][오름차순][상위Rank3]<hr>
+               
+               
+               
+            
+[1단계:개념] 6. [js] sort()기능메서드의 한계점을 [1,5,92,124,234]를 기준으로 설명하세요.<hr>
+	기본 sort()는 첫번째자리부터 비교해서 정렬하고
+	그다음 자리에 데이터를 비교하기에 자리수가 같지 않으면
+	원하는 정렬이 처리되지 않는다.
+	정렬하면 1,124,234,5,92 이렇게 나온다. 
+[1단계:확인] 7. [js] 월드컵 선수(나라,이름,골,도움)를 3명을 배열로 설정한 후, 초기 화면을 테이블로 출력하고,
+                   골기준으로 내림차순 정렬처리하는 화면을 처리하세요.<hr>
+<!-- 
+ var soccerList=[]
+ soccerList.push({nation:"한국",name:"김길동",goal:9,help:1})
+ soccerList.push({nation:"미국",name:"abc",goal:3,help:2})
+ soccerList.push({nation:"일본",name:"二李二",goal:2,help:1})
+
+ var show = "<h3>골 기준 정렬</h3>" 
+ show += "<table><tr><th>국가</th><th>선수명</th><th>골</th><th>도움</th></tr>"
+	 soccerList.sort(function(left,right){
+    return  right.goal-left.goal;
+ })
+ soccerList.forEach(function(soccer){
+    show+="<tr><td>"+soccer.nation+"</td><td>"+soccer.name+"</td><td>"
+    +soccer.goal+"</td><td>"+soccer.help+"</td></tr>"
+ })
+ show+="</table>"
+ div.innerHTML+=show
+
+ -->                   
+[1단계:개념] 8. [js] 특정 조의 팀속성(국가, 승점)를 배열로 등록한 후(승점은 임의로 입력), 승점기준으로 내림차순으로 테이블로 출력하세요.<hr>
+<!--  var score=[]
+ score.push({nation:"포르투갈",grade:6})
+ score.push({nation:"가나",grade:3})
+
+
+ var show = "<h3>골 기준 정렬</h3>" 
+ show += "<table><tr><th>국가</th><th>승점</th></tr>"
+	 score.sort(function(left,right){
+    return  right.grade - left.grade;
+ })
+ score.forEach(function(score){
+    show+="<tr><td>"+score.nation+"</td><td>"+score.grade+"</td></tr>"
+ })
+ show+="</table>"
+ div.innerHTML+=show -->
+[3단계:개념] 8. [js] 특정 조를 데이터로 넣고, 팀속성(국가,승,무,패,골득실,승점)을 기준으로 테이블로 출력한 후, 테이블 상단항목을
+            클릭시, 해당 내용의 내림차순으로 정렬되게 하세요.<hr>
+
+</body>
+<script type="text/javascript">
+/*
+
+ */
+var div = document.querySelector("#container")
+var show="학생 국어 성적<br>"
+		var studs = []
+for(var no=1;no<=10;no++){
+	var stud = {}
+	stud.no = no
+	stud.kor= parseInt(Math.random()*101)
+	
+	studs.push(stud)	
+	show+=stud.no+"번 "+stud.kor+"점<br>"
+	}
+ div.innerHTML=show
+//7번
+ var soccerList=[]
+ soccerList.push({nation:"한국",name:"김길동",goal:9,help:1})
+ soccerList.push({nation:"미국",name:"abc",goal:3,help:2})
+ soccerList.push({nation:"일본",name:"李二二",goal:2,help:1})
+
+ var show = "<h3>골 기준 정렬</h3>" 
+ show += "<table><tr><th>국가</th><th>선수명</th><th>골</th><th>도움</th></tr>"
+	 soccerList.sort(function(left,right){
+    return  right.goal-left.goal;
+ })
+ soccerList.forEach(function(soccer){
+    show+="<tr><td>"+soccer.nation+"</td><td>"+soccer.name+"</td><td>"
+    +soccer.goal+"</td><td>"+soccer.help+"</td></tr>"
+ })
+ show+="</table>"
+ div.innerHTML+=show
+
+</script>
+</html>

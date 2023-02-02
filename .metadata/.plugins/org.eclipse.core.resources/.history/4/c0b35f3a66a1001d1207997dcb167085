@@ -1,0 +1,5 @@
+package springweb.z02_oliveyoung.a03_dao;
+
+public interface A01_MemberDao {
+
+}

@@ -1,0 +1,24 @@
+package homework;
+
+public class A00_Systemout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 [1단계:코드] 3. 100에서 1/4로  4회 누적해서 나눈 값을 아래의 형식으로 출력 하세요
+초기데이터 100
+1회  25
+2회  6.2..
+3회  1.54..
+4회  0.38..
+*/
+	int num = 100;
+	int tot = 0;
+		for(int cnt=1;cnt<=4;cnt++) {
+			tot+=num*cnt
+					System.out.println(tot);
+		System.out.println(cnt+"회"+(num*0.25+cnt));
+			
+	}
+	}
+	}

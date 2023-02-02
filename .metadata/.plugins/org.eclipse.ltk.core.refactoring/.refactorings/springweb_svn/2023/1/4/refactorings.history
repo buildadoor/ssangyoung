@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;springweb/src/main/java/a01_diexp.z08_mydb.vo&apos;&#x0D;&#x0A;- Original project: &apos;springweb_svn&apos;&#x0D;&#x0A;- Destination element: &apos;springweb/src/main/java/a01_diexp.z08_mydb.vo&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     a01_diexp.z08_mydb.vo.Product.java&#x0D;&#x0A;     a01_diexp.z08_mydb.vo.Member.java" description="Copy compilation units" destination="=springweb/src\/main\/java&lt;a01_diexp.z08_mydb.vo" element1="/src\/main\/java&lt;a01_diexp.z08_mydb.vo{Product.java" element2="/src\/main\/java&lt;a01_diexp.z08_mydb.vo{Member.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1674787289931" units="2" version="1.0"/>
+</session>

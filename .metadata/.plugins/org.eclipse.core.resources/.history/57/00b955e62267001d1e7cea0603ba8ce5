@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배송지 추가</title>
+<link href="logo.ico" rel="shortcut icon" type="image/x-icon">
+<style type="text/css">
+span{color:deepskyblue;}
+p{color:dimgray;
+	text-align : center;}
+#id{line-height:25px;
+width:700px; height:35px; padding-left:10px; 
+}
+#img{
+margin : 0 auto;
+margin-top : 10px;
+text-align : center;
+
+}
+/* 
+
+
+
+*/
+</style>
+</head>
+<body>
+ <div style="text-align : center;"><input type="text" name="search" id="id" size="500px" placeholder="예) 판교역로 235, 분당 주공, 삼평동 681" />
+<input type="image" value="image버튼4" id="img" onclick="alert('입력한 주소를 검색합니다.')"src="searchadlogo.jpg" width="25" height="30"/></div>
+<hr>
+<h2  style="text-align : center;">tip</h2>
+<p>
+아래와 같은 조합으로 검색을 하시면 더욱 정확한 결과가 검색됩니다.<br><br>
+
+도로명 + 건물번호<br>
+<span>예) 판교역로 235,  제주 첨단로 242</span><br><br>
+
+지역명(동/리) + 번지<br>
+<span>예) 삼평동 681,  제주 영평동 2181</span><br><br>
+
+지역명(동/리) + 건물명(아파트명)<br>
+<span>예) 분당 주공,  연수동 주공3차</span><br><br>
+
+사서함명 + 번호<br>
+<span>예) 분당우체국사서함 1~100</span><br><br>
+</p>
+</body>
+</html>

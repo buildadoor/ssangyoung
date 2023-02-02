@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ 
+*/
+</script>
+
+</head>
+<body>
+	<div id="container"></div>
+
+
+</body>
+<script type="text/javascript">
+/*
+#sort의 처리
+1. 기본 sort()는 첫번째자리부터 비교해서 정렬하고
+	그다음 자리에 데이터를 비교하기에 자리수가 같지 않으면
+	원하는 정렬이 처리되지 않는다.
+	동일한 자리수 일때, sort()그대로 사용하여 정렬 처리한다.
+	ex) 4, 1, 2, 7, (O)
+		125,7,1,23,5(X)
+2. 숫자의 데이터를 비교해서 정리를 위한 처리..
+	자리수가 다른 경우 : 	125,7,1,23,5
+	객체형 데이터를 처리해야되는 경우 (특정한 속성을 기준ㅇ로 정렬) : 
+		[{kor:70, eng:80},{kor:90, eng:80},
+			{kor:80, eng:80},{kor:90, eng:80}]
+	 1) 오름차순 
+	 배열.sort(function(left,right){
+		 return left - right; // 0, +, - 값에 따라서 정렬을 처리
+	 })
+	 2) 내림차순
+	 배열.sort(function(left,right){
+		 return right - left; // 0, +, - 값에 따라서 정렬을 처리
+	 })
+3. 객체형 배열데이터의 정렬처리..
+	1) 특정한 속성을 기준으로 오름 내림 차순 처리
+		var points=
+		[{kor:70,eng:80,math:90},
+		 {kor:80,eng:85,math:80},
+		 {kor:90,eng:90,math:90}
+		]
+		points.sort(function(left, right){
+			//left, right 속성이 포함된 단위 객체를 지칭..
+			//left =  {kor:70,eng:80,math:90}
+			//right =  {kor:70,eng:80,math:90}
+			//특정한 속성을 기준으로 처리하려면 left.속성 접근해서 처리
+			return left.kor - left.kor // 국어점수 기준으로 오름차순  
+			return right.eng - left.eng // 영어점수 기준으로 내림차순  
+			leftTot = left.kor+left.eng+left.math
+			rightTot = right.kor+right.eng+right.math
+			return rightTot - leftTot // 총합산 기준으로 내림차순  
+	})
+ */
+
+ var div = document.querySelector("#container")
+ var array=[52,273,103,32]
+ var array1=[52,73,32,12]
+ var array2=[152,273,332,412]
+ var array3=[52,1,273,332,4324,412]
+
+ array.sort(); array1.sort();array2.sort();array3.sort()
+ div.innerHTML+=array+"<br>"
+ div.innerHTML+=array1+"<br>"
+ div.innerHTML+=array2+"<br>"
+ div.innerHTML+=array3+"<br>"
+ var array = [52,273,103,32]
+ array.sort(function(left,right){
+	 return left - right;//그대로 내려오기에 기본 순차정렬인 오름차순 정렬
+ })
+ div.innerHTML+="기능 처리 후 오름차순 정렬:"+array+"<br>"
+ array.sort(function(left,right){
+	 return right - left; //X형식으로 바꾸어 주기에 역정렬인 내림차순 정렬
+ })
+ div.innerHTML+="기능 처리 후 내림차순 정렬:"+array+"<br>"
+// ex) 임의의 수 (1~9999) 범위 안에 숫자를 5개 배열로 가져와서 최고 높은 값부터 
+// 내림차순으로 출력되게 하세요.
+
+ div.innerHTML+="<h2>랜덤 돌리기</h2>"
+ var ranNums =[]
+ for(var cnt=1;cnt<=5;cnt++){
+	 ranNums.push(parseInt(Math.random()*9999+1))
+			 }
+ div.innerHTML+=ranNums+"<br>"
+ ranNums.sort(function(left,right){
+	 return left - right;//그대로 내려오기에 기본 순차정렬인 오름차순 정렬
+ })
+ div.innerHTML+="기능 처리 후 오름차순 정렬:"+ranNums+"<br>"
+ ranNums.sort(function(left,right){
+	 return right - left; //X형식으로 바꾸어 주기에 역정렬인 내림차순 정렬
+ })
+ div.innerHTML+="기능 처리 후 내림차순 정렬:"+ranNums+"<br>"
+//학생별로 번호-국-영-수 점수가 있을 때 , 국어 점수가 가장 높은 학생, 
+//가장 낮은 학생별로 정렬을 처리할 때, 어떻게 해야하는가?
+
+var show="학생성적<br>"
+		var studs = []
+for(var no=1;no<=10;no++){
+	var stud = {}
+	stud.no = no
+	stud.kor= parseInt(Math.random()*101)
+	stud.eng= parseInt(Math.random()*101)
+	stud.math= parseInt(Math.random()*101)
+	studs.push(stud)	
+	show+=stud.no+"번 "+stud.kor+"점 "+stud.eng+"점 "+stud.math+"점<br>"
+	}
+ div.innerHTML=show
+studs.sort(function(left,right){ //객체기준 studs배열안에 비교 객체를 기준으로 설정 
+	return right.kor -left.kor; 
+})
+var show = ""
+studs.forEach(function(stud){
+	show+=stud.no+"번 "+stud.kor+"점 "+stud.eng+"점 "+stud.math+"점<br>"
+})
+div.innerHTML="학생 국어점수 기준 내림차순<br>"
+div.innerHTML+=show
+ 
+studs.sort(function(left,right){ //객체기준 studs배열안에 비교 객체를 기준으로 설정 
+	return left.eng-right.eng; 
+})
+
+ </script>
+</html>

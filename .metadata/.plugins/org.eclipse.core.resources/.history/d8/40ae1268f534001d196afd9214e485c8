@@ -1,0 +1,85 @@
+package javaexp_homework;
+
+import java.util.ArrayList;
+
+public class A00_Sysout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//	[1단계:개념] 1. (연습이 필요한 분)1:다관계 설정 연습 - 버스/승객, 영화/배우들, 회사/종업원  
+
+	}
+			}
+	class Bus{
+		private int no;
+		private String to;
+		private ArrayList<Passenger> plist;
+		public Bus(int no, String to) {
+			this.no = no;
+			this.to = to;
+			this.plist = new ArrayList<Passenger>();
+			
+		}
+		public void setPlist(Passenger p) {
+			this.plist.add(p);
+			System.out.println(p.getpName()+"승객 추가");
+		}
+		public void showPList() {
+			System.out.println("#버스#");
+			System.out.println("버스번호"+no);
+			System.out.println("목적지"+to);
+			if(plist.size()==0) {
+				System.out.println("예약목록이 없네요.");
+			}else {
+				System.out.println("예약리스트");
+				for(Passenger : plist) {
+					System.out.println(p);
+				}
+		}
+		}
+		public int getNo() {
+			return no;
+		}
+		public void setNo(int no) {
+			this.no = no;
+		}
+		public String getTo() {
+			return to;
+		}
+		public void setTo(String to) {
+			this.to = to;
+		}
+		public ArrayList<Passenger> getPlist() {
+			return plist;
+		}
+		
+		
+		
+	}
+	class Passenger{
+		private String pName;
+		private String from;
+		public Passenger(String pName, String from) {
+			this.pName = pName;
+			this.from = from;
+		}
+		
+		@Override
+		public String toString() {
+			return "Passenger [pName=" + pName + ", from=" + from + "]";
+		}
+
+		public String getpName() {
+			return pName;
+		}
+		public void setpName(String pName) {
+			this.pName = pName;
+		}
+		public String getFrom() {
+			return from;
+		}
+		public void setFrom(String from) {
+			this.from = from;
+		}
+		
+	}

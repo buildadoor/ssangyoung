@@ -1,0 +1,12 @@
+package javaexp.a01_begin;
+
+public class A03_executeCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.print("저장된 데이터:"+num02);
+		int num02 = 15;
+		System.out.printIn("num02?"+num02);
+	}
+
+}

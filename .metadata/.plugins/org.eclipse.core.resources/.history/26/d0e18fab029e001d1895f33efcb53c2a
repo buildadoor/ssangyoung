@@ -1,0 +1,18 @@
+package springweb.a05_mvc.a02_service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import springweb.a05_mvc.a03_dao.A02_DeptDao;
+import springweb.z01_vo.Dept;
+
+@Service
+public class A02_DeptService {
+	@Autowired
+	private A02_DeptDao dao;
+	public List<Dept> getDeptList(Dept sch){
+		return dao.getDeptList(sch);
+	}
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.cls01 .cls02{ background:pink;}
+	h4{text-align:center;}
+	strong{text-decoration:overline;}
+	.s1{text-indent:1em;text-align:justify} 
+	.s2{text-indent:3em;text-align:center} 
+	.s3{text-indent:3em;text-align:right;color:darkgreen}
+	*{font-family:"돋움체"}
+</style>
+</head>
+<body>
+<!-- 
+/*
+2022-11-08
+[1단계:개념] 1. 선택자의 기본 선언 형식을 화면에 처리하세요.
+	태그
+		<h2 id="id01">
+	선택자
+		#id01{속성:속성값}
+[1단계:개념] 2. 2중 선택자 및 선택자/속성 선언 형식을 기술하고 예제를 만들고 설명하세요.
+.cls01 .cls02{ background:pink;}
+	-->
+	<h4 class="cls01">2번 문제 </h4>
+	<h4 class="cls02">2번 문제 </h4>
+	<!-- 
+[1단계:개념] 3. 부모/자식 관계 계층과 조상/자손 관계 계층의 차이를 선택자와 함께 설명하세요.
+2. 자식 선택자 (child selector)
+	1) 부모 자식 관계인 두 선택자는 '>' 기호로 조합된다.
+	ex) div > strong { color:dodgerblue;}
+		-div의 직계 자식인 strong에 적용되는 스타일 시트
+3. 자손 선택자(descendents selector)
+	1) 자손 관계인 2개 이상의 태그 나열
+	ex) ul strong{color:dodgeblue;}
+		-ul의 자손 strong에 적용되는 스타일 시트
+[1단계:개념] 4. css에 속성을 이용하여 선택자를 사용하는 경우를 기술하세요.
+
+[1단계:확인] 5. 사원정보등록(사원번호, 사원명, 등 emp 컬럼) 화면에서 속성값을 이용한 선택자를 통해서 
+               글자색상이나 배경색상을 설정하세요.  
+1. 아이디 선택자
+	1) id 속성의 목적을 각 태그를 유일하게 식별하기 위해서 처리된다.
+		- 동일한 id속성이 같지 않도록 html 파일 작성하는 것이 바람직하다.
+		- 자바 스크립트 코드에서 id값을 가진 태그 객체를 찾을 때 문제가 된다.
+	2) 적절한 활용
+		id 선택자는 여러 태그 중 특정 태그에만 css 스타일을 적용할 때,
+			적합하다.
+2. class 선택자
+	1) 적합한 활용
+		- 여러 태그를 하나의 그룹으로 묶어 단체로 동일한 css스타일을 적용할 때 적합하다.
+		- class 속성 값이 같은 태그에 모두 css 스타일 적용을 한다.
+	2) 태그의 종류에 관계없이 class 선택자 활용 가능하다.
+[1단계:개념] 6. 가상클래스란 무엇인지? 종류별 기능별 내용을 예제를 통해서 설명하세요.
+		어떤 조건이나 상황에서 스타일을 적용하도록 만든 선택자
+	1) 40개 이상의 많은 가상 클래스 선택자가 있음
+		ex1) a:visited{color:green;}
+		ex2) li:hover{background:yellow;}
+		2. 가상 클래스의 유형과 내용
+	1) 마우스
+		:hover - 마우스가 올라갈 때, 스타일 적용
+		:active - 마우스로 누르고 있는 상황에서 스타일 적용
+	2) 폼하위 요소
+		:focus - 폼 요소가 키보드나 마우스 클릭으로 포커스를 받을 때
+				스타일 적용
+		ex) 아이디:<input
+			아이디:[ ] ==> 입력하려고 클릭시 .. ==> focus
+	3) 링크
+		:link - 방문하지 않은 링크에 스타일 적용
+		:visited - 방문한 링크에 스타일 적용
+	4) 블록
+		:first-letter -<p>,<div>등과 같은 블록형 태그의 첫 글자에
+			스타일 적용 : first-letter과 동일하면 span과 같은 인라인 
+			태그에는 적용되지 않음
+		:first-line- <p>.<div>등과 같은 블록형 태그의 첫 라인에 
+			스타일 적용 : first-line과 동일
+	5) 구조
+		:nth-child(even|odd) - 짝수/홀수 번째 모든 자식 태그에 스타일 적용
+		:nth-child(1) - 첫번째 자식 태그에 스타일 적용
+		:nth-child(3n+1) - 동일한 태그를 3개 단위로 그룹되어 처리할 때,
+							첫번째에 대한 스타일 적용
+[1단계:확인] 7. 인터넷상 가상클래스가 적용된 게시판을 확인하고, 해당 게신판에서 사용하는 가상클래스를 적용하여
+                게시판을 만들어 보세요.
+         
+         ???-->
+         
+         <!--       
+[1단계:개념] 8. 색상 설정 방법 3가지 형식을 예제로 처리하세요.
+
+	1) 색 이름으로 표현 : css3표준에서는 140개 색의 이름을 정ㄹ하고 있다.
+		ex) h1{color:orange;}
+	2) 16진수 코드로 표현 : #6A2BE2 ==> 16진수16진수16진수로
+		색상() 비율 조합
+		ex) h5{color:#F08080}
+	3) 10진수 코드와 rgb()로 표현
+			Red green blue
+		rgb(138, 43, 226)
+		
+		그외 글자 꾸미기 
+		color : 글자 색상
+		background-color: 배경 색상
+		border-color: 테두리의 색상
+		border-width: 테두리의 굵기
+		border-style: 테두리의 모양
+		border : 굵기 모양 색상
+-->
+
+<!--
+[1단계:개념] 9. 문단 관련 속성을 기술하고, 기본 예제를 통하여 처리하세요.
+1. text-indent : 길이| %처리
+	들여쓰기 옵션
+2. text-align : left | right | center | justify
+	정렬 처리 옵션
+3. text-decoration : none | underline | overline | line-through
+	텍스트로 꾸미기		  없음								사선 처리  
+[1단계:확인] 10. 애국가를 검색해서 절별로 문단을 만들고, 들여쓰기, 중간 강조 글자에 대한 언더바 등 설정하여
+                출력해세요.
+                -->
+ <hr>
+ <h2>10번 애국가</h2>              
+<p class="s1">1. 동해물과 백두산이 마르고 닳도록
+하느님이 보우하사 우리나라 만세
+<strong>무궁화 삼천리 화려 강산
+대한 사람 대한으로 길이 보전하세</p></strong>
+<p class="s2">2. 남산 위에 저 소나무 철갑을 두른 듯
+바람 서리 불변함은 우리 기상일세
+<strong>무궁화 삼천리 화려 강산
+대한 사람 대한으로 길이 보전하세</p></strong>
+<p class="s3">3. 가을 하늘 공활한데 높고 구름 없이
+밝은 달은 우리 가슴 일편단심일세
+<strong>무궁화 삼천리 화려 강산
+대한 사람 대한으로 길이 보전하세</p></strong>
+<p class="s2">4. 이 기상과 이 맘으로 충성을 다하여
+괴로우나 즐거우나 나라 사랑하세
+무궁화 삼천리 화려 강산
+대한 사람 대한으로 길이 보전하세</p>
+                <!-- 
+[1단계:개념] 11. 상대적 크기와 절대적 크기의 단위의 차이를 기술하세요. 
+1. 상대적 크기 지정
+	상대적 크기라는 것은 해당 선택자가 가지고 있는 고유의 font의 기본적인
+	크기를 기준으로 몇배, 몇 % 지정하여 처리하는 것을 말한다.
+	ex) h1~h6까지 문자열의 기본 태그의 크기가 다르다.
+	1) em : 배수 ex) font-size:3em; 현재 폰트의 3배 크기
+	2) % 퍼센트 ex) font-size:500%;  현재 폰트의 500%의 크기
+2. 절대적 크기 지정
+	절대적 크기는 일반적인 길이 측정단위를 기준으로 설정하는 것을 말한다.
+	1) px : 픽셀수 ex) font-size:10px; 10픽셀 크기
+	2) cm : 센티미터 ex) margin-left5cm; 왼쪽 여백 5cm
+	3) mm : 미리미터 ex) margin-top: 20mm; 상단 여백 20mm
+	4) in : 인치 1in = 2.54cm = 96px
+			ex) margin-left:2in;
+	5) pt : 포인터 1pt = 1in의 1/72 크기 
+			ex) margin-bottom : 20pt; 
+	6) pc : 피카소(picas) 1pc = 12pt 
+			ex) font-size:1pc; 
+	7) deg : 각도 시계방향 20도 회전 
+			ex) transform:ratate(20deg);
+[1단계:개념] 12. font 관련 속성에 대하여 나열하고, 한번에 설정하는 옵션을 내용을 예제를 통해서 기술하세요.
+1. 폰트 패밀리 font-family
+	font-family: Arial, "Times New Roman", Serif;
+				1순위, 2순위, 3순위
+				해당 폰트 패밀리 우선 순위 1순위 없으면 2,3 순위로 진행한다.
+2. font-size 글자 크기
+	font-size: 40px; 절대적 크기 
+	font-size:medium; 브라우저별 상대적 크기 
+	font-size:1.6em; 기본 글자에서 상대적 비율 설정
+3. font-style 글자의 모양
+	font-style:italic; 기울림체 
+4. font-weight 글자의 굵기
+	font-weight:300; 100~900의 점위에서 300정도 굵기
+	font-weight:bold; 굵기 700 크기 
+5. font 속성
+	font : 글자의 종류 굵기 크기 글자체를 한 번에 설정하는 옵션 
+	font:italic bold 20px consolas 	
+
+
+전체 선택자
+ *{font-family:"돋움체"}
+[1단계:확인] 13. 지금까지 배운 과목명을 한글로 글자체, 굵기, 크기, 스타일을 설정하여 출력하세요.
+*/-->
+<h2 style="font-family:TimesNewRoman;font-style:italic;font-size:200%">java</h2>
+<h2 style="font-family:TimesNewRoman;font-size:200%">sql</h2>
+<h2 style="font-family:Aral;font-style:oblique;font-size:0.5cm">html</h2>
+<h2 style="font-family:Serif;font-size:250%">css</h2>
+
+</body>
+</html>

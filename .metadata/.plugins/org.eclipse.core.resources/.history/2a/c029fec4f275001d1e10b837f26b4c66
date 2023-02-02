@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    import="jspexp.vo.*"
+   import="java.util.*"   
+    import="jspexp.a13_database.*"    
+    import="jspexp.a13_database.vo.*"
+   %>
+<%request.setCharacterEncoding("utf-8");%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<script type="text/javascript">
+/*
+
+ */
+</script>
+</head>
+<body>
+   <div id="container"></div>
+   <script type="text/javascript">
+   var div = document.querySelector("#container")
+   </script>
+<%--
+# 쿠키 수정하기
+1. 기존에 쿠키의 키를 다른 값으로 할당하고, 다시 response객체로 전달한다.
+ --%>
+    <h2>현재 쿠키 리스트</h2>
+    <form method="post">
+       <table>
+          <tr><th>선택</th><th>쿠키의 키</th><th>쿠키의 값</th></tr>
+          <%
+          Cookie cks[] = request.getCookies();
+          for(int idx=0;idx<cks.length;idx++){
+             Cookie c = cks[idx];
+             if(!c.getName().equals("JSESSIONID")){
+          %>
+          <tr><td><input type="checkbox" name="cidx" value="<%=idx%>"/></td>
+             <td><input type="text" name="ckey" value="<%=c.getName()%>"/></td>
+             <td><input type="text" name="cval" value="<%=c.getValue()%>"/></td></tr>
+          <%
+             }
+          }
+          %>
+          <tr><td></td>
+          <td></td>
+          <td></td>
+          </tr>
+       </table>
+    </form>
+    
+    <input type="button" value="쿠키변경"/><input type="button" value="쿠키삭제"/>
+    <input type="button" value="쿠키삭제"/>
+    
+</body>
+<script type="text/javascript">
+/*
+
+ */
+</script>
+</html>

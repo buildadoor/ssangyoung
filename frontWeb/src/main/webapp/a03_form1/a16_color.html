@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2 style="background:#9370DB;">색상1</h2>
+	<h2 style="background:aqua;">색상2</h2>
+<!-- 
+	#색코드
+		1. 문자열 또는 rgb 조하병ㅎ태ㅗㄹ 색상을 지원하여 설정할 수 있다.
+		2. 색코드 처리
+			#rrggbb
+			rr:빨간색
+			gg:초록색
+			bb:파란색
+			각 코드값을 16진수로 0~255가지의(00~FF)의 내용을 선택가능
+		3. 해상 색 코드는 영문으로 패밍되는 색상명이 있따>
+			- 구글 색상코드 참고
+			ex) brown: #A52A2A
+				darkorange:#FF8C00
+	
+	#색입력 폼
+	1. <input type="color">
+		1)컬러 다이얼로그 출력, 사용자로 부터 색 선택
+		2) 사용예
+			<input type:"color" value="#00FF00">
+		-->
+		<form>
+		색선택
+		<input type="color" value="#00BFFF"
+				onchange="document.body.style.background=this.value">
+		<input type="submit"></form>
+		<!-- 
+		onchange : 특정 색상을 변경했을 때, 이벤트
+		this.value : 위이벤트에 의해서 색상이 변경되는 this.value를 통해서 변경된 값을 가지고 있다.
+		document.body.style.background:DOM객체로 현재하모ㅕㄴ이 ㅡ전체 body의 배경색을 설정한다.
+		
+		#DOM :document objuct model
+		1.html로 구성된 내용을 객체화하여 해당 객체의 속성을 변경철 ㅣ할 수 있음
+		2. 객체 선택
+			document.body, document.forms...
+			var dom = document.querySelector("선택자") : vpdlwlso eksdlf xorm
+			document.querySelectorAll("선택자" : 페이지내 다중 태그
+		3. 속성변경
+			dom.align="center"; //기본속성 변경
+			dom.style.color="blue"; //css속성변경
+			dom.innerText = "안녕";// label이 있는 태그 출력변경
+			dom.innerHTML = "<h2>안녕</h2>"; //랜더링 할수 있는 내용 처리 변경
+			dom.value="himan";// form하위 요소객체 value 값변경
+		 -->
+		 
+		 <!-- 
+		 ex) 색상 요소 객체 3개를 만들고 ,색상을 빨/주/노를 선택후 전송되게 하세요.
+		  -->
+		 <form>
+		 <h1>첫번째 색상</h1>
+		 <h1>두번째 색상</h1>
+		 <h1>세번째 색상</h1>
+		색선택에제
+		<input type="color" name="c01" value="#000000"
+				onchange="document.querySelectorAll('h1')[0].style.background=this.value"><br>
+		<input type="color" name="c02" value="#000000"
+		onchange="document.querySelectorAll('h1')[1].style.background=this.value"><br>
+		<input type="color" name="c03" value="#000000"
+		onchange="document.querySelectorAll('h1')[2].style.background=this.value"><br>
+		<input type="submit"></form>
+</body>
+</html>

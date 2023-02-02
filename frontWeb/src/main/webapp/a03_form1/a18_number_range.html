@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		#스핀 버튼과 슬라이드 바로 편리한 숫자입력
+			1. <input type="number"
+				1)스핀버튼으로 정교한 값입력
+					<input type="number" min="0.0" max="10.0"
+						step="0.5">
+					숫자를 입력하되 spint으로 입력단위와 범위를 설정하여 처리할 수있따>>
+			2.<input type="range"
+				스라이드 바로 댉쟈ㅓㄱ인 값입력
+				<input type="range" min="0" max="100" list="temperates">
+				<datelist id='temperates"
+					<option value="10" label="low">
+					<option value="50" label="medium">
+					<option value="90" label="high">
+				</datelist>
+	 -->
+	<script type="text/javascrsipt">
+	function chNum(val){
+		document.querySelector("#show").innerText=val;}></script.> </script>
+	 <form>
+	 스핀버튼:<input name="num01" type="number" min="0.0" max="10.0" step="0.5"/><br>
+	 <input type="range" name="num02" min="0" max="100" list="temperatures">
+	 <datalist id="temperatures">
+	 	<option value="10" label="low">
+	 	<option value="50" label="medium">
+	 	<option value="90" label="high">
+	 	</datalist>
+	 	<input type="submit"/>
+	 	</form>
+	 	
+	 <h3>ex)물건명:[] 물건가격:[] 1000단위즈강 1000~9000까지
+	 		할인율: scrollbar 0%~100%까지 표기
+	 		구매[]</h3>
+	 	<script type="text/javascript">
+	 		function chDis(val){
+	 			document.querySelector("#showDis").innerText=val;
+	 		}
+	 	</script>
+	 	<form>
+	 	물건명:<input type="text" name="pname"><br>
+	 	가 격:<input name="price" type="number" min="1000" max="9000" step="1000"/><br>
+	 	할인율: <input type="range" onchange="chDis(this.value)" name="num05" min="0" max="100" list="distruck"/>
+	 			<span id="showDis">50</span>%
+	 			<datalist id="distruck">
+	 	<option value="10" >
+	 	<option value="15" >
+	 	<option value="20" >
+	 	<option value="25" >
+	 	<option value="30" >
+	 	<option value="50" >
+	 	</datalist><br>
+	 	<input type="submit"/>
+	 	</form>
+</body>
+</html>

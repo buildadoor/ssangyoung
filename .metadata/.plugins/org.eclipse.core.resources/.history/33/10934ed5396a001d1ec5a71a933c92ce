@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    import="java.util.*"    
+    import="jspexp.vo.*"
+    import="jspexp.a13_database.*"    
+    import="jspexp.a13_database.vo.*"   
+    import="jspexp.vo.Person, jspexp.vo.Product"   
+    session = "true"
+    %>
+    <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ form 하위 요소객체와 request.getParameterNames()를 이용하여
+ 
+ 
+ 사원명/사원번호/부서이름을 등록리스트하세요
+*/
+
+</script>
+
+</head>
+<body>
+<h2>장바구니 (물건선택)</h2>
+ <form>
+ <input type="checkbox" name="product" value=("키보드",2000)/>키보드,2000<br>
+ <input type="checkbox" name="product" value="마우스"/>마우스<br>
+ <input type="checkbox" name="product" value="노트북"/>노트북<br>
+ <input type="checkbox" name="product" value="데스크탑"/>데스크탑<br>
+ <input type="checkbox" name="product" value="이어폰"/>이어폰<br>
+
+ <input type="submit">
+ </form>
+ <%String []products = request.getParameterValues("product"); %>
+ 
+ <table>
+ 	<tr><th>물건명</th></tr>
+ 	<%
+	if(products!=null){
+		for(String product:products){
+			out.print("<tr><td>"+product+"</td></tr>");
+		}
+	} 
+ 
+ 	%>
+
+  
+    
+    </body>
+<script type="text/javascript">
+
+
+
+</script>
+</html>
+
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+
+
+</script>
+</html>

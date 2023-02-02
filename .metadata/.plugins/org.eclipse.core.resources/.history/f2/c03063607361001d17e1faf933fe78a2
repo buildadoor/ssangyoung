@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+4번
+
+7번
+
+11번
+
+12번 
+*/
+	img{ width:100px;height:150px;position:absolute;}
+	img#card01{left:0px;top:0px;}
+	img#card02{left:30px;top:30px;}
+	img#card03{left:60px;top:60px;}
+	img#card04{left:90px;top:90px;}
+	img:hover{ z-index:5;}
+	img:active{ display:none;}
+
+	#menus>ul{
+		padding:5px;
+		list-style-type:none;
+		list-style-image:url('/a00_img/marker.png;');
+		list-style-position:inside;
+	}
+	#menus>ul>li{
+		padding:10px;
+		float:left;
+		border:1px solid blue;
+		border-radius:8px;
+	}
+	#menus a{
+		color:gray;
+		text-decoration: none;
+	}
+	label{
+		display:block;
+	}
+	label>span{
+		width:30%;
+	}
+	
+</style>
+</head>
+<body>
+	<h2>부서정보 등록</h2>
+	<form>
+		<label><span>부서번호</span>
+			<input type="text" name="detno" placeholder="부서번호입력"/></label>
+		<label><span>부서명</span>
+			<input type="text" name="dname" placeholder="부서명입력"/></label>
+		<label><span>부서위치</span>
+			<input type="text" name="loc" placeholder="부서위치입력"/></label>
+		<label><span></span><input type="submit" name="submit" value="부서등록"/></label>
+	</form>
+	
+
+
+
+
+
+
+
+	<!-- 
+	<img src="/a00_img/spade-2.png" id="card01">
+	<img src="/a00_img/spade-3.png" id="card02">
+	<img src="/a00_img/spade-7.png" id="card03">
+	<img src="/a00_img/spade-A.png" id="card04">
+ 	-->
+	<h3>네비게이션 메뉴(왼쪽에서 오른쪽으로 리스트 처리)</h3>
+	<nav id="menus">
+		<ul>
+			<li><a href="#">메뉴1</a></li>
+			<li><a href="#">메뉴2</a></li>
+			<li><a href="#">메뉴3</a></li>
+			<li><a href="#">메뉴4</a></li>
+		</ul>
+	</nav>
+	
+	</body>
+</html>

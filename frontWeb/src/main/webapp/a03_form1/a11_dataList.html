@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+#데이터 목록을 가진 텍스트 입력창 datalist
+	1. 목록 리스트를 작성하는 태그
+		1) option 태그로 항목하나 표현
+	
+	2. input type="text" 입력가능한 데이터 목록 제고
+	3. 기본형식
+		1) <datalist id="아이디명">
+			<option value="입력항목1">
+			<option value="입력항목2">
+			<option value="입력항목3">
+		2) <input list="리스트 아이디명">			 
+ -->
+ 	<form>
+ 		나라:<input type="text" name="national" list="countries">
+ 		<datalist id="countries">
+ 			<option value="가나">
+ 			<option value="스위스">
+ 			<option value="브라질">
+ 		</datalist>
+ 		<input type="submit">
+ 	</form>
+ 	<hr>
+ <h3>ex)구매과일 목록 5개 단가리스트 1000~5000으로 5개처리 </h3>
+ 	<form action="a06_rev.jsp" method="post" target="frame03">
+ 	<datalist id="fruitname">
+ 		<option value="사과">
+ 		<option value="딸기">
+ 		<option value="바나나">
+ 		<option value="수박">
+ 		<option value="메론">
+ 		</datalist>
+ 	<datalist id="fruitprice">
+ 		<option value="1000">
+ 		<option value="2000">
+ 		<option value="3000">
+ 		<option value="4000">
+ 		<option value="5000">
+ 		</datalist>
+ 	과일목록:<input type="text" name="fruits" list="fruitname"> 
+ 	 가격:<input type="text" name="fruitsprice" list="fruitprice">
+ 		<input type="submit" value="구매">
+ 	</form>	
+ 	<iframe name="frame03" srcdoc="<h3>구매과일정보</h3>" width="50%" height="100"></iframe>
+ 	
+</body>
+</html>

@@ -1,0 +1,28 @@
+package homework;
+
+public class A00_Systemout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*5응용] 6. 두 팀(홍/청-컴퓨터vs컴퓨터)이 주사위를 던져 홍팀의 결과를 출력하세요(승/무/패)
+	
+		int dice = (int)(Math.random()*3);
+		System.out.println("가위/바위/보 idx:"+gIdx2);
+		System.out.println(gIdx2==0?"가위":(gIdx2==1?"바위":"보"));
+		
+		int dice = (int)(Math.random()*3);
+		System.out.println(":"+gIdx2);
+		System.out.println(gIdx2==0?"가위":(gIdx2==1?"바위":"보"));
+		*/
+		System.out.println("#주사위 게임 #");
+		String player01 = ("청팀");
+		String player02 = ("홍팀");
+		int player01Dice = (int) (Math.random()*6+1);
+		int player02Dice = (int) (Math.random()*6+1);
+		System.out.println(player01+":"+player01Dice);
+		System.out.println(player02+":"+player02Dice);
+		String rs = player01Dice>player02Dice?player01+"승":(player01Dice<player02Dice?player02+"승":"무승부");
+		System.out.println("결과:"+rs);
+	}
+	}
+		

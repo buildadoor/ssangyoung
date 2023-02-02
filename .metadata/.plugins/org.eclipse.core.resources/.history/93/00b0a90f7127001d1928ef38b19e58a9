@@ -1,0 +1,10 @@
+package javaexp.a01_begin;
+
+public class A01_0829 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.pritln("문자열 선언 방법");
+	}
+
+}

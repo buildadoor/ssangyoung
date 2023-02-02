@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="NodeList/DBNProjectDatabases/DBNBookmarkFolder/DBNDiagramFolder/DBNResource">
+		<column name="이름" visible="true" order="0" width="126"/>
+		<column name="경로" visible="true" order="1" width="223"/>
+		<column name="크기" visible="true" order="3" width="100"/>
+		<column name="최종 수정" visible="true" order="2" width="100"/>
+	</item>
+	<item id="NodeList/DBNProjectDatabases/DBNResource/DBNBookmarkFolder/DBNDiagramFolder">
+		<column name="이름" visible="true" order="0" width="135"/>
+		<column name="경로" visible="true" order="1" width="211"/>
+		<column name="최종 수정" visible="true" order="2" width="216"/>
+		<column name="크기" visible="true" order="3" width="100"/>
+	</item>
+	<item id="NodeList/DBNResource">
+		<column name="이름" visible="true" order="0" width="248"/>
+		<column name="경로" visible="true" order="1" width="300"/>
+		<column name="크기" visible="true" order="3" width="100"/>
+		<column name="최종 수정" visible="true" order="2" width="216"/>
+	</item>
+	<item id="NodeList/DataSourceDescriptor">
+		<column name="이름" visible="true" order="0" width="100"/>
+		<column name="설명" visible="true" order="1" width="100"/>
+		<column name="Origin" visible="true" order="2" width="100"/>
+		<column name="드라이버 유형" visible="true" order="3" width="128"/>
+	</item>
+	<item id="NodeList/OracleMaterializedView">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Container" visible="true" order="1" width="100"/>
+		<column name="Comment" visible="true" order="2" width="100"/>
+	</item>
+	<item id="NodeList/OracleSchema">
+		<column name="Name" visible="true" order="0" width="186"/>
+	</item>
+	<item id="NodeList/OracleTable">
+		<column name="Name" visible="true" order="0" width="115"/>
+		<column name="Stat Row Count" visible="true" order="1" width="140"/>
+		<column name="Tablespace" visible="true" order="2" width="105"/>
+		<column name="Comment" visible="true" order="3" width="100"/>
+	</item>
+	<item id="NodeList/OracleTableColumn">
+		<column name="컬럼명" visible="true" order="0" width="100"/>
+		<column name="#" visible="true" order="1" width="100"/>
+		<column name="Type" visible="true" order="2" width="135"/>
+		<column name="Type Mod" visible="true" order="3" width="100"/>
+		<column name="Not Null" visible="true" order="4" width="100"/>
+		<column name="디폴트" visible="true" order="5" width="100"/>
+		<column name="Comment" visible="true" order="6" width="100"/>
+	</item>
+	<item id="SchemaSelector">
+		<column name="Name" visible="true" order="0" width="186"/>
+	</item>
+	<item id="Suggestion/NodeList/OracleTableColumn">
+		<column name="컬럼명" visible="true" order="0" width="119"/>
+		<column name="#" visible="true" order="1" width="40"/>
+		<column name="Type" visible="true" order="2" width="145"/>
+		<column name="Type Mod" visible="false" order="3" width="100"/>
+		<column name="Not Null" visible="true" order="3" width="83"/>
+		<column name="디폴트" visible="true" order="4" width="68"/>
+		<column name="Comment" visible="true" order="5" width="94"/>
+	</item>
+	<item id="scriptSelectorViewer">
+		<column name="Script" visible="true" order="0" width="99"/>
+		<column name="Time" visible="true" order="1" width="120"/>
+		<column name="Info" visible="true" order="2" width="37"/>
+		<column name="Folder" visible="true" order="3" width="312"/>
+	</item>
+</items>

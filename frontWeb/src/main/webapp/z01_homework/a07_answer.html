@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+7. 인터넷상 가상클래스가 적용된 게시판을 확인하고, 해당 게신판에서 사용하는 가상클래스를 적용하여
+게시판을 만들어 보세요.
+*/
+</style>
+</head>
+<body>
+<!-- 
+# 테이블에 가상 클래스 적용 내용
+1. : hover, : active 
+2. : nth-child(even)
+ -->
+ <style>
+	table{boder-collapse:collapse;}
+	th{background-color:limegreen;color:brown;}
+	th,td{boder:1px solid black;text-align:center;}
+	tr:active{font-size:20pt;}
+	tr:nth-child(even){background-color:teal;color:aquamarine;}
+	tr:hover{color:red;background-color:yellowgreen;}
+ </style>
+ <h2>사원정보</h2>
+ <table border="1">
+ 	<tr class="header01">
+ 		<th>사원번호</th><th>사원명</th><th>직책명</th><th>급여</th><th>부서번호</th>	
+ 	</tr>
+ 	<tr>
+ 		<td>7800</td><td>홍길동</td><td>사원</td><td>3200</td><td>10</td></tr>
+ 		<td>7801</td><td>고길동</td><td>대리</td><td>3500</td><td>20</td></tr>
+ 		<td>7802</td><td>김길동</td><td>부장</td><td>4000</td><td>30</td></tr>
+ 		<td>7803</td><td>박길동</td><td>차장</td><td>4500</td><td>10</td></tr>
+ 		<td>7804</td><td>송길동</td><td>과장</td><td>5000</td><td>20</td></tr>
+ 		<td>7805</td><td>남궁길동</td><td>인턴</td><td>3000</td><td>30</td></tr>
+	</tr>
+ </table>
+ 
+</body>
+</html>

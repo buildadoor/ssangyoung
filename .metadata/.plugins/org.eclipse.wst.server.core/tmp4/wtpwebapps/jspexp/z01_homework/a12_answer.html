@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ 
+*/
+</script>
+
+</head>
+<body>
+	<table id="container"></div>
+ <table>
+ 	<thead>
+ 		<tr><th>no</th><th>점수</th></tr></thead>
+ 		<tbody></tdoby>
+ </table>
+
+ <input type="button" value="임의점수생성" onclick="funRandom()"/>
+ <input type="button" value="내림차순" onclick="funDesc()"/>
+ <input type="button" value="오름차순" onclick="funAsc()"/>
+ <input type="button" value="Rank3" onclick="funRank3()"/>
+
+</body>
+<script type="text/javascript">
+
+ var engs = []
+ var tab01 = document.querySelector("#tab01 tbody")
+function show(){	
+ var addHTML=""
+ 	engs.forEach(function(eng,idx){
+ 		addHTML+="<tr><td>"+(idx+1)+"</td><td>"+eng+"</td></tr>"
+ 	})
+ 	tab01.innerHTML = addHTML
+ 	}
+ function funRank3(){
+	 engs.sort(function(left,right){
+		 return right-left
+	 })
+	engs = engs.slice(0,3)
+ 	show();
+ }	
+ 
+ function funAsc(){
+	 engs.sort(function(left,right){
+		 return left-right
+	 })
+ 	show();
+ }	
+ function funDesc(){
+	 engs.sort(function(left,right){
+		 return right-left
+	 })
+
+ 	show();
+ }	
+
+ function funRandom(){
+	 engs = []
+ 	for(var cnt = 1; cnt=10;cnt++){
+ 		engs.push(parseInt(Math.random()*101))
+ 	}
+ 	show();
+ }
+
+ //2번 3번 
+ var kors = []
+ for(var cnt=1;cnt<=10;cnt++){
+	 kors.push(parseInt(Math.random()*101))
+ }
+ var con = document.querySelector("#container")
+ con.innerHTML = kors+"<br>"
+ kors.sort(function(left, right){
+	return right-left; //내리차순 sorting 처리
+})
+var rank3 = kors.slice(0,3)
+con.innerHTML = rank3+"<br>"
+
+//4번
+//최대 점수는 첫번째 데이터 : splice(0,1) - 첫번째 위치에 있는 데이터 삭제 처리 
+//최저 점수는 마지막 데이터 : pop() - 마지막 데이터 삭제
+kors.splice(0,1); kors.pop()
+con.innerHTML += kors+"<br>"
+//5번
+//1) 영어점수 10명 임의 배열 만들기 
+//2) DOM테이블에 출력하기
+//3) 기능 버튼을 핸들러 함수를 통해 호출해서 출력처리하기 
+//임의의 영어 점수 할당.
+
+</script>
+</html>

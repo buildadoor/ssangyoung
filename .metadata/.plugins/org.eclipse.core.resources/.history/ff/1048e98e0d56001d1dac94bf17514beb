@@ -1,0 +1,72 @@
+package z02_project;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import javaexp.a13_database.A02_EmpDao;
+import javaexp.a13_database.DB;
+import javaexp.a13_database.vo.Emp;
+
+public class A00_Practice {
+	// 1. 필드 선언
+	private Connection con;
+	private Statement stmt;// import sql
+	private ResultSet rs;
+
+	// 2. 사원정보 조회 기능메서드(전체조회 및 출력)
+	public void AllWeekly() {
+		// 1) 연결객체 메모리 할당. : ex) 통신망, 특정한 상대방과 통화 연결
+		// -SQL예외 처리 기타에러에 대한
+		try {
+			con = DB.con();
+			// 2) 대화객체 생성 ex) 연결된 내용으로 대화를 시작
+			String sql = "SELECT * FROM program";
+			stmt = con.createStatement();
+			// 3) 결과객체 받기 ex) 대화의 내용 중에 결과 데이터가 있는 경우 select
+			// -while() 통해 결과객체 내용 출력
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) { // 행 단위로 커서변경
+				// 열단위 컬럼 접근 rs.get 데이터 유형("컬럼명")
+				System.out.println("┌──────────────주간프로그램──────────────┐");
+				System.out.println("프로그램 번호: "+rs.getString("pno"));
+				System.out.println("프로그램 제목: "+rs.getString("pname"));
+				System.out.println("프로그램 내용:"+"\n"+rs.getString("pcontents"));
+				System.out.println("게시일: "+rs.getString("ptime"));
+				System.out.println("공지기간: "+rs.getString("noticedate"));
+				System.out.println("작성자: "+rs.getString("usersno"));
+				System.out.println("└─────────────────────────────────────┘");			
+				
+				
+			}
+			// 4) 자원해제 ex) 전화 끊기
+			DB.close(rs, stmt, con);
+			// rs.close();
+			// stmt.close();
+			// con.close();
+
+			// 5) SQL예외 처리 상세 및 기타 예외 처리하기 ex) 통신 장애시 처리 방법
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("기타 sql 처리 예외:" + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("기타 예외:" + e.getMessage());
+		} finally {
+			if (rs != null)
+				rs = null;
+			if (stmt != null)
+				stmt = null;
+			if (con != null)
+				con = null;
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// DB.con(); try catch문 접속처리
+		A00_Practice dao = new A00_Practice();
+		 dao.AllWeekly();
+	}}

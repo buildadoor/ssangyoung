@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<!--  
+2022-11-10
+[1단계:개념] 1. position의 속성에 따른 속성값의 차이를 기술하세요.
+1. 특정 요소를 포함하고 있는 태그기준으로 절대 위치를 설정할 수 있다.
+2. 기본형식
+	position:absolute;
+	top:@@px; left:@@px;
+	위치 속성은 top/bottom/left/right 모두 다 설정할 수 있음. 
+	z-index : 우선순위를 설정하는 옵션을 해당 값에 따라 화면상으로
+		가장 먼저 보이게 처리한다. 
+[1단계:확인] 2. 화면 오른쪽 중앙 주요업무사항을 리스트한 내용을 화면이 스크롤링 되더라도 보일 수 있게 처리하세요.
+-->
+<style>
+	ul{
+		position:fixed;
+		top:50px;right:50px;
+		width:150px;height:150px;
+		background:yellowgreen;
+	}
+	</style>
+	<ul class="cls1">
+	<li>내일 발표 준비
+	<li>html코드
+	<li>자바코드
+	<li>ppt수정
+	<li>복습은 언제하지
+	</ul>
+	
+
+	<br><br><br><br><br><br><br><br><br><br><h2>내일금요일</h2>
+	<br><br><br><br><br><br><br><br><br><br><h2>내일금요일</h2>
+	<br><br><br><br><br><br><br><br><br><br><h2>내일모래토요일</h2>
+	<br><br><br><br><br><br><br><br><br><br><h2>내일모래토요일</h2>
+
+<!--
+[1단계:개념] 3. visibility, display를 통해 보이지 않게 처리하는 속성값 내용과 이 둘간의 차이점을 기술하세요
+			visibility는 보이지 않게 처리해도 빈 공간은 그대로 두지만
+			display는 아예 없애버린다.
+[1단계:확인] 4. a00_img폴드에 카드 관련 이미지를 오른쪽으로 리스트 보이게 하되 적절하게 겹치게 보이게 하시고
+               (z-index 활용) 및 클릭시, 카드가 보이지 않게 처리하세요.
+              img.active{visibility:hidden;} -->
+       
+               <!--
+[1단계:개념] 5. 컨테츠형 태그(div,p)에서 해당 내용이 크기보다 넘칠 때, 처리하는 옵션을 기본예제를 통하여 설명하세요.
+Overflow
+지정된 화면의 크기보다 더 많은 내용을 컨테이너 요소에 포함될 때, 처리하는 속성
+	hidden : 보이지 않게 처리 
+	visible : 넘기게 보기에 처리
+	scroll : 스크롤 해서 보이게 처리 
+	
+
+[1단계:개념] 6. ul list-style-type의 여러 유형을 기술하세요.
+	정렬  : decimal, georgian, lower-alpha, lower-roman, upper-roman
+	비정렬 : desc, armenia, circle, cjk-ideographic
+	삭제 : none
+[1단계:확인] 7. 네비게이션 바에서 이미지가 있는 메뉴리스트(좌우)를 만들어 출력하세요. 
+
+[1단계:개념] 8. 테이블에서 사용되는 css설정 옵션을 기술하세요.
+	1) border: 표 테두리, border-bottom : 하단의 테두리 설정.
+	2) border-collapse:collapse; 중복된 테두리 합치기
+	3) height/width : th/td의 폭과 넓이 개별적 조정
+	4) padding : 여백설정
+	5) text-align: td 안에 정렬 처리
+	6) nt-child(even) : 짝수 행 단위 처리
+	7) tr:hover : 마우스커서 이동시 처리
+	
+[1단계:확인] 9. 부서정보 테이블을 오늘 배운 css 설정하여 화면에 출력하세요. 
+-->
+<style>
+	table{
+		border-collapse:collapse;
+	}
+	th,td{
+		padding:5px;
+		height:15px;
+		text-align:center;
+		width:100px;
+	}
+	thead>tr>th, .cls02{
+		text-align:center;
+	}
+	thead{
+		background:green;
+		color:yellow;
+	}
+	tbody tr:hover{
+		background:pink;
+	}
+</style>
+<h3>9번</h3>
+	<table border>
+		<thead>
+			<tr><th>부서번호</th><th>부서명</th><th>부서위치</th></tr>
+		</thead>
+		<tbody>
+			<tr><td class="cls02">D0001</td><td>회계</td><td>서울</td></tr>	
+			<tr><td class="cls02">D0002</td><td>인사</td><td>대전</td></tr>	
+			<tr><td class="cls02">D0003</td><td>재무</td><td>천안</td></tr>	
+			<tr><td class="cls02">D0004</td><td>마케팅</td><td>아산</td></tr>	
+		
+		</tbody>
+	</table>
+<!--
+
+[1단계:개념] 10. form 요소 객체에서 사용되는 css 설정 옵션을 기술하세요.
+1. 글자 색상 지정
+	input[type=text]{color:red}
+2. 테두리만들기
+	input[type=text]{
+		border:2px solid skyblue;
+		border-radius:5px;
+	}
+3. 마우스 올라올 때
+	input[type=text]: hover{
+		background:aliceblue;
+	}
+4. 포커스를 받을 때
+	input:focus{
+		font-size:120%;
+	}
+[1단계:확인] 11. 부서정보 등록 form을 form관련 css 설정하여 화면에 출력하세요. 
+[1단계:확인] 12. js의 화면 출력 형식 3가지를 기술하고, 차이점을 검색해보고 정리해보세요.
+document.write("hello world");
+
+"hello world"
+document.write는 화면이 로딩이 되고나서 다시 호출하면 화면이 지워진다. test용으로만 사용을 권장한다.
+
+    alert("안녕");
+
+"안녕"
+브라우저에서 제공되는 메시지박스를 이용해서 출력한다. 되도록 사용하지 않는 것을 권장한다.
+
+console.log("hello world");
+
+"hello world"
+객체를 찍으면 객체 내부를 확인할 수 있다. 오류를 확인하려면 f12 키를 눌러서 console창을 확인하면 된다.
+
+
+-->
+</body>
+</html>

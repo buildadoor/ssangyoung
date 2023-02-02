@@ -1,0 +1,19 @@
+package homework;
+import java.util.Scanner;
+public class A00_Systemout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("총 자책점:"); //옆에 바로 입력가능
+		int lostScore = sc.nextInt();
+		System.out.print("등판 이닝수"); //옆에 바로 입력가능
+		int gameCnt = sc.nextInt();
+		int tot = ((lostScore*9)/(gameCnt));
+		System.out.println("투수 방어율:"+tot);
+
+	}
+
+}

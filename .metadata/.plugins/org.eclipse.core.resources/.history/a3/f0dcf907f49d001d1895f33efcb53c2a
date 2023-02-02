@@ -1,0 +1,10 @@
+package a01_diexp.z08_mydb;
+
+public class A02_DeptDao {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

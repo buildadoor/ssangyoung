@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+#btn{
+	float: right;
+	margin-bottom: 10px;
+	margin-right: 50px;
+}
+
+input[type=number]{
+	border-radius: 5px;
+    height: 20px;
+    width: 100px;
+    border-color: black;
+}
+
+select{
+	border-radius: 5px;
+    height: 25px;
+    width: 85px;
+}
+

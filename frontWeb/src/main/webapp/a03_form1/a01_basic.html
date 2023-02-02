@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<!-- 
+# 웹폼
+	1. 웹폼
+		1) 웹페이지에서 사용자 입력을 받는 폼
+		2) 로그인, 등록, 검색, 예약, 쇼핑 등
+	2. 폼요소
+		1) 폼을 만드는 다양한 태그
+		2) <input,textarea, select 등
+		
+# 우선 시작해보자.
+	1. 로그인 폼 만들어보기
+ -->
+ <h3>로그인 폼</h3>
+ <hr>
+ <!-- action="" 서버단에 있는 요청값을 처리해줄 자바프로그램을 지정한다.(jsp=java server) -->
+ <form name="fo" method="get" action="a02_rev.jsp">
+ 	사용자 아이디:<input type="text" name="id" size="15" value=""><br>
+ 	비 밀 번 호 :<input type="password" name="pass" size="15" value="">
+ 				<!-- type="password"는 비밀번호를 보이지않게 처리해준다.  -->
+ 			  <input type="submit" value="로그인">
+ 			  <!-- type submit은 버튼 형태로 이것을 클릭 시, action으로 지정된 곳에 데이터를 전송해준다. -->
+ 			  <!-- value를 통해 해당버튼에 '로그인'단어를 심는다. 
+ 			  
+ 	#특정한 페이지에 현재 화면에 입력된 내용을 전송해주는 핵심 keyword
+ 		1. action: 어떤페이지에 전송할지 설정
+ 		2. name: 입력한 데이터를 key=value 형식으로 전송하는데 그 key에 해당하는 내용
+ 				입력한 데이터를 value로 처리
+ 		3. submit : type submit 버튼을 통해서 데이터가 form으로 시작해서 form을 닫는 태그사이의
+ 					데이터를 전송해준다.	
+ 		ex) a02_rev.jsp?id01=himan&pass01=7777	  
+ 			  
+ 			  
+ 			  -->
+ 			  
+ </form>
+ 
+ <!-- 물건명 구매개수 구매버튼만들기 -->
+ <h3>내가 직접만든 입력값 받기!</h3>
+ <hr>
+ <form action="a03_show.jsp">
+ 	물건명:<input type="text" name="pname" size="20" value=""> <br>
+ 	구매갯수:<input type="text" name="pcnt" size="20" value=""><br>
+ 		<input type="submit" value="구매하기">
+ 
+ </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/springweb/a00_com/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("h2").text("안녕하세요")
+		$("#addBtn").click(function(){
+			//$("h2").text($("h2").text()+"★")
+			$("h2").append("★")
+		})
+		$("#removeBtn").click(function(){
+			$("h2").remove() //요소객체 자체가 없어짐 (추가 불가)
+		})
+		$("#emptyBtn").click(function(){
+			$("h2").empty() //요소의 내용물을 없앰
+		})
+		//ex1) 좋아요 버튼 클릭시, 하단에 ♥가 추가되게 처리하세요.
+		//ex2) 싫어요 버튼 클릭시, 하단에 ♥가 하나씩 사라지게 처리하세요.
+		var lkCnt=0;
+		$("#like").click(function(){
+			$("h3").append("♥") //요소의 내용물을 없앰
+			lkCnt++
+		})
+		$("#hate").click(function(){
+			lkCnt--
+			$("h3").empty() //요소의 내용물을 없앰
+			for(var cnt=1;cnt<=lkCnt;cnt++){
+				$("h3").append("♥")
+				}
+			})
+	});
+</script>
+</head>
+<body>
+	<button type="button" id="addBtn">추가</button>
+	<button type="button" id="removeBtn">삭제</button>
+	<button type="button" id="emptyBtn">비우기</button>
+	<br>
+		<button type="button" id="like">좋아요</button> 
+		<button type="button" id="hate">싫어요</button> 
+	 <h2></h2>
+	 <h3></h3>
+</body>
+</html>

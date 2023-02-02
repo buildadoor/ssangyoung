@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <!-- 
+# 테이블 속성 
+1. cellpadding 
+	cell의 글자와 border(셀의 구분자)와의 간격 설정
+2. cellspacing
+	내부 border의 굵기를 지정한다. 
+  
+  -->
+ <table cellpadding="25" 
+ cellspacing="10"
+ border="1" width="200" height="200">
+ <col width="50%" height="50%">
+ <tr><td>사과</td><td>키위</td></tr>
+ <tr><td>딸기</td><td>수박</td></tr>
+ <!-- ex) 사원정보(emp)테이블을 위 테이블 속성을 이용해서 3개 정도 데이터
+ 		리스트를 출력하세요 -->
+ <table cellpadding="15" cellspacing="5" border="5" width="600">
+ <col width="20"> <col width="20"><col width="20"><col width="20">
+ <tr><td>사원번호</td><td>사원명</td><td>직책</td><td>관리자번호</td><td>입사일</td><td>부서번호</td><td>급여</td><td>보너스</td><td>부서</td></tr>
+ <tr><td>0001</td><td>이또치</td><td>과장</td><td>6000</td><td>2002/11/01</td><td>A01</td><td>700</td><td>500</td><td>인사</td></tr>
+ <tr><td>0002</td><td>이둘리</td><td>부장</td><td>5000</td><td>2012/11/01</td><td>A02</td><td>500</td><td>400</td><td>회계</td></tr>
+ <tr><td>0003</td><td>이희동</td><td>대리</td><td>3000</td><td>2022/11/01</td><td>A03</td><td>300</td><td>300</td><td>마케팅</td></tr>
+ </table>
+</body>
+</html>

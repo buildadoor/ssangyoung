@@ -1,0 +1,25 @@
+package homework;
+
+import java.util.Scanner;
+
+public class A00_Systemout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*		
+[2단계:응용] 7. while문 숫자 맞추기 게임, 컴퓨터가 임의로 1~100범위의 숫자를 저장하면,
+while문을 통해서 해당 숫자를 입력한다. 비교해서 동일하면 종료,
+
+		System.out.println(":"+gIdx2);
+		System.out.println(gIdx2==0?"가위":(gIdx2==1?"바위":"보"));
+		*/
+		int cnt=100;
+		while(cnt>=1) {
+			System.out.println("숫자 맞추기 게임");
+			while(true);
+		}
+		int random = (int)(Math.random()*100*1);
+		System.out.println("랜덤숫자");
+	}
+	}
+		

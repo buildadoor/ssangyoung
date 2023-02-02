@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;pythonexp/a01_start/a04_.py&apos; to &apos;a04_str_function.py&apos;" description="Rename resource &apos;a04_.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="a01_start/a04_.py" name="a04_str_function.py" stamp="1671585565762" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;pythonexp/a03_loop/a01.py&apos; to &apos;a01_for.py&apos;" description="Rename resource &apos;a01.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="a03_loop/a01.py" name="a01_for.py" stamp="1671667605598" updateReferences="true"/>
+</session>

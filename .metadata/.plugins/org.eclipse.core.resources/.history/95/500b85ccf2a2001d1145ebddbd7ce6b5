@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/springweb/a00_com/bootstrap.min.css" >
+<style>
+   td{text-align:center;}
+</style>
+<script src="/springweb/a00_com/jquery.min.js"></script>
+<script src="/springweb/a00_com/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+      /*
+    v-if 조건문을 활용하여 입력한 아이디와 패스워드가 맞으면 로그인성공/로그인실패/아이디와패스워드를 입력하세요로
+               구분하여 출력하세요.
+      */
+      var vm = new Vue({
+         el:".container",
+         data:{msg:"조건문 처리",id:"",pass:""}
+      });   
+   });
+  // 로그인성공/로그인실패/아이디와패스워드를 입력하세요로
+</script>
+</head>
+<body>
+
+<div class="container">
+   <div class="jumbotron text-center">
+     <h3 v-if="point>=80">합격</h3>
+     <h3 v-else-if="point>=0">불합격</h3>
+     <h3 v-else>점수는 0이상 숫자로 입력</h3>
+   </div>
+   <div>
+   	<h2>회원등급</h2>
+   	<h2>구매총비용: {{price*cnt}}</h2>
+   	<h3 v-if="price*cnt>=1000000">골드 </h3>
+        <h3 v-else-if="price*cnt>=999999">실버</h3>
+        <h3 v-else-if="price*cnt>=499999">브론즈</h3>
+        <h3 v-els>일반</h3>
+   </div>
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+       <input v-model="point" class="form-control mr-sm-2" placeholder="점수입력" />
+    </nav>
+   <form id="frm01" class="form-inline"  method="post">
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+       <input class="form-control mr-sm-2" placeholder="내용" />
+       <button class="btn btn-info" type="submit">Search</button>
+    </nav>
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+       <input class="form-control mr-sm-2" placeholder="물건가격" />
+       <input class="form-control mr-sm-2" placeholder="물건갯수" />
+       <button class="btn btn-info" type="submit">Search</button>
+    </nav>
+   </form>
+   <table class="table table-hover table-striped">
+      <col width="10%">
+      <col width="50%">
+      <col width="15%">
+      <col width="15%">
+      <col width="10%">
+    <thead>
+    
+      <tr class="table-success text-center">
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회</th>
+      </tr>
+    </thead>   
+    <tbody>
+       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+   </table>       
+</div>
+</body>
+</html>

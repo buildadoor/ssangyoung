@@ -1,0 +1,90 @@
+package javaexp_homework;
+
+import java.util.ArrayList;
+
+public class A00_Sysout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//	[1단계:개념] 1. (연습이 필요한 분)1:다관계 설정 연습 - 버스/승객, 영화/배우들, 회사/종업원  
+
+		class Bus{
+			private String goTo; //종류
+			private String comp; //제조사
+			private ArrayList<Passenger> plist;
+			public Computer01(String kind, String comp) {
+				this.kind = kind;
+				this.comp = comp;
+				this.plist = new ArrayList<Part>();
+			}
+			public void setPlist(Part p) {
+				this.plist.add(p);
+				System.out.println(p.getPname()+"부품 추가");
+			}
+			public void showPartList() {
+				System.out.println("#컴퓨터 사양#");
+				System.out.println("종류:" +kind);
+				System.out.println("제조사:"+comp);
+				if(plist.size()==0) {
+					System.out.println("부품이 아직 없네요.");
+				}else {
+					System.out.println("포함된 부품리스트");
+					for(Part p : plist) {
+						System.out.println(p);
+					}
+			}
+		}
+			public String getKind() {
+				return kind;
+			}
+			public void setKind(String kind) {
+				this.kind = kind;
+			}
+			public String getComp() {
+				return comp;
+			}
+			public void setComp(String comp) {
+				this.comp = comp;
+			}
+			public ArrayList<Part> getPlist() {
+				return plist;
+			}
+
+			}
+			
+
+		class Passenger{
+			//부품 종류, 제조사, 사양
+			private String pname;
+			private int age ;
+			private String from;
+			public Part(String pname, int age , String from) {
+				this.pname = pname;
+				this.age = age;
+				this.from = from;
+			}
+			@Override
+			public String toString() {
+				return "Passenger [pname=" + pname + ", age=" + age + ", from=" + from + "]";
+			}
+
+
+			public String getPname() {
+				return pname;
+			}
+			public void setPname(String pname) {
+				this.pname = pname;
+			}
+			public int getage() {
+				return age;
+			}
+			public void setage(int age) {
+				this.age = age;
+			}
+			public String getfrom() {
+				return from;
+			}
+			public void setfrom(String from) {
+				this.from = from;
+			}
+		}

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:task="http://www.springframework.org/schema/task" 
+   xmlns:aop="http://www.springframework.org/schema/aop" 
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:mvc="http://www.springframework.org/schema/mvc"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xmlns:c="http://www.springframework.org/schema/c"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:util="http://www.springframework.org/schema/util"
+   xmlns:websocket="http://www.springframework.org/schema/websocket"
+   xmlns:sec="http://www.springframework.org/schema/security"
+   xmlns:tx="http://www.springframework.org/schema/tx" 
+    
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task.xsd       
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd     
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/websocket
+       http://www.springframework.org/schema/websocket/spring-websocket.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd   
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd   
+      " >
+      <!-- 
+      set객체 관련 할당
+       -->
+      <bean id="pk01" class="a01_diexp.z01_vo.Pocket">
+      	<property name="ball">
+      		<set>
+      			<value>초록구슬</value>
+      			<value>파랑구슬</value>
+      			<value>파랑구슬</value>
+      			<value>빨강구슬</value>
+      			<value>빨강구슬</value>
+      			<value>빨강구슬</value>
+      		</set>
+      	</property>
+        </bean>
+        
+        <bean id="t01" class="a01_diexp.z01_vo.Tire">
+	      <constructor-arg value="미쉐린"/>
+	      <constructor-arg value="55000"/>
+	      
+	    </bean>
+        <bean id="t02" class="a01_diexp.z01_vo.Tire">
+	      <constructor-arg value="금호"/>
+	      <constructor-arg value="35000"/>
+      	</bean>
+  
+  
+      <bean id="c01" class="a01_diexp.z01_vo.Car">
+     	 <constructor-arg value="GV90"/>
+     	 <constructor-arg value="230"/>
+     	 	<property name="tlist">
+     	 		<list>
+     	 			<ref bean="t01"/>
+     	 			<ref bean="t02"/>
+     	 		</list>
+     	 	</property>
+     </bean>
+     
+     <!-- baseball -->
+      <bean id="bt100" class="a01_diexp.z01_vo.BaseTeam">
+     	 	<property name="hitOrders">
+     	 		<map>
+					<entry key="1" value="일길동"/>     	 		
+					<entry key="2" value="이길동"/>     	 		
+					<entry key="3" value="삼길동"/>     	 		
+					<entry key="4" value="사길동"/>     	 		
+					<entry key="5" value="오길동"/>     	 		
+					<entry key="6" value="육길동"/>     	 		
+					<entry key="7" value="칠길동"/>     	 		
+					<entry key="8" value="팔길동"/>     	 		
+					<entry key="9" value="구길동"/>     	 		
+     	 		</map>
+     	 	</property>
+     	 	<property name="defends">
+     	 		<props>
+     	 			<prop key="투수">일길동</prop>
+     	 			<prop key="포수">이길동</prop>
+     	 			<prop key="1루수">삼길동</prop>
+     	 			<prop key="2루수">사길동</prop>
+     	 			<prop key="3루수">오길동</prop>
+     	 			<prop key="중견수">육길동</prop>
+     	 			<prop key="좌익수">칠길동</prop>
+     	 			<prop key="우익수">팔길동</prop>
+     	 		</props>
+     	 	</property>
+
+     </bean>
+        
+	</beans>

@@ -1,0 +1,20 @@
+package springweb.a05_mvc.a01_controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import springweb.a05_mvc.a02_service.A01_EmpService;
+import springweb.z01_vo.Dept;
+
+@Controller
+public class A02_DeptController {
+	// http://localhost:7080/springweb/myDeptList.do
+	@RequestMapping("myDeptList.do")
+	public String myDeptList() {
+		return "WEB-INF\\views\\a05_mvc\\a02_deptList.jsp";
+	}
+	
+}

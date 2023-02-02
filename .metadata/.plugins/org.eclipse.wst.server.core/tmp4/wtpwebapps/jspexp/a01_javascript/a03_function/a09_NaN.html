@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+
+*/
+</script>
+
+</head>
+<body>
+	<div id="container"></div>
+
+
+</body>
+<script type="text/javascript">
+/*
+ #NaN (not a number)
+1. 형 변환에서 숫자형 문자열이 아닐 때, 주로 발생하는 에러코드
+2. 위 내용을 체크해주는 함수 isNaN() : 숫자형이 아닐떄, true
+
+ex) prompt로 숫자를 두번 입력받아서 연산(합산)하되 해당 데이터가 숫자형이 아닐 때는
+숫자형이 아닙니다가 로딩되게 처리하세요.
+*/
+ 
+ var div = document.querySelector("#container")
+ div.innerHTML="숫자형:"+parseInt("25")+"<br>"
+ div.innerHTML+="숫자형(check):"+isNaN(parseInt("25"))+"<br>"
+ div.innerHTML+="숫자형 아닐때:"+parseInt("이십오")+"<br>"
+ div.innerHTML+="숫자형 아닐때(check):"+isNaN(parseInt("이십오"))+"<br>"
+ div.innerHTML="";
+while(true){
+	var num01 = parseInt(prompt("첫번째 숫자"))
+	var num02 = parseInt(prompt("두번째 숫자"))
+	if( isNaN(num01)||isNaN(num01)){
+		alert("숫자형을 입력하세요");
+	}else{
+		div.innerHTML=num01+" + "+num02+" = "+(num01+num02);
+		break;
+	}
+}
+</script>
+</html>

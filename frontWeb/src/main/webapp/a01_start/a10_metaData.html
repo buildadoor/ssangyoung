@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<base href="http://localhost:7080/frontWeb/a02/"/>
+<!-- 
+	외부/내부 사이트에 사용하는 기본 경로를 설정하는 부분이다.
+	기본 경로를 기준으로 자원(html/css/img)등으로 바로 호출할 수 있다.
+
+	보통 설정하지 않으면
+	default로 
+	http://localhost:7080/frontWeb/
+	물리적 폴드 기준으로 \frontWeb\src\main\webapp
+	자동설정이 된다.
+ -->
+</head>
+<body>
+<a href="a01_test.html">이동성공</a>
+<!-- 
+#메타 데이터 삽입
+1. 메타 데이터
+	1) 데이터를 설명하는 데이터
+	- 사진 데이터의 메타데이터 : 사진 찍은 장소, 시간
+	- 오디오 데이터 : 재생 시간, 채널 수
+	- 이미지 데이터 : 이미지의 폭, 높이, 컬러, 해상도 
+2. html 페이지에 대한 메타 데이터를 담기 위한 태그들 
+	base, link, script, style, title, meta
+3. 메타 태그들은 head 태그 안에 작성
+	head
+		base href="http://www.mysite.com/score
+	1) <script>는 <body>내에서도 작성 가능 
+#base 태그
+1. 웹 페이지들의 기본 url과 페이지가 출력된 윈도우 지정
+2. 사용 예
+	math.html이나 science.html 웹페이지가 모두 
+	http://www.mysite.com/score/에 있는 경우
+	<a href= "http://www.mysite.com/score/math.html>수학</a>
+	<a href= "http://www.mysite.com/score/math.html>과학</a>
+	위의 html 소스를 base 태그를 이용하여 수정
+	<head>
+		<base href="http://www.mysite.com/score/">
+	
+	<a href="math.html">수학</a>
+	<a href="science.html">과학</a>				
+	-->
+	<a href="a01_test.html">이동성공</a>
+	
+</html>

@@ -1,0 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    import="jspexp.a13_database.*"
+   %>
+<fmt:requestEncoding value="UTF-8" />
+<%--
+jspexp.a13_database.A06_PreparedDao checkId
+--%>
+<jsp:useBean id="dao" class="jspexp.a13_database.A06_PreparedDao"/>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="auth" content="홍길동">
+<meta name="description" content="입력 요령에 대한 자세한 사항">
+<meta name="keywords" content="컴퓨터, 소프트웨어, 스마트폰">
+<title>메타 태그 연습</title>
+</head>
+<body>
+<h3>메타 태그 연습 </h3>
+
+<!-- 
+# mata 태그는 다양한 메타 데이터 표현
+1. 웹 페이지의 저작자, 문자 인코딩 방식, 내용 등
+	<meta name="auth" content="홍길동">
+2. 웹 페이지의 내용 설명
+	<meta name="description" content="입력 요령에 대한 자세한 사항">
+3. 웹 페이지의 키워드(검색 엔진에 의해 검색되게 하기 위함)
+	<meta name="keywords" content="컴퓨터,소프트웨어,스마트폰">
+4. charset 속성으로 웹 페이지에 사용하는 문자 코드 지정
+	<meta charset="utf-8>
+ -->
+ <!--  
+ # 이미지 삽입
+ 1. img 태그와 src 속성에 이미지 파일의 주소 지정
+ 	1) scr에 지정할 수 있는 이미지 종류
+ 		-bmp, gif, png, jpg
+ 	2) 기본 형식
+ 		img src="이미지 파일"
+ 			alt="문자열"
+ 			width="이미지폭"
+ 			height="이미지높이"
+ -->
+ 	<!-- 1. 이미지 호출 외부에 있는 이미지 호출 -->
+ 	<img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEyMDJfMjA1%2FMDAxNjM4NDExOTk0Nzg2.f8GKr0STKMjXqFPQo0e4A_BcloN33QuuGgi1Jjl1c9sg.iKs66ooKvB80rz9SvDdtC_X9x8WKsU_UNKfow4V4bZUg.JPEG.rjungmi%2FIMG_0508.jpg&type=a340"
+	width="200" height="200">
+	<!-- 2. 내부에 있는 현재 폴드에 있는 이미지 -->
+	<img src="panda.jpg" width="200" height="200">
+	<!-- 3. 내부에 있는 default 경로 기준으로 특정 폴드에 있는 이미지 -->
+	<img src="/a00_img/img03.jpg" width="200" height="200">
+</body>
+</html>

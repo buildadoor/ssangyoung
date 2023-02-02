@@ -1,0 +1,34 @@
+package javaexp.a01_begin;
+
+public class A01_0829 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("문자열 선언 방법");
+		
+//3)이름, 나이 키 
+		String name = "이윤아";
+		int tall = 164;
+		int age = 26;
+		System.out.println("이름:"+name);
+		System.out.println("키:"+tall);
+		System.out.println("나이:"+age);
+		
+//좋아하는 음악명, 발매연도
+		String song = "Home";
+		int year = 2016;
+		System.out.println("좋아하는 음악명:"+song);
+		System.out.println("발매연도:"+year);
+
+//지출 금액 목록과 비용, 합산
+		// 지출금액 목록
+		String prodName1 = "요거트";
+		int price = 7500;
+		String prodName2 = "블루베리";
+		int price2 = 10000;
+		System.out.println("지출금액목록:"+prodName1&prodName2);
+		System.out.println("비용:"+price+price2);
+		System.out.println("합산:"+price+price2);
+	}
+
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+	border-width:15px;
+		border-style:double;
+		border-color:black;
+*/
+div.box{
+		background:yellow;
+		border-width:10px;
+		border-style:double;
+		border-color:red;
+		
+		margin:40px;
+		padding:20px;
+}
+p.box2{height:100px}
+p.box2 > font#ch01{
+		background:pink;
+		border:20px double black;
+		font-family:"궁서체";
+		margin:40px;
+		padding:20px;
+		font-size:1.5cm;
+}
+/*ex)p태그 안에 font 태그 선언하여 보더의 굵기 형태 색상,
+	패딩과 마진을 선언하세요 .
+	
+	
+	<font>반갑습니다</font>
+	p하위에 클래스명이 box2로 있고 그 자식으로 font가 있으며 
+	속성이 id가 ch01인것 
+	<p class+"box2">
+	<font id="ch01">==>를 지칭
+	부모가 p태그이고 class가box2이며 태그가 폰트이고 id가 ch01요소
+	
+	
+	
+	
+	border-width:20px;
+	border-style:20px;
+	border-color:greenpx;
+
+	border-위치:1px solid green;
+
+	border-위치:1px solid green;
+	border-위치:width|style|color;
+	위치: left, right, top. bottom;
+	*/
+</style>
+</head>
+<body>
+<!-- 
+	인라인 형태 태그는 margin을 주더라도 왼쪽만 간격이 벌어진다.
+	블럭 형태 태그는 margin을 통해서 좌우/상하 다 간격이 벌어진다.
+	f12 element 탭을 통해서 해당 요소객체의 범위를 확인하고
+		margin을 통해 적절한 가격을 유지 처리하면 된다.
+ -->
+	<div class="box">
+		<span>안녕하세요! </span>
+	</div>
+	<p class="box2">
+		<font id="ch01">블랙핑크인요에리아</font>
+	</div>
+<!-- 
+# 박스 모델의 색, 테두리, 단축 프로퍼티
+1. 박스의 위치 옵션
+	1) border-left-width
+		left, right, top, bottom
+		방향별로 굵기 옵션을 설정할 수 있음. 
+2. 박스의 형태 옵션
+	1) boder-style
+		dotted, solid, double
+ps) 위와 같이 위치와 형태에 따른 옵션 내용을 변경하여 적절하게 처리할 수 있다.
+ -->
+ <style>
+ 		.box{
+ 			border-width:3px;
+ 			border-style:dotted;
+ 			border-color:blue;
+ 		}
+ 		.box4{
+ 			border-left-width:3px;
+ 			border-left-style:dotted;
+ 			border-left-color:blue;
+ 		}
+ 		.box5{
+ 			border:3px dotted blue;
+ 		}
+ </style>
+ 		<br><br><br>
+ 		<h2>박스모델</h2>
+		<p class="box3">박스모델(.box3)</p>
+		<p class="box4">박스모델(.box4)</p>
+		<p class="box5">박스모델(.box5)</p>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="fruit"/>
+		<list key="findhistory">
+			<item value="fruit"/>
+			<item value="frut"/>
+			<item value="ㄹ"/>
+			<item value="loc"/>
+			<item value="p01"/>
+			<item value="classpath"/>
+			<item value="타이틀"/>
+			<item value="로그인"/>
+			<item value="svn"/>
+			<item value="visual"/>
+			<item value="click"/>
+			<item value="수정하시겠습니까?"/>
+			<item value="c:for"/>
+			<item value="#reg"/>
+			<item value="checkValid"/>
+		</list>
+		<list key="replacehistory">
+			<item value="A6CD48"/>
+			<item value="/"/>
+			<item value="td"/>
+			<item value="attendance"/>
+			<item value="eduSt"/>
+			<item value="th"/>
+			<item value="Salgrade"/>
+			<item value="from person"/>
+			<item value="person"/>
+			<item value="dept100"/>
+			<item value="FROM emp100"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="11"/>
+		<item key="DIALOG_Y_ORIGIN" value="365"/>
+		<item key="DIALOG_WIDTH" value="418"/>
+		<item key="DIALOG_HEIGHT" value="523"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="164"/>
+		<item key="DIALOG_Y_ORIGIN" value="301"/>
+	</section>
+	<section name="org.eclipse.wst.html.ui.internal.preferences.ui.HTMLTemplatePreferencePage$HTMLEditTemplateDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="-22"/>
+		<item key="DIALOG_Y_ORIGIN" value="82"/>
+		<item key="DIALOG_WIDTH" value="827"/>
+		<item key="DIALOG_HEIGHT" value="633"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="11"/>
+		<item key="DIALOG_Y_ORIGIN" value="11"/>
+		<item key="DIALOG_WIDTH" value="825"/>
+		<item key="DIALOG_HEIGHT" value="681"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

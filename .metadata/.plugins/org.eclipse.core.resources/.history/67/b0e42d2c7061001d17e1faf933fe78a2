@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+4번
+
+7번
+
+11번
+
+12번 
+*/
+	img{ width:100px;height:150px;position:absolute;}
+	img#card01{left:0px;top:0px;}
+	img#card02{left:30px;top:30px;}
+	img#card03{left:60px;top:60px;}
+	img#card04{left:90px;top:90px;}
+	img:hover{ z-index:5;}
+	img:active{ display:none;}
+
+</style>
+</head>
+<body>
+	
+	<img src="/a00_img/spade-2.png" id="card01">
+	<img src="/a00_img/spade-3.png" id="card02">
+	<img src="/a00_img/spade-7.png" id="card03">
+	<img src="/a00_img/spade-A.png" id="card04">
+	<br>
+	
+	<h3>네비게이션 메뉴(왼쪽에서 오른쪽으로 리스트 처리)</h3>
+	<nav id="menu">
+		<u>
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+			<li>메뉴4</li>
+		</u>
+	</nav>
+	
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+4번
+
+7번
+
+11번
+
+12번 
+*/
+	img{ width:100px;height:150px;position:absolute;}
+</style>
+</head>
+<body>
+	<img src="/a00_img/spade-2.png" id="card01">
+	<img src="/a00_img/spade-3.png" id="card01">
+	<img src="/a00_img/spade-7.png" id="card01">
+	<img src="/a00_img/spade-A.png" id="card01">
+	<br>
+	
+	</body>
+</html>

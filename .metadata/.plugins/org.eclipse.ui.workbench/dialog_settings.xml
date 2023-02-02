@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jst.jsp.ui.internal.wizard.NewJSPWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_WIDTH" value="600"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_HEIGHT" value="844"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
+		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
+		<list key="orderedElements">
+			<item value="org.eclipse.egit.ui.CreateRepositoryWizard"/>
+			<item value="org.eclipse.ui.preferencePages.GeneralTextEditor"/>
+		</list>
+		<list key="orderedProviders">
+			<item value="org.eclipse.ui.wizards"/>
+			<item value="org.eclipse.ui.preferences"/>
+		</list>
+		<list key="textEntries">
+			<item value="1"/>
+			<item value="1"/>
+		</list>
+		<list key="textArray">
+			<item value="git"/>
+			<item value="print"/>
+		</list>
+	</section>
+	<section name="EditorSelectionDialog">
+		<item key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION" value=".xml"/>
+		<item key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL" value="false"/>
+		<item key="EditorSelectionDialog.STORE_ID_DESCR" value="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart"/>
+	</section>
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.egit.ui.internal.clone.GitCloneWizard"/>
+		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.ui.wizards.export.ZipFile"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="ZipFileExportWizard">
+		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
+		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230201_1.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230201.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230127.zip"/>
+			<item value="E:\쌍용\이클립스 백업\230121.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230120.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\a05.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\202301120zip.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230119.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230116.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230111.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230105.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230103.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\1조_이윤아_소스코드.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\1조 이윤아.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230101.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\로그인.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\이윤아.zip"/>
+			<item value="E:\쌍용\이클립스 백업\20221221.zip"/>
+			<item value="E:\쌍용\이클립스 백업\20221209.zip"/>
+			<item value="C:\a01_javaexp\workspace\jspexp\src\main\webapp\z01_homework\20221209.zip"/>
+		</list>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="-194"/>
+		<item key="DIALOG_Y_ORIGIN" value="-208"/>
+		<item key="DIALOG_WIDTH" value="934"/>
+		<item key="DIALOG_HEIGHT" value="1008"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="PreferencesExportWizard">
+		<item key="" value="C:\Users\lya_0\OneDrive\바탕 화면\230119.epf"/>
+		<item key="WizardPreferencesExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID" value="false"/>
+		<item key="WizardPreferencesExportPage1.EXPORT_ALL_PREFERENCES_ID" value="true"/>
+		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230119.epf"/>
+		</list>
+	</section>
+</section>

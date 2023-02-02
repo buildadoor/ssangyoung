@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ 
+*/
+</script>
+
+</head>
+<body>
+	<div id="container"></div>
+
+
+</body>
+<script type="text/javascript">
+/*
+ # 배열.forEach
+1. 배열의 데이터를 효과적으로 처리하기위해 처리되는 함수이다.
+2. 기본 형식 
+	배열.forEach(function(단위데이터, index, 배열전체){
+	})
+ */
+ var div = document.querySelector("#container")
+ var arry = ["사과","바나나","딸기"]
+ arry.forEach(function(fruit,index, fruits){
+	 div.innerHTML+=index+":"+fruit+":"+fruits.length+"<br>"
+ }); //괄호안에 함수 선언
+
+// ex) 물건의 가격을 배열로 선언하고 , 1(번호) 3000(가격)을 h2로 출력하세요
+var arry2 = [3000,4000,5000]
+arry2.forEach(function(price,idx){
+	div.innerHTML+="<h2>"+(idx+1)+")"+price+"</h2>"	
+})
+show+="<tr><th>물건명</th><th>가격</th><th>갯스</th></tr>"
+//배열안에 객체 선언 (json)
+//비동기적으로 ajax서버의 데이터를 가져올떄, 사용하는 방식
+var arry3 = [
+	{name:"사과",price:3000,cnt:2},
+	{name:"바나나",price:4000,cnt:3},
+	{name:"딸기",price:12000,cnt:4}]
+//fruit={name:"사과",price:3000,cnt:2}
+arry3.forEach(function(fruit,idx){
+	show+="<tr><td>"+fruit.name+"</td><td>"+fruit.price+"</td><td>"+fruit.cnt+"</td></tr>"
+});
+show+="</table>"
+div.innerHTML+="</table>"
+</script>
+</html>

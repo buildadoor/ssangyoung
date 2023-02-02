@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+ 
+*/
+</script>
+
+</head>
+<body>
+	<h2>부서정보로딩</h2>
+	<div id="container"></div>
+
+
+
+</body>
+<script type="text/javascript">
+var h2Ob =document.querySelector("h2")
+var div = document.querySelector("#container")
+h2Ob.onclick=function(){
+	var xhr = new XMLHttpRequest()
+	xhr.open("get","z06_DeptList.jsp",true)
+	xhr.send()
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			div.innerHTML=xhr.responseText
+		}
+	}
+	
+}
+/*
+
+ */
+ 
+ div.innerHTML=""
+// 
+</script>
+</html>

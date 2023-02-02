@@ -1,0 +1,77 @@
+package javaexp.z01_project;
+
+import java.util.Scanner;
+
+public class A01_Searching {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		/*
+		System.out.print("검색할 도서를 입력하세요: ");
+		String book = sc.nextLine();
+		switch (book) {
+		case "하얼빈":
+			System.out.println("[소설] 하얼빈 : 김훈 장편소설");
+			System.out.println("[어린이(초등)] 하얼빈 의거와 안중근 : (다큐동화로 만나는 한국 근현대사 6)");
+			System.out.println("[역사/문화] 그들이 기록한 안중근 하얼빈 의거 : 일본 외무성 소장 「이토 공작 만주 시찰 일건");
+			System.out.println("[소설] 하얼빈 리포트 : 소설로 읽는 안중근 이야기 | 유홍종 장편소설");
+			break;
+		
+				}
+		*/
+		Scanner search = new Scanner(System.in);
+		System.out.print("검색할 도서를 입력하세요:");
+		String book = search.nextLine();	
+		switch(book) {
+		case "하얼빈":
+			System.out.println("[소설] 하얼빈 : 김훈 장편소설");
+			System.out.println("[어린이(초등)] 하얼빈 의거와 안중근 : (다큐동화로 만나는 한국 근현대사 6)");
+			System.out.println("[역사/문화] 그들이 기록한 안중근 하얼빈 의거 : 일본 외무성 소장 「이토 공작 만주 시찰 일건");
+			System.out.println("[소설] 하얼빈 리포트 : 소설로 읽는 안중근 이야기 | 유홍종 장편소설");
+			break;
+		case "불편한 편의점:"
+			System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			System.out.println("31일");
+			break;	
+		case 2:
+			System.out.println("28일");
+			break;
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			System.out.println("30일");
+			break;
+		default:
+			System.out.println(book+"에 대한 검색결과가 없습니다.\n"
+					+ "검색어의 철자가 정확한지 다시 한번 확인해주세요.\r\n"
+					+ "검색어의 단어 수를 줄이거나, 두 단어 이상의 검색어인 경우, 띄어쓰기를 해주세요");
+			}
+		}
+		
+		/*
+		 * Scanner sc = new Scanner(System.in); String book = "하얼빈";
+		 * System.out.println("# 도서검색 #"); System.out.print("검색할 도서를 입력하세요:"); String
+		 * inputBook = sc.nextLine(); System.out.println("검색도서:"+(book==inputBook));
+		 * System.out.println("# equals 연산자 비교 #");
+		 * System.out.println("id.equals(inputBook):"+(id.equals(inputId)));
+		 * System.out.println("pass.equals(inputPass):"+(pass.equals(inputPass)));
+		 * System.out.println("#로그인 인증 여부 처리#"); if(id.equals(inputId) &&
+		 * pass.equals(inputPass)) { System.out.println("로그인 성공"); }else {
+		 * System.out.println("로그인 실패"); } ----------------------------------- int
+		 * appPrice = 1200; int appCnt=1; while(true) { //무한loop
+		 * System.out.println(appCnt+"개 구매"+appPrice*appCnt+"원");
+		 * System.out.println("구매를 중단하시겠습니까?"); //입력받은 데이터를 바로 "Y" 여부를 boolean 확인
+		 * if(sc.nextLine().equals("Y")) { //break는 for/while 반복문에 다 사용 , 반복을 중단 break;
+		 * 
+		 * } appCnt++; System.out.println("구매 종료!"); }
+		 */
+

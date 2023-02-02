@@ -1,0 +1,5 @@
+package springweb.a05_mvc.a02_service;
+
+public class A02_DeptService {
+
+}

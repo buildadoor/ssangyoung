@@ -1,0 +1,36 @@
+package javaexp.z01_project;
+
+import java.util.Scanner;
+
+public class A03_Review {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		 Scanner sc = new Scanner(System.in);
+		 int grade = 0;
+		 String stars = ""; 
+		 do {
+		 System.out.println("별점을 선택하세요 (입력범위 1~4)");
+		 grade = sc.nextInt();
+		 } while (grade >4 || grade <1 );
+		 while (grade > 0) {
+			 stars +="★";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+			 grade--;
+		 }
+		
+		 System.out.println(stars);
+		 System.out.println("리뷰- 이책을 간단히 말하면?");
+			Scanner sc02 = new Scanner(System.in);
+
+			String review = sc02.nextLine();		
+
+				
+			System.out.println(review);
+		}
+
+	
+		
+	}
+
+

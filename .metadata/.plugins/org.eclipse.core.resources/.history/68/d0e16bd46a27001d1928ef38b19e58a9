@@ -1,0 +1,21 @@
+package javaexp.a01_begin;
+
+public class A03_executeCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		# 기본명령어 처리순서
+		1. 변수 처리
+			변수 선언, 값 저장, 메소드 호출, 세미콜론
+			
+		 * */
+		int num01 = 10; // num01이라는 이름으로 정수형으로 선언하고,
+		// 데이터10을 할당, 세미콜론으로 종료
+		System.out.print("저장된 데이터:"+num01);
+		// 저장된ㄷ ㅔ이터를 출력 처리..
+		 * 
+		 */
+	}
+
+}

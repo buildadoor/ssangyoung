@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+ #여러가지 형태의 type 버튼 만들기
+ 	1. 버튼을 만드는 형태
+ 		1) <input type="button|reset|submit|image" value="버튼의 문자열">
+ 		2) <button type="button|reset|submit">버튼의 문자열</button>
+ -->
+ <h2>버튼유형1(type형태)</h2>
+ <form>
+ <input type="text" name="content" value="reset/submit테스트용"/><br>
+ <input type="button" value="버튼1(button)" onclick="alert('클릭!!')"/><br>
+ <input type="reset" value="버튼2(reset)"/><br>
+ <!-- form안에 입력된 내용을 다시 초기화 시킴 -->
+ <input type="submit" value="버튼3(submit)"/><br>
+ <input type="image" value="버튼4(image)" src="/a00_img/button.jpg" width="70" height="50"/><br>
+  </form>
+  <h2>버튼유형2(button태그)</h2>
+  <form>
+  	내용:<input type="text" value="reset/submit테스트용/"><br>
+  	<button type="button" onclick="alert('클릭!!')">일반버튼</button><br>
+  	<button type="reset">reset버튼</button><br>
+  	<button type="submit">submit버튼</button><br>
+  	<button>type설정을 하지않은 버튼</button><br>
+  	<!-- type설정을 하지않으면 submit가 되므로 주의 -->
+  </form>
+  
+
+<h2>개인 정보 이름 나이 사는곳을 입력하고 type버튼형식으로 submit처리 button태그형식으로 reset처리하여 해당내용을 전송하게 하세요</h2>
+	<form>
+		이름:<input type="text" name="name" placeholder="이름입력"/><br>
+		나이:<input type="text" name="age" size="2" maxlength="2" placeholder="나이"/><br>
+		주소:<textarea name="adress" cols="20" rows="5" placeholder="주소입력"></textarea><br>
+ 			<button type="reset">입력초기화</button>	<input type="submit" value="입력완료" /><br>
+	</form>
+</body>
+</html>

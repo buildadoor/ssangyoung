@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/a00_com/a01_common.css" rel="stylesheet">
+<style type="text/css">
+/*
+
+*/
+
+</style>
+
+<script>
+/*
+
+*/
+</script>
+
+</head>
+<body>
+	<div id="container"></div>
+
+	
+</body>
+<script type="text/javascript">
+/*
+ #Date 객체 전체 날짜 시간 출력형태
+ 1. 형식: toXXXXString()
+ 2. XXX
+ 	Date, Time, GMT, ISO, UTC, JSON, Locale, LocaleDate, LocaleTime
+ */
+ var sh = document.querySelector("#container")
+ var d = new Date()
+ sh.innerHTML+="toDateString():"+ d.toDateString()+"<br>"
+ sh.innerHTML+="toTimeString():"+ d.toTimeString()+"<br>"
+ sh.innerHTML+="toGMTString():"+ d.toGMTString()+"<br>"
+ sh.innerHTML+="toISOString():"+ d.toISOString()+"<br>"
+ sh.innerHTML+="toUTCString():"+ d.toUTCString()+"<br>"
+ sh.innerHTML+="toLocaleString():"+ d.toLocaleString()+"<br>"
+ sh.innerHTML+="toLocaleDateString():"+ d.toLocaleDateString()+"<br>"
+ sh.innerHTML+="toLocaleTimeString():"+ d.toLocaleTimeString()+"<br>"
+// ex) 2023.01.01, 9:00:00로 날짜와 시간을 설정하고,
+//날짜 출력, 시간 출력을 하세요 
+//@@년@@월@@일@@시@@분으로 출력하세요 
+var date01 = new Date(2023,0,1,9,0)
+sh.innerHTML+="날짜출력:"+ d.toLocaleDateString()+"<br>"
+sh.innerHTML+="시간출력:"+ d.toLocaleTimeString()+"<br>"
+var shw = date01.getFullYear()+"년 "
+shw += date01.getMonth()+1+"월 "
+shw += date01.getDate()+"일 "
+var days=["일","월","화","수","목","금","토"]
+shw += days[date01.getDay()]+"요일 " //요일은 변경 기준이 없어서 setDay가 없음. 다른 속성에 의해 영향을 받기만 함..
+shw += date01.getHours()+"시 "
+shw += date01.getMinutes()+"분"
+sh.innerHTML+=shw
+
+</script>
+</html>

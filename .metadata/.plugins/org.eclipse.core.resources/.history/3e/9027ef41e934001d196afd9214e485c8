@@ -1,0 +1,73 @@
+package javaexp_homework;
+
+import java.util.ArrayList;
+
+public class A00_Sysout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//	[1단계:개념] 1. (연습이 필요한 분)1:다관계 설정 연습 - 버스/승객, 영화/배우들, 회사/종업원  
+
+	Bus b01 = new Bus("김길동");
+	b01.addTakeList(new Passenger("김길동","서울",1500));
+
+}
+}
+class Bus{
+	private String pName;
+	private ArrayList <Passenger>blist;
+	public Bus(String pName) {
+		this.pName = pName;
+		this.blist = new ArrayList <Passenger>();
+	}
+	public void addTakeList(Passenger passenger) {
+		this.blist.add(passenger);
+		System.out.println(passenger.getTo()+"버스를 예약목록에 추가하였습니다.");
+	}
+	public void go() {
+		System.out.println(pName+"승객 ");
+		if(blist.size()>0) {
+				System.out.println("승객명\t목적지\t금액");
+		
+		}
+		else {
+			System.out.println("예약 목록이 없습니다.");
+		}
+		
+}
+class Passenger{
+	private String name;
+	private String to;
+	private int price;
+	public Passenger(String name, String to, int price) {
+		this.name = name;
+		this.to = to;
+		this.price = price;
+	}
+	public void takeInfo(int no) {
+		System.out.println(no+"\t");
+		System.out.println(this.name+"\t");
+		System.out.println(this.to+"\t");
+		System.out.println(this.price+"\t");
+		
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getTo() {
+		return to;
+	}
+	public void setTo(String to) {
+		this.to = to;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+}}

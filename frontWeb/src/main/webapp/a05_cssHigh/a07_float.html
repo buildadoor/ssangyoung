@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+	ex)a07_float설정으로 새로운 페이지를 만들어
+	안녕하세요 각각 문자 div를 만들어
+	float옵션을 통해 반대로 나오게 처리하세요. 
+	==>요세하녕안
+*/
+	div{
+		float:right;
+		border:3px solid orange;
+		width:1.5cm;
+		padding:0.25em;
+		
+	}
+/*
+# 화면에서 보이지 않게 처리
+1. visibility:hidden
+*/
+	h3.cls01{
+		visibility:hidden;
+	}
+	h3.cls02{
+		display: none;
+	}
+	h3.cls03{
+		visibility:hidden;
+	}
+	h3.cls04{
+		display: none;
+		}
+
+	img.active{visibility:hidden;}
+
+
+	/*
+	ex) 사과 바나나 망고를 출력하되 
+		사과와 바나나는 각각 visibility , dispaly 를 통해 보이지 않게 처리하세요.
+	*/
+</style>
+</head>
+<body>
+	<h3>과일 예제</h3>
+	<h3 class="cls03" src="/a00_img/strawberry.jpg">사과</h3>
+	<h3 class="cls04" src="/a00_img/grape.jpg">바나나</h3>
+	<h3 src="/a00_img/pearch.jpg">망고</h3>
+	<hr>
+	<h3>화면 처리내용1</h3>
+	<h3 class="cls01">화면 처리내용2</h3>
+	<h3>화면 처리내용3</h3>
+	<h3 class="cls02">화면 처리내용4</h3>
+	<h3>화면 처리내용5</h3>
+	
+	<div>안</div>
+	<div>녕</div>
+	<div>하</div>
+	<div>세</div>
+	<div>요</div>
+</body>
+</html>

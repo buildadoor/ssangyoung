@@ -1,0 +1,18 @@
+package javaexp.a01_begin;
+
+public class A01_Start {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("자바 시작입니다!");
+//		ctrl+/ : 단일행 주석
+//		주석은 프로그래밍에 영향을 미치지 않지만
+//		프로그램에 대한 이해를 위해서 많이 활용된다.
+		/* block + ctrl + shift + /
+
+		실행명령 
+		f11 (디버깅모드실행)
+		ctri + f11 (실행)
+
+		
+}

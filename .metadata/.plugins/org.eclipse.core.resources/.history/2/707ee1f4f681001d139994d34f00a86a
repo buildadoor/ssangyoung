@@ -1,0 +1,156 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    import="java.util.*"    
+    import="jspexp.vo.*"
+    import="javaexp.sql.*"
+    import="jspexp.a13_database.*"    
+    import="jspexp.a13_database.vo.*"     
+    %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>쌍용 대학교</title>
+<link href="main.css" type="text/css" rel="stylesheet">
+<script type="text/javascript"
+   src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+</head>
+<style>
+@import url(a00_main.css);  
+
+#addtable{
+margin-top:5%;
+margin-left: 40%;
+font-size: 15px;
+}
+#bt{
+margin-top:3%;
+margin-left: 50%;
+font-size: 15px;
+background-color:navy;
+color:white;
+}
+
+</style>
+<body>
+   <div>
+      <div>
+         <div class="flex-box1">
+            <div id="box1">
+               <div id="top-box1">
+                  <span id="tob-box1-span">쌍용대학교</span>
+               </div>
+            </div>
+            <div id="top-box2">
+               <span id="tob-box2-span"><%=session.getAttribute("id")%>교수</span>
+            </div>
+         </div>
+
+         <div class="flex-box2">
+            <div id="flex-box2_box1">
+               <div>
+                  <div id="nav-box">
+                     <ul id="navi">
+                        <li class="group">
+                           <div class="title">공지사항</div>
+                           <ul class="sub">
+                              <li><a href="#">-공지게시판</a></li>
+                           </ul>
+                        </li>
+                        <li class="group">
+                           <div class="title">강의관리</div>
+                           <ul class="sub">
+                              <li><a href="a02_lectureadd.jsp">-강의 등록</a></li>
+                              <li><a href="a02_lecturemodify.jsp">-강의 수정</a></li>
+                              <li><a href="a02_lecturedelete.jsp">-강의 삭제</a></li>
+                           </ul>
+                        </li>
+                        <li class="group">
+                           <div class="title">출결관리</div>
+                           <ul class="sub">
+                              <li><a href="#">-출결 등록</a></li>
+                              <li><a href="#">-출결 삭제</a></li>
+                           </ul>
+                        </li>
+                        <li class="group">
+                           <div class="title">강의계획서관리</div>
+                           <ul class="sub">
+                              <li><a href="a03_lecplanadd.jsp">-강의계획서 등록</a></li>
+                              <li><a href="#">-강의계획서 수정</a></li>
+                              <li><a href="#">-강의계획서 삭제</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+
+               </div>
+            </div>
+            <div id="flex-box2_box2">
+               <div class="main-box-flex">
+                  <div id="main-box1">
+                     <div id="main-box1-iteam">
+                        <span class="span-margin" id="span1">강의계획서등록</span>
+                     </div>
+                     <div>
+                        <span class="span-margin">강의계획서관리 > 강의계획서등록</span>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="main-box-flex">
+                  <div id="main-box2">
+                     <div>
+                     <form>
+                     <table id="addtable">
+                     <tr><td>등록할 강의명</td><td><input type="text" name="lecName" placeholder="강의명"/></td></tr>
+                     	<tr><td colspan="2">────────────────────</td></tr>
+                     	<tr><td>강의계획서 첨부</td><td><input type="text" name="lecPlan" placeholder="파일첨부"/></td></tr>
+                     
+                       <label class="input-file-button" for="input-file">
+                            파일첨부
+                        </label>
+                        </table>
+                     <input type="submit" id="bt" onclick="ckValid()" value="등록"/>
+                     </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+   <div></div>
+</body>
+<script>
+   $(document).ready(function() {
+
+      //모든 서브 메뉴 감추기
+      $(".sub").css({
+         display : "none"
+      });
+      //$(".sub").hide(); //위코드와 동일 
+
+      $(".title").click(function() {
+         //일단 서브메뉴 다 가립니다.
+         //$(".sub").css({display:"none"});
+
+         //열린 서브메뉴에 대해서만 가립니다.
+         $(".sub").each(function() {
+            console.log($(this).css("display"));
+            if ($(this).css("display") == "block") {
+               //$(".sub").css({display:"none"});
+               //$(this).hide();
+               $(this).slideUp("fast");
+            }
+         });
+
+         //현재 요소의 다음 요소를 보이게 합니다.
+         //$(this).next("ul").css({display:"block"});
+         //$(this).next("ul").show();
+         $(this).next("ul").slideDown("fast");
+
+      })
+   });
+</script>
+</html>
