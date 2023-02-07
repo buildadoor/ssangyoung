@@ -1,0 +1,18 @@
+package board.Controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import board.vo.Board;
+import board.vo.BoardSch;
+
+@Controller
+public class Controller {
+// http://localhost:7080/board2/list
+	@RequestMapping("/list.do")
+	public String boadrList() {
+		return "a01_boardList";
+	}
+}

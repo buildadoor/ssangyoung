@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+<link rel="stylesheet" href="/springweb/a00_com/bootstrap.min.css" >
+ -->
+<style>
+	td{text-align:center;}
+	.orange{background-color:orange;}
+	.pink{background-color:pink;}
+	.yellow{background-color:yellow;}
+</style>
+<script src="/springweb/a00_com/jquery.min.js"></script>
+<script src="/springweb/a00_com/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+. v-for와 객체형 배열데이터(프리미어리그팀-팀명,승,무,패,승점)을 선언
+		- 객체형데이터 : [{},{},{}]
+			<요소객체 v-for="(단위객체, index번호) in 객체형배열모델"
+				{{index번호}} {{단위객체.속성1}}  {{단위객체.속성2}}
+ 
+ */
+
+		var vm = new Vue({
+			el:".container",
+			data:{id:"",pass:""},
+		});	
+		
+</script>
+</head><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/springweb/a00_com/bootstrap.min.css" >
+<style>
+   td{text-align:center;}
+</style>
+<script src="/springweb/a00_com/jquery.min.js"></script>
+<script src="/springweb/a00_com/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+
+	   var vm = new Vue({
+			el:".container",
+			data:{id:"",pass:""},
+		});	
+   });
+  //ex) 물건가격과 갯수로 구매 총액을 기준으로 고객 등급 출력
+  // 1000000 이상 골드, 500000~1000000미만 실버, 
+  // 20000~500000 미만 브론즈 
+  // 200000미만 일반 기타 물건가격과 갯수는 0이상 숫자로 입력
+</script>
+</head>
+<body>
+
+   <div class="jumbotron text-center">
+     <h2>로그인</h2>
+     <h3 v-if="id=='himan' && pass='7777'">로그인성공</h3>
+     <h3 v-else-if="id=='' || pass=''">아이디와 패스워드를 입력하세요</h3>
+     <h3 v-else>로그인 실패 </h3>
+   </div>
+   <div>
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    </nav>
+  
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+       <input name="id" class="form-control mr-sm-2" placeholder="아이디" />
+       <input name="pass" class="form-control mr-sm-2" placeholder="비밀번호" />
+       <button class="btn btn-info" type="submit">로그인</button>
+    </nav>
+   </form>
+   <table class="table table-hover table-striped">
+      <col width="10%">
+      <col width="50%">
+      <col width="15%">
+      <col width="15%">
+      <col width="10%">
+    <thead>
+    
+      <tr class="table-success text-center">
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회</th>
+      </tr>
+    </thead>   
+    <tbody>
+       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+   </table>       
+</div>
+</body>
+</html>
+<body>
+
+
+
+</body>
+</html>

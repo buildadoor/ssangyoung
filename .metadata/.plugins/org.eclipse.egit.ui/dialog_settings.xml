@@ -3,11 +3,12 @@
 	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="0"/>
 	<item key="ResetTargetSelectionDialog.resetType" value="HARD"/>
 	<list key="EGit.KnownHosts">
-		<item value="git.eclipse.org"/>
 		<item value="bitbucket.org"/>
+		<item value="git.eclipse.org"/>
 		<item value="github.com"/>
 	</list>
 	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/ssangyoung9736/board.git"/>
 		<item value="https://github.com/ssangyoung9736/springweb.git"/>
 		<item value="https://github.com/janexagnes/jane.git"/>
 	</list>
@@ -19,8 +20,8 @@
 	</list>
 	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
 		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>
-		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="200,200"/>
-		<item key="STAGING_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
 		<item key="sortItemState" value="false"/>
 	</section>
 	<section name="GitCommitMessageComponent">

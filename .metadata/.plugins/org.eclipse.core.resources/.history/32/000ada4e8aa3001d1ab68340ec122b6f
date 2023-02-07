@@ -1,0 +1,12 @@
+package board;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Controller {
+// http://localhost:7080/board2/list
+	@RequestMapping("/list.do")
+	public String boadrList() {
+		return "a01_boardList";
+	}
+}

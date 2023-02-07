@@ -7,18 +7,19 @@ import org.springframework.stereotype.Service;
 
 import springweb.mvc.a03_dao.A01_MemberDao;
 import springweb.vo.OvMember;
-import springweb.vo.OvMemberInit;
-
 @Service
 public class A01_MemberService {
 	@Autowired
 	private A01_MemberDao dao;
-	
-	public List<OvMember> getOvMemberList(OvMember sch){
+	public List<OvMember> OvMemberList(OvMember sch){
 		if(sch.getId()==null) sch.setId("");
-		return dao.getOvMemberList(sch);
+		if(sch.getAuth()==null) sch.setAuth("");
+		if(sch.getNickname()==null) sch.setNickname("");
+		if(sch.getAddress()==null) sch.setAddress("");
+		if(sch.getPoint()==0) sch.setPoint(0);
+		return dao.OvMemberList(sch);
 }
-	public List<OvMemberInit> getOvMemberAll(){
-		return dao.getOvMemberAll();
+	public void insertOvMember(OvMember ins) {
+		dao.insertOvMember(ins);
 	}
 }

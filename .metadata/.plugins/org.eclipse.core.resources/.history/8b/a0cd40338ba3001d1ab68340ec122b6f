@@ -1,0 +1,19 @@
+package board;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import board.vo.Board;
+
+
+@Service
+public class A02_Service {
+	@Autowired
+	private A03_BoardDao dao;
+	
+	public List<Board> getBoardList(Board sch){
+		return dao.get(sch);
+}
+}

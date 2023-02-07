@@ -1,0 +1,5 @@
+package board.A04_Dao;
+// board.a03_dao.A03_BoardDao
+public interface A03_BoardDao {
+
+}

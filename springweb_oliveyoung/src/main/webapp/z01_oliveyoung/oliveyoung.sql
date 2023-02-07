@@ -11,7 +11,16 @@ CREATE TABLE ovMember(
    nickname varchar2(50),
    address varchar2(150),
    point NUMBER);
+ -- #{id},#{pass},1,#{nickname},#{address},3000 
+ --회원검색
+		select *
+		from ovMember
+		where id like '%'||'ov'||'%'
+		and nickname like '%'||'관리자'||'%'; 
+	
 INSERT into OVMEMBER values('ov','1234','관리자','관리자','서울 서교동',9999);
+INSERT into OVMEMBER values('ov2','1234','0','관리자2','서울 서교동',9999);
+INSERT into OVMEMBER values('ddochi','ddochi','1','이또치','천안 불당동',1000);
   UPDATE OVMEMBER
    SET auth = '0'
    WHERE id = 'ov';

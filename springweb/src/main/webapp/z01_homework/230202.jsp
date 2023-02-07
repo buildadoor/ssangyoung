@@ -80,6 +80,77 @@
         });
 [1단계:확인] 4. v-if 조건문을 활용하여 입력한 아이디와 패스워드가 맞으면 로그인성공/로그인실패/아이디와패스워드를 입력하세요로
                구분하여 출력하세요.
+               
+           1) 모델 데이터 선언
+           2) UI 화면구성
+           3) 디렉티브 선언(양방향/단방향 선언) 
+           4) 조건문 디렉티브
+            
+            <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/springweb/a00_com/bootstrap.min.css" >
+<style>
+   td{text-align:center;}
+</style>
+<script src="/springweb/a00_com/jquery.min.js"></script>
+<script src="/springweb/a00_com/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+      var vm = new Vue({
+         el:".container",
+         data:{msg:"시작!!(뷰와함께)", id:"",pass:""}
+      });   
+   });
+</script>
+</head>
+<body>
+
+<div class="container">
+   <div class="jumbotron text-center">
+     <h2 >로그인</h2>
+     <h3 v-if="id=='himan'&&pass=='7777'">로그인성공</h3>
+     <h3 v-else-if="id==''|| pass==''">아이디와 패스워드를 입력하세요</h3>
+     <h3 v-else>로그인 실패</h3>
+   </div>
+   <form id="frm01" class="form-inline"  method="post">
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+       <input v-model="id" class="form-control mr-sm-2" placeholder="아이디" />
+       <input v-model="pass" class="form-control mr-sm-2" placeholder="비밀번호" />
+       <button class="btn btn-info" type="submit">Search</button>
+    </nav>
+   </form>
+   <table class="table table-hover table-striped">
+      <col width="10%">
+      <col width="50%">
+      <col width="15%">
+      <col width="15%">
+      <col width="10%">
+    <thead>
+    
+      <tr class="table-success text-center">
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회</th>
+      </tr>
+    </thead>   
+    <tbody>
+       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+   </table>       
+</div>
+</body>
+</html>
+            
+            
 [1단계:개념] 5. v-if와 v-show의 차이점을 기술하세요.
 v-show 는, 말 그대로 이미 화면에 그려놓고
 상황에 따라서 display:none, display:block 사용

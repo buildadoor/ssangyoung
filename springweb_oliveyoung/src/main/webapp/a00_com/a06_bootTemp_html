@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/a00_com/bootstrap.min.css" >
+<link rel="stylesheet" href="/springweb/a00_com/bootstrap.min.css" >
 <style>
 	td{text-align:center;}
 </style>
-<script src="/a00_com/jquery.min.js"></script>
-<script src="/a00_com/bootstrap.min.js"></script>
+<script src="/springweb/a00_com/jquery.min.js"></script>
+<script src="/springweb/a00_com/bootstrap.min.js"></script>
 <script type="text/javascript">
 	$$(document).ready(function(){
 

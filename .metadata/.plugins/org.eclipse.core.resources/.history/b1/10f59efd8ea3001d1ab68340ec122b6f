@@ -1,0 +1,22 @@
+package board;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import board.vo.Board;
+
+@Controller
+public class A01_Controller {
+   // http://localhost:7080/board2//list.do
+   @Autowired(required=false)
+   private A02_Service service;
+   @RequestMapping("/list.do")
+   public String boardList() {
+      return "a01_boardList";
+   }
+   public String boardList(Board sch, Model d) {
+	 return "";  
+   }
+}

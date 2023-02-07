@@ -7,10 +7,15 @@
 		인터페이스를 상속받은 실제 Dao객체를 위 규칙에 생성하는 xml파일..
 		-->
 <mapper namespace="springweb.mvc.a03_dao.A01_MemberDao">
-<select id="getOvMemberAll" resultType="ovmemberinit">
-	select id, pass, auth, nickname,
-			address, point
+	<select id="OvMemberList" resultType="OvMember"
+		parameterType="OvMember">
+		select *
 		from ovMember
-</select>
+		where id like '%'||#{id}||'%'
+		and nickname like '%'||#{nickname}||'%'	
+	</select>
+	<insert id="insertOvMember" parameterType="OvMember">
+		INSERT INTO ovmember values(#{id},#{pass},1,#{nickname},#{address},3000)			
+	</insert>	
 </mapper>		
 		

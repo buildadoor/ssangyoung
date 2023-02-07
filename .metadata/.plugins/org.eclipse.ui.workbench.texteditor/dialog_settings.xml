@@ -6,27 +6,27 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="fruit"/>
+		<item key="selection" value="passFrm"/>
 		<list key="findhistory">
-			<item value="fruit"/>
-			<item value="frut"/>
-			<item value="ㄹ"/>
-			<item value="loc"/>
-			<item value="p01"/>
-			<item value="classpath"/>
-			<item value="타이틀"/>
-			<item value="로그인"/>
-			<item value="svn"/>
-			<item value="visual"/>
-			<item value="click"/>
-			<item value="수정하시겠습니까?"/>
-			<item value="c:for"/>
-			<item value="#reg"/>
-			<item value="checkValid"/>
+			<item value="passFrm"/>
+			<item value="insertFr"/>
+			<item value="insertFrm"/>
+			<item value="regBtn"/>
+			<item value="02_"/>
+			<item value="02"/>
+			<item value="join"/>
+			<item value="goDetail"/>
+			<item value="goDetai"/>
+			<item value="b"/>
+			<item value="joinBtn"/>
+			<item value="reg"/>
+			<item value="스프링 실무"/>
+			<item value="웹 소켓"/>
+			<item value="웹"/>
 		</list>
 		<list key="replacehistory">
-			<item value="A6CD48"/>
 			<item value="/"/>
+			<item value="A6CD48"/>
 			<item value="td"/>
 			<item value="attendance"/>
 			<item value="eduSt"/>

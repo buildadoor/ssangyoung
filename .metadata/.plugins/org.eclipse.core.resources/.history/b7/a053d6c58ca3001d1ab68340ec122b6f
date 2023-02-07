@@ -1,0 +1,6 @@
+package board.vo;
+// board.vo.BoardSch
+public class BoardSch {
+ private String subject;
+ private String writer;
+}

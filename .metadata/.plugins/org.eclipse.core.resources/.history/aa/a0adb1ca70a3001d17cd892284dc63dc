@@ -1,0 +1,13 @@
+package board.A01_Controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class A01_Controller {
+
+	@RequestMapping("/list")
+	public String boadrList() {
+		return "a01_boardList";
+	}
+	
+}

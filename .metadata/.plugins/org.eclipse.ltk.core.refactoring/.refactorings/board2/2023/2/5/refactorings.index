@@ -1,0 +1,20 @@
+1675320391048	Rename resource 'mybatis.Spring.xml'
+1675320434537	Rename resource 'A01_EmpMapper.xml'
+1675391708457	Rename resource 'dispatcher-servlet.xml'
+1675392170712	Rename package 'board.a01_controller'
+1675392178591	Rename package 'board.a02_service'
+1675392187310	Rename package 'board.a03_dao'
+1675392213577	Rename type 'Board'
+1675392234682	Rename type 'vo'
+1675392252758	Rename package 'board.a04_vo'
+1675392298394	Rename resource 'a01_mybatis.xml'
+1675392309422	Rename resource 'a02_mapper.xml'
+1675392316342	Rename resource 'a03_mapper.xml'
+1675392343329	Rename package 'board.vo'
+1675392349708	Rename package 'board.board.vo'
+1675392998660	Rename package 'board.A04_Dao'
+1675393943544	Move folder
+1675394149354	Move file
+1675397251437	Delete element
+1675404981232	Delete elements
+1675406865713	Rename type 'A03_BoardDao'
