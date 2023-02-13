@@ -7,20 +7,17 @@
 <c:set var="path" value="${pageContext.request.contextPath }"/>
 <fmt:requestEncoding value="utf-8"/>     
 <!DOCTYPE html>
-<%--
 
-
- --%>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css" >
-<link rel="stylesheet" href="${path}/a00_com/jquery-ui.css" >
-
-  <style>
+<html lang="en">
+<style>
     body {
       min-height: 100vh;
+
+      background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#1d466c));
+      background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+      background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+      background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+      background: linear-gradient(to top right, #FFFFFF 100%, #FFFFFF 100%);
     }
 
     .input-form {
@@ -38,6 +35,31 @@
       box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
     }
   </style>
+<head>
+<head>
+<meta charset="utf-8">
+    <title>올리브영</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+   <link rel="stylesheet" href="${path}/resources/a00_com/bootstrap.min.css" >
+   <link rel="stylesheet" href="${path}/resources/a00_com/jquery-ui.css" >
+    <!-- Favicon -->
+    <link href="${path}/resources/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="${path}/resources/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="${path}/resources/css/style.css" rel="stylesheet">
+ 
 <script src="${path}/a00_com/jquery.min.js"></script>
 <script src="${path}/a00_com/popper.min.js"></script>
 <script src="${path}/a00_com/bootstrap.min.js"></script>
@@ -48,13 +70,20 @@
 	$(document).ready(function(){
 		var msg = "${msg}"
 		if(msg!=""){
-			if(confirm(msg+"\n 조회화면으로 이동하시겠습니까?")){
-				location.href="${path}/ovMemberList.do"
+			if(confirm(msg+"\n 로그인화면으로 이동하시겠습니까?")){
+				location.href="${path}/login.do"
 			}
 		}
+		$("#goProduct").click(function(){
+			location.href="${path}/ovProductrList.do"
+			})
 		$("#goMain").click(function(){
 			location.href="${path}/ovMemberList.do"			
 		});
+		$("#goLogin").click(function(){
+			location.href="${path}/login.do"			
+		});
+		
 		$("#regBtn").click(function(){
 			var isInValid = false
 			for(var idx=0;idx<$(".ckValid").length;idx++){
@@ -65,70 +94,56 @@
 					break;
 				}
 			}
+			
+			var passVal = $("#pass").val()
+            var passFrmVal = $("#passFrm").val()
+            if(passVal.length>0){
+               if(passVal!=passFrmVal){
+                  alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.")
+               }
+               return false;
+            }
 			if(isInValid){
 				return
 			}
 			$("form").submit()
 		})
 	});
-</script>
-<script>
-		var ckIdBtnObj = document.querySelector("#ckIdBtn");
-		var passIdchObj = document.querySelector("#passIdch");
-		idObj.onkeyup=function(){
-			//글자 유효성 check(8~18)
-			if(event.keyCode==13)
-	        validChk();  		
-		}	
-		}
-	chIdBtn.onclick=validChk;
-		function validChk(){
-			var idVal = idObj.value;
-		if(idVal>=8 && idVal<=18){
-			idCkAjax()	
-		}else{
-			alert("등록할 아이디는 8자~18자만 가능합니다.")
-			} 
-		}
-		           		
-		function idCkAjax(){
-			var xhr = new XMLHttpRequest();
-			xhr.open("get","/ovMemberList.do", true);
-			xhr.send()
-			xhr.onreadystatechange=function(){
-				if(xhr.readyState==4 && xhr.status==200){
-					console.log(xhr.responseText)
-					var hasId = JSON.parse(xhr.responseText)
-					if (hasId){
-						alert("이미 등록된 아이디입니다.");
-						passIdckObj.value="true" //최종적으로 회원등록시
-						idObj.readOnly="readOnly"//일단 인증이 되었을 때는 변경 못하게 
-					}else{
-						alert("등록 가능한 아이디입니다.");
-					}
-				}
-			}
-		}
-
-
-
+	function fn_idChk(){
+		 console.log("버튼누름")
+	      $.ajax({
+	         url : "${path}/idChk.do",
+	         type : "post",
+	         data : "id="+$("#id").val(),
+	         dataType:"json",
+	         success : function(data){
+	            if(data.idCheck != null){
+	               alert("중복된 아이디입니다.");
+	            }else if(data.idCheck == null){
+	               $("#idChk").attr("value", "Y");
+	               alert("사용가능한 아이디입니다.");
+	            }
+	         }
+	      })
+	   }
 </script>
 </head>
 <body>
-    <!-- Topbar Start -->
+<!-- Topbar Start -->
     <div class="container-fluid">
+        
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-4 d-none d-lg-block">
-                <a href="" class="text-decoration-none">
-                  　<img style="width:80%" src="project_oliveyoung/img/main.png">
+                <a href="${path}/main.do" class="text-decoration-none">
+                  　<img style="width:80%" src="${path}/resources/img/main.png">
                 </a>
             </div>
-            <div class="col-lg-3 col-3 text-left">
+            <div class="col-lg-5 col-8 text-left">
                 <form action="">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for products">
                         <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-success">
+                            <span class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
                             </span>
                         </div>
@@ -136,20 +151,23 @@
                 </form>
             </div>
             <div style="margin-left:150px;" class="col-lg-4 col-4">
-               <a class="text-dark" href="">회원가입</a>
+               <!-- 회원가입 -->
+               <a class="text-dark" id="regBtn" >회원가입</a>
                <span class="text-muted px-2">|</span>
-               <a class="text-dark" href="">로그인</a>
+                <!-- 로그인 -->
+               <a class="text-dark" id="goLogin">로그인</a>
                <span class="text-muted px-2">|</span>
-               <a class="text-dark" href="">고객센터</a>
-        </div>
+               <a class="text-dark" href="${path}/csFrm.do">고객센터</a>
         </div>
     </div>
     <!-- Topbar End -->
-      <!-- Navbar Start -->
+
+
+    <!-- Navbar Start -->
     <div style="margin-top:30px" class="container-fluid">
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-success text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                     <h6 class="m-0"><b>카테고리</b></h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
@@ -182,7 +200,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link"><b>오특</b></a>
+                        <a id="goProduct" class="nav-item nav-link"><b>오특</b></a>
                             <a href="index.html" class="nav-item nav-link"><b>신상</b></a>
                             <a href="index.html" class="nav-item nav-link"><b>랭킹</b></a>
                             <a href="index.html" class="nav-item nav-link"><b>프리미엄관</b></a>
@@ -197,28 +215,42 @@
             </div>
         </div>
     </div>
+               
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
     
-    <div class="input-form-backgroud row">
-      <div class="input-form col-md-12 mx-auto">
+    <div class="input-form-backgroud row" >
+      <div class="input-form col-md-5 mx-auto">
         <h4 class="mb-3">회원가입</h4>
         <form method="post" action="${path}/insert.do" class="validation-form" novalidate>
         	<input type="hidden" name="refno" value="0"/>
           <div class="mb-3">
             <label for="id">아이디</label>
-            <input name="id" type="text" class="form-control  ckValid" placeholder="아이디를 입력" required>
+            <input id="id" name="id" type="text" class="form-control  ckValid" placeholder="아이디를 입력" required>
             <div class="invalid-feedback">
               아이디를 입력하세요
             </div>
-            
           </div>
-
           
           
+       <button class="btn btn-success idChk" type="button" id="idChk" onclick="fn_idChk()" value="N">중복확인</button>           
+        
+        
           <div class="mb-3">
             <label for="pass">비밀번호</label>
-            <input type="password" name="pass" class="form-control ckValid"  placeholder="비밀번호를 입력" required>
+            <input id="pass" type="password" name="pass" class="form-control ckValid"  placeholder="비밀번호를 입력" value="" required>
             <div class="invalid-feedback">
               비밀번호를 입력해주세요.
+            </div>
+          </div>   
+          <div class="mb-3">
+            <label for="passFrm">비밀번호 확인</label>
+            <input id="passFrm" type="password" name="passFrm" class="form-control ckValid"  placeholder="비밀번호를 입력" value="" required>
+            <div class="invalid-feedback">
+              비밀번호 확인을 입력해주세요.
             </div>
           </div>   
           <div class="mb-3">
@@ -236,10 +268,92 @@
             </div>
           </div>   
           <div class="mb-4"></div>
-          <button id="regBtn" class="btn btn-primary btn-lg btn-block" type="button">회원가입</button>
-          <button id="goMain" class="btn btn-info btn-lg btn-block" type="button">조회 화면</button>
+          <button id="regBtn" type="submit" style="margin-left:40%; background-color:#A6CD48;">회원가입</button>
+		<!-- 
+	      <button id="goMain" type="button" style="background-color:#A6CD48">조회 화면</button>
+         -->
         </form>
       </div>
     </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <a href="" class="text-decoration-none">
+                    <h1 class="mb-4 display-5 font-weight-semi-bold">
+                    <img style="width:100%" src="${path}/resources/img/foot_logo.png"></h1>
+                </a>
+          
+                <p class="mb-2">공지사항</p>
+                <p class="mb-2">고객센터이용안내</p>
+                <p class="mb-2">온라인몰 고객센터</p>
+                <h1 class="mb-4 display-5 font-weight-semi-bold">
+                <p class="mb-4">
+                    <span class="text-primary font-weight-bold border px-3 mr-1">1522-0882</span></p></h1>
+                <p class="mb-2">매장 고객센터</p>
+                <h1 class="mb-4 display-5 font-weight-semi-bold">
+                <p class="mb-4">
+                    <span class="text-primary font-weight-bold border px-3 mr-1">1577-4887</span></p></h1>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">고객센터 운영<br>[평일09:00-18:00]</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="index.html">주말 및 공휴일은<br> 1:1문의하기를 이용해주세요</a>
+                            <a class="text-dark mb-2" href="shop.html">업무가 시작되면 바로 처리해드립니다.</a>
+                            <button class="footbtn">1:1문의하기</button>
+                           <button class="footbtn">자주하는 질문</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4"></h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="index.html"></a>
+                            <a class="text-dark mb-2" href="shop.html"></a>
+   
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">올리브영 모바일웹</h5>
+                      <img src="${path}/resources/img/qr.png">
+            </div>
+        </div>
+        <div class="row border-top border-light mx-xl-5 py-4">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-dark">
+                    &copy; <a class="text-dark font-weight-semi-bold" href="#">씨제이올리브영 주식회사</a>. 
+대표이사 : 구창근 | 사업자등록번호 : 809-81-01574
+주소 : (04323) 서울특별시 용산구 한강대로 372, 24층
+(동자동, KDB타워)
+호스팅사업자 : CJ 올리브네트웍스
+통신판매업신고번호 : 2019-서울용산-1428
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="${path}/resources/img/payments.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="<c:url value="/resources/lib/easing/easing.min.js" />"></script>
+    <script src="<c:url value="/resources/lib/owlcarousel/owl.carousel.min.js" />"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="<c:url value="/resources/mail/jqBootstrapValidation.min.js" />"></script>
+    <script src="<c:url value="/resources/mail/contact.js" />"></script>
+
+    <!-- Template Javascript -->
+    <script src="<c:url value="/resources/js/main.js" />"></script>
 </body>
 </html>

@@ -1,4 +1,11 @@
-  SELECT * from board; 
+		select *
+		from board
+		where 1=1
+	SUBJECT 
+
+
+
+SELECT * from board; 
  DELETE  FROM board WHERE no  = 21; --삭제 
   DROP TABLE board;
    create table board(
@@ -42,4 +49,30 @@ SELECT * FROM board
 SET READCNT = readcnt+1
 	WHERE NO = #{no}
  */
-    
+
+	 create table boardfile(
+      	 	no number,
+      	 	fname varchar2(500),
+      	 	etc varchar2(500),
+      	 	regdte date, 
+      	 	uptdte date
+      	 );
+    --  sql 작성
+		insert into boardfile values(board_seq.nextval,
+		'a01.text','파일등록',sysdate,sysdate);
+		insert into boardfile values(1,
+		'a02.text','파일등록',sysdate,sysdate);
+		select fname
+		from boardfile
+		where no = 1;
+
+SELECT * FROM emp;
+select * from emp
+start with mgr = null
+connect by prior empno = mgr;
+
+
+SELECT LEVEL, mgr, e.*
+FROM emp e 
+START WITH mgr = 7839
+CONNECT BY PRIOR empno = mgr;

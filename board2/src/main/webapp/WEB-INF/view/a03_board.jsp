@@ -54,23 +54,50 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
 <script type="text/javascript">
+	var msg = "${msg}"
+	if(msg=="수정완료"){
+		if(confirm(msg+" 전체조회화면 이동하시겠습니까?")){
+			location.href = "${path}/list.do";
+		}
+	}
+	if(msg=="삭제완료"){
+		alert(msg+" 전체조회화면 이동하겠습니다!");
+		location.href = "${path}/list.do";
+	}
+	
+
 	$(document).ready(function(){
 		<%-- 
 		
 		--%>	
 		$("#goMain").click(function(){
 			location.href="${path}/list.do"			
-		});		
-		$("#uptBtn").click(function(){
-			
-		})
+		});	
 		$("#delBtn").click(function(){
-			
+			location.href="${path}/delBoard.do?no="+$("[name=no]").val();
 		})
 		$("#repBtn").click(function(){
+			$("[name=refno]").val($("[name=no]").val())
+			$("[name=subject]").val("RE:"+
+					$("[name=subject]").val())
+			$("[name=content]").val(
+					"\n\n\n\n==== 이전글 ===\n"+$("[name=content]").val())
+			$("form").attr("action","${path}/insertFrm.do")
 			
+			$("form").submit()
 		})
-		
+		$("#uptBtn").click(function(){
+			if(confirm("수정하시겠습니까?")){
+				$("form").attr("action","${path}/boardUpt.do");
+				$("form").submit();
+			}
+		})	
+	  	$("#downFile").click(function(){
+	  		if(confirm($(this).val()+"을 다운로드하시겠습니까?")){
+	  			location.href="${path}/download.do?fname="+$(this).val()
+	  		}
+	  		
+	  	})		
 	});
 </script>
 </head>
@@ -79,7 +106,7 @@
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
         <h4 class="mb-3">게시판 상세</h4>
-        <form method="post" class="validation-form" novalidate>
+        <form method="post" enctype="multipart/form-data" class="validation-form" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="no">글번호</label>
@@ -151,11 +178,33 @@
               내용를 입력해주세요.
             </div>
           </div> 
+          <div class="mb-3">
+            <label >첨부파일</label>
+            <input id="downFile"  value="${board.fname}" type="text" class="form-control" placeholder="첨부 입력" required>
+            <div class="invalid-feedback">
+              첨부파일 입력해주세요.
+	         </div>
+		  </div>  		  
+		       <div class="mb-3">
+         	<div class="custom-file">
+		        <input type="file" name="report" class="custom-file-input" id="file01">
+		        <label class="custom-file-label" for="file01">
+		        ${empty board.fname?'첨부 파일을 선택하세요':board.fname+' 수정시 선택'}</label>
+			</div>
+		  </div>	
+
+		  <script type="text/javascript">
+	        $(".custom-file-input").on("change",function(){
+	        	$(this).next(".custom-file-label").text($(this).val())
+	        })	  
+		  
+		  </script>      
+          
           <div class="mb-4"></div>
-          <button id="uptBtn" class="btn btn-warning  btn-lg btn-block" type="button">게시물 수정</button>
+          <button id="uptBtn" class="btn btn-warning btn-lg btn-block" type="button">게시물 수정</button>
           <button id="delBtn" class="btn btn-danger btn-lg btn-block" type="button">게시물 삭제</button>
           <button id="repBtn" class="btn btn-success btn-lg btn-block" type="button">답글</button>
-          <button id="goMain" class="btn btn-info  btn-lg btn-block" type="button">조회 화면</button>
+          <button id="goMain" class="btn btn-info   btn-lg btn-block" type="button">조회 화면</button>
         </form>
       </div>
     </div>

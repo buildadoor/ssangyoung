@@ -5,43 +5,74 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="/springweb/a00_com/bootstrap.min.css" >
 <style>
-   td{text-align:center;}
+	td{text-align:center;}
 </style>
 <script src="/springweb/a00_com/jquery.min.js"></script>
 <script src="/springweb/a00_com/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
 <script type="text/javascript">
-   $(document).ready(function(){
-      var vm = new Vue({
-         el:".container",
-         data:{msg:"시작!!(뷰와함께)", id:"",pass:""}
-      });   
-   });
+/*
+# 이벤트 처리
+1. 기본 구조
+	1) view 단
+	v-on:이벤트명 = "inline 모델데이터 처리 or 기능메서드"
+	==> @:이벤트명 = "inline 모델데이터 처리 or 기능메서드"
+		ex) v-on:click = "tot = grade*cnt"
+		    v-on:click = "totAll"
+		    <input v-model="grade"/>
+		    <input v-model="cnt"/>
+		    {{grade}} X {{cnt}} = {{tot}}
+		new Vue({
+			data:{grade:0,cnt:0, tot:0},
+			methods:{
+				function totAll(){
+					// this : 전역변수로 모델 데이터나 포함된 기능 메서드 접근이 가능..
+					this.tot = this.grade*this.cnt
+				}
+			}
+		})
+	2) Vue 인스턴스 객체 선언
+		기능 메서드 함수 정의		
+		methods:{
+			함수명1:function(){
+				처리할 내용
+			},
+			함수명2:fucntion(){
+				처리할 내용
+			}
+		}
+ */
+
+
+	$(document).ready(function(){
+		var vm = new Vue({
+			el:".container",
+			data:{msg:"이벤트 처리", price:0, cnt:0, tot:0,cnt2:0}
+		});	
+	});
+
 </script>
 </head>
 <body>
 
 <div class="container">
-   <div class="jumbotron text-center">
-     <h2 >로그인</h2>
-     <h3 v-if="id=='himan'&&pass=='7777'">로그인성공</h3>
-     <h3 v-else-if="id==''|| pass==''">아이디와 패스워드를 입력하세요</h3>
-     <h3 v-else>로그인 실패</h3>
-   </div>
-   <form id="frm01" class="form-inline"  method="post">
-     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-       <input v-model="id" class="form-control mr-sm-2" placeholder="아이디" />
-       <input v-model="pass" class="form-control mr-sm-2" placeholder="비밀번호" />
-       <button class="btn btn-info" type="submit">Search</button>
-    </nav>
-   </form>
+  	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	    <input v-model="price" class="form-control mr-sm-2" placeholder="가격을 입력하세요" />
+	    <input v-model="cnt" class="form-control mr-sm-2" placeholder="갯수를 입력하세요" />
+	    <button v-on:click="tot+=price*cnt, cnt2+=parseInt(cnt)"  class="btn btn-info" type="button">총계 확인</button>
+ 	</nav>
+<div class="jumbotron text-center">
+	  <h2 >{{msg}}</h2>
+	   	<h3>단가:{{price}} 갯수:{{cnt2}}개 총계:{{tot}}</h3>
+	</div>
+	
    <table class="table table-hover table-striped">
-      <col width="10%">
-      <col width="50%">
-      <col width="15%">
-      <col width="15%">
-      <col width="10%">
+   	<col width="10%">
+   	<col width="50%">
+   	<col width="15%">
+   	<col width="15%">
+   	<col width="10%">
     <thead>
     
       <tr class="table-success text-center">
@@ -51,13 +82,13 @@
         <th>작성일</th>
         <th>조회</th>
       </tr>
-    </thead>   
+    </thead>	
     <tbody>
-       <tr><td></td><td></td><td></td><td></td><td></td></tr>
-       <tr><td></td><td></td><td></td><td></td><td></td></tr>
-       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    	<tr><td></td><td></td><td></td><td></td><td></td></tr>
+    	<tr><td></td><td></td><td></td><td></td><td></td></tr>
+    	<tr><td></td><td></td><td></td><td></td><td></td></tr>
     </tbody>
-   </table>       
+	</table>       
 </div>
 </body>
 </html>

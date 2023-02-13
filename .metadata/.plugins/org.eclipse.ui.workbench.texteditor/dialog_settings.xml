@@ -6,26 +6,28 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="passFrm"/>
+		<item key="selection" value="회원 조회"/>
 		<list key="findhistory">
-			<item value="passFrm"/>
-			<item value="insertFr"/>
-			<item value="insertFrm"/>
+			<item value="회원 조회"/>
+			<item value="회원조회"/>
+			<item value="로그인"/>
+			<item value="회원가입"/>
+			<item value="png"/>
+			<item value="goMain"/>
+			<item value="goLogin"/>
+			<item value="Spring"/>
+			<item value="cat-1"/>
+			<item value="Men"/>
+			<item value="M"/>
+			<item value="men"/>
+			<item value="오특"/>
+			<item value="img"/>
 			<item value="regBtn"/>
-			<item value="02_"/>
-			<item value="02"/>
-			<item value="join"/>
-			<item value="goDetail"/>
-			<item value="goDetai"/>
-			<item value="b"/>
-			<item value="joinBtn"/>
-			<item value="reg"/>
-			<item value="스프링 실무"/>
-			<item value="웹 소켓"/>
-			<item value="웹"/>
 		</list>
 		<list key="replacehistory">
 			<item value="/"/>
+			<item value="src=&quot;${path}/resources/img"/>
+			<item value="src=&quot;project_oliveyoung/img/"/>
 			<item value="A6CD48"/>
 			<item value="td"/>
 			<item value="attendance"/>

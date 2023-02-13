@@ -23,7 +23,7 @@ public class A01_Controller {
 	   d.addAttribute("list",service.boardList(sch));
 	   return "a01_boardList";
    }
-   @GetMapping("/insertFrm.do")
+   @RequestMapping("/insertFrm.do")
 	public String inserFrm(){
 		return "a02_insertBoard";
 	}
@@ -40,4 +40,26 @@ public class A01_Controller {
 		d.addAttribute("board",service.getBoard(no));
 		return "a03_board";
 	}	
+	
+	   // download.do?fname=@@@@
+	   @GetMapping("/download.do")
+	   public String download(@RequestParam("fname") 
+	      String fname, Model d) {
+	      d.addAttribute("downloadFile", fname);
+	      return "downloadView";
+	   }
+@PostMapping("/boardUpt.do")
+public String boardUpt(Board upt, Model d) {
+	service.updateBoard(upt);
+	d.addAttribute("board",service.getBoard(upt.getNo()));
+	d.addAttribute("msg","수정완료");
+	return "a03_board";
 }
+// /delBoard.do
+@GetMapping("/delBoard.do")
+public String delBoard(@RequestParam("no") int no, Model d) {
+	service.deleteBoard(no);
+	d.addAttribute("msg", "삭제완료");
+	return "a03_board";
+}
+	}

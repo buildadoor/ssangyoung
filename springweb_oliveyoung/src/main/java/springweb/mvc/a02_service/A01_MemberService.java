@@ -19,7 +19,19 @@ public class A01_MemberService {
 		if(sch.getPoint()==0) sch.setPoint(0);
 		return dao.OvMemberList(sch);
 }
+	public OvMember getOvMember(String id) {
+		return dao.getOvMember(id);
+	}
 	public void insertOvMember(OvMember ins) {
 		dao.insertOvMember(ins);
+	}
+	public void deleteOvMember(String id) {
+		dao.deleteOvMember(id);
+	}
+	public OvMember idChk(String id) {
+		return dao.idChk(id);
+	}
+	public OvMember login(OvMember ov) {
+		return dao.login(ov);
 	}
 }

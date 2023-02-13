@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/springweb/a00_com/bootstrap.min.css" >
+<style>
+	td{text-align:center;}
+</style>
+<script src="/springweb/a00_com/jquery.min.js"></script>
+<script src="/springweb/a00_com/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
+<script type="text/javascript">
+	// deptAjax.do 를 활용하여 vue에서 ajax로 검색화면을 구현하세요.
+/*
+3. 개발 순서
+	1) backend단 처리 (스프링을 통한 json 데이터 로딩 처리)
+		/springweb/deptAjax.do?dname=&loc=
+	2) vue 모델데이터선언 :요청값, 결과값
+		dname,loc, dlist:[]
+	3) vue의 기능 메서드 선언 (methods)
+	4) 화면 ui 구현 : 요청값을 처리할 form- v-model선언, 리스트 데이터 구현 - vue의 결과 리스트
+		@이벤트="이벤트핸들러함수"
+	5) fetch api를 통한 데이터 로딩 처리.
+		함수안에 this와 함수밖에서 모델 데이터를 처리하기 위한 this를 구분하기 위한 변수 선언
+		var vm = this  : 함수 밖에서 모델 데이터를 접근 하기 위하여 사용.. 
+ 
+ */	
+	$(document).ready(function(){
+		var vm = new Vue({
+			el:".container",
+			data:{msg:"부서정보",dname:"",loc:"",dlist:[]},
+			methods:{
+				schKeyUp:function(){
+					if(event.keyCode==13) this.deptList()
+				},
+				deptList:function(){
+					this.dlist = []
+					var vm = this
+					var url = "/springweb/deptAjax.do?dname="+this.dname+"&loc="+this.loc;
+					fetch(url).then(function(response){
+						return response.json()
+					}).then(function(json){
+						console.log("서버에서온 json")
+						vm.dlist = json.dlist
+						console.log(json)
+					}).catch(function(err){
+						console.log(err)
+					})
+				}
+			}
+		});	
+	});
+</script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron text-center">
+	  <h2 >{{msg}}</h2>
+	</div>
+	<form id="frm01" class="form-inline"  method="post">
+  	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  							  <!-- vue에서 지원하는 keycode값이 13일 때, 함수 호출 -->
+	    <input v-model="dname" @keyup.13="deptList" class="form-control mr-sm-2" placeholder="부서명" />
+	    <input v-model="loc" @keyup="schKeyUp" class="form-control mr-sm-2" placeholder="부서위치" />
+	    <button @click="deptList" class="btn btn-info" type="button">Search</button>
+ 	</nav>
+	</form>
+   <table class="table table-hover table-striped">
+
+   	<col width="33%">
+   	<col width="33%">
+   	<col width="33%">
+    <thead>
+      <tr class="table-success text-center">
+        <th>번호</th>
+        <th>부서명</th>
+        <th>부서위치</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<tr v-for="dept in dlist">
+    		<td>{{dept.deptno}}</td><td>{{dept.dname}}</td><td>{{dept.loc}}</td></tr>
+    </tbody>  	
+	</table>       
+</div>
+</body>
+</html>

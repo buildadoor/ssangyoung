@@ -1,4 +1,8 @@
 SELECT * FROM ovMember;
+delete FROM ovmember where id = 'ddochi';
+INSERT into OVMEMBER values('ddochi','dd','1','이또치','대전 대흥동',5000);
+INSERT into OVMEMBER values('builadoor','lee','1','이윤아','천안 불당동',15000);
+INSERT into OVMEMBER values('jane','eee','1','이제인','아산 모종동',2000);
 SELECT * FROM ovCategory;
 SELECT * FROM ovProduct;
 SELECT * FROM ovQuestion;
@@ -14,7 +18,7 @@ CREATE TABLE ovMember(
    nickname varchar2(50),
    address varchar2(150),
    point NUMBER);
-INSERT into OVMEMBER values('ov','1234','관리자','관리자','서울 서교동',9999);
+
   UPDATE OVMEMBER
    SET auth = '0'
    WHERE id = 'ov';
@@ -38,6 +42,11 @@ CREATE TABLE ovProduct(
    prdDescript varchar2(4000),
    prdDelivery varchar2(4000),
    point NUMBER);
+  
+ SELECT * FROM ovProduct; 
+INSERT INTO OVPRODUCT VALUES('A001','1','리얼베리어 로션','기초',29000,'product1.jpg','피부에 촉촉히 스며드는 고보습 로션');
+INSERT INTO OVPRODUCT VALUES('A002','2','맥 소바','색조',25000,'product2.jpg','자연스러운 아이섀도우 발색은 맥 소바');
+INSERT INTO OVMEMBER VALUES('dooli','hi','1','강둘리','대전 대흥동',3333);
 --문의
 CREATE TABLE ovQuestion(
    cstmrId varchar2(50) CONSTRAINTS ovMember_id_fk2 REFERENCES ovMember(id),

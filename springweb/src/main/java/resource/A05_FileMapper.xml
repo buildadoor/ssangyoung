@@ -7,7 +7,8 @@
 		insert into filerep values(file_seq.nextval,#{title}, #{path},
 			'file'||file_seq.currval,#{fname},#{etc},sysdate,sysdate)			
 	</insert>	
-	<select id="getFileList" parameterType="string" resultType = "filerep">
+	<select id="getFileList" parameterType="string" 
+		resultType = "filerep">
 		select * from filerep
 		where title like '%'||#{fname}||'%'			
 	</select>

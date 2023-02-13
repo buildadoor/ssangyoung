@@ -31,19 +31,20 @@ ctgNo varchar2(100) PRIMARY KEY ,
 ctgName varchar2(300)
 );
 INSERT into OVCATEGORY values('10','스킨케어');
+DROP TABLE OVPRODUCT;
 --상품
-CREATE TABLE ovProduct(
+ CREATE TABLE ovProduct(
    prodNo varchar2(10) PRIMARY KEY,
-   ctgNo varchar2(100) CONSTRAINTS ovCategory_ctgNo_fk REFERENCES ovCategory(ctgNo),
-   seller varchar2(100),
-   id varchar2(50) CONSTRAINTS ovMember_id_fk REFERENCES ovMember(id),
+   ctgNo varchar2(100),
    prdName varchar2(300),
    prdKind varchar2(2000),
    prdPrice number,
-   prdImg varchar2(500),
-   prdDescript varchar2(4000),
-   prdDelivery varchar2(4000),
-   point NUMBER);
+   prdImg varchar2(1000),
+   prdDescript varchar2(4000)
+  ); 
+ INSERT INTO ovProduct values('A003',2,'웨이크메이크 워터 블러링 픽싱 틴트','색조',15000,'웨이크메이크 워터 블러링 픽싱 틴트.jpg','웨이크 메이크의 히든템 보송하지만 진한 발색');
+
+  
 --문의
 CREATE TABLE ovQuestion(
    cstmrId varchar2(50) CONSTRAINTS ovMember_id_fk2 REFERENCES ovMember(id),
@@ -55,6 +56,8 @@ CREATE TABLE ovQuestion(
    anDate DATE,
    anContent varchar2(2000)   
    );
+  
+  DROP TABLE ovShoppingCart;
 --장바구니
 CREATE TABLE ovShoppingCart(
 id varchar2(50) CONSTRAINTS ovMember_id_fk4 REFERENCES ovMember(id),

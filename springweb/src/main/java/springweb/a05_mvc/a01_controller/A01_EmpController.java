@@ -17,7 +17,7 @@ import springweb.z01_vo.Emp;
 public class A01_EmpController {
 	@Autowired
 	private A01_EmpService service;
-	//deptCom, mgrCom,jobCom
+	// deptCom, mgrCom jobCom
 	@ModelAttribute("deptCom")
 	public List<Dept> getDeptComb(){
 		return service.getDeptComb();
@@ -29,12 +29,23 @@ public class A01_EmpController {
 	@ModelAttribute("jobCom")
 	public List<String> getJobComb(){
 		return service.getJobComb();
-	}
-	// http://localhost:7080/springweb/empListMy.do
+	}		
 	@RequestMapping("empListMy.do")
-	public String empList(@ModelAttribute("sch")Emp sch, Model d) {
-		d.addAttribute("empList",service.getEmpList(sch));
-			return "\\WEB-INF\\views\\a05_mvc\\a01_empList.jsp";
+	public String empList(@ModelAttribute("sch")Emp sch,Model d) {
+		System.out.println("부서번호:"+sch.getDeptno());
+		System.out.println("관리자번호:"+sch.getMgr());
+		System.out.println("직책명:"+sch.getJob());
+		d.addAttribute("empList", service.getEmpList(sch));
+		return "\\WEB-INF\\views\\a05_mvc\\a01_empList.jsp";
 	}
+	// http://localhost:7080/springweb/empListAjax.do?ename=A&job=ER
+	@RequestMapping("empListAjax.do")
+	public String empListAjax(@ModelAttribute("sch")Emp sch,Model d) {
+		d.addAttribute("empList", service.getBsEmpList(sch));
+		return "pageJsonReport";
+	}
+		
+	
+	
 	
 }

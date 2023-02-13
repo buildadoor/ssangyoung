@@ -14,8 +14,29 @@
 		where id like '%'||#{id}||'%'
 		and nickname like '%'||#{nickname}||'%'	
 	</select>
+	<select id="getOvMember" parameterType="string" 
+		resultType="OvMember">
+		select * from ovMember
+		where id = #{id}	
+	</select>
+	<select id="login" resultType="OvMember">
+      SELECT *
+      FROM ovMember 
+      where id = #{id} AND pass = #{pass}
+   </select>
+	
 	<insert id="insertOvMember" parameterType="OvMember">
-		INSERT INTO ovmember values(#{id},#{pass},1,#{nickname},#{address},3000)			
+		INSERT INTO ovmember values(#{id},#{pass},1,
+		#{nickname},#{address},3000)			
 	</insert>	
+	<select id="idChk" resultType="OvMember" parameterType="String">
+      SELECT * 
+      FROM ovMember
+      WHERE id=#{id}
+   </select>
+	<delete id="deleteMember" parameterType="string">
+		delete ovmember 
+		where id = #{id}
+	</delete>	
 </mapper>		
 		

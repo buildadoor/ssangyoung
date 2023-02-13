@@ -2,15 +2,46 @@ package board.vo;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Board {
-	private int no;
-	private int refno;
-	private String subject;
-	private String content;
-	private String writer;
-	private int readcnt;
-	private Date regdte;
-	private Date uptdte;
+	private int cnt; //rownum
+	private int level;
+	private int no;// 글번호 
+	private int refno;// 답글번호
+	private String subject;// 제목
+	private String content;// 내용
+	private String writer;// 작성자
+	private int readcnt;// 조회수
+	private Date regdte;// 등록일
+	private Date uptdte;// 수정일
+	private String fname;
+	private MultipartFile report;
+	
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	public MultipartFile getReport() {
+		return report;
+	}
+	public void setReport(MultipartFile report) {
+		this.report = report;
+	}
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
 	public int getNo() {
 		return no;
 	}

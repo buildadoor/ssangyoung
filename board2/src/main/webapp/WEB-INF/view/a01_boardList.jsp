@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css" >
 <link rel="stylesheet" href="${path}/a00_com/jquery-ui.css" >
 <style>
-	td{text-align:center;}
+   td{text-align:center;}
 </style>
 <script src="${path}/a00_com/jquery.min.js"></script>
 <script src="${path}/a00_com/popper.min.js"></script>
@@ -27,17 +27,21 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
-		<%-- 
-		
-		--%>	
-		$("#regBtn").click(function(){
-			location.href="${path}/insertFrm.do"
-		})
-	});
-	function goDetail(no){
-		location.href="${path}/board.do?no="+no
-	}	
+   $(document).ready(function(){
+      <%-- 
+      
+      --%>   
+      $("#regBtn").click(function(){
+         location.href="${path}/insertFrm.do"
+      })
+   });
+   function goDetail(no){
+      location.href="${path}/board.do?no="+no
+   }   
+	function goPage(cnt){
+   		$("[name=curPage]").val(cnt);
+   		$("form").submit()
+   	}
 </script>
 </head>
 
@@ -46,23 +50,31 @@
   <h2>게시판</h2>
   <!-- 
   <h2 data-toggle="modal" data-target="#exampleModalCenter">타이틀</h2>
- 	-->
+    -->
 </div>
 <div class="container">
-	<form id="frm01" class="form"  method="post">
-  	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	    <input name="subject" value="${sch.subject}" class="form-control mr-sm-2" placeholder="제목" />
-	    <input name="writer" value="${sch.writer}" class="form-control mr-sm-2" placeholder="내용" />
-	    <button class="btn btn-info" type="submit">Search</button>
-	    <button class="btn btn-success" id="regBtn" type="button">등록</button>
- 	</nav>
-	</form>
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <form id="frm01" class="d-flex"  method="post">          
+             <input name="subject" value="${sch.subject}" class="form-control mr-sm-2" placeholder="제목" />
+             <input name="writer" value="${sch.writer}" class="form-control mr-sm-2" placeholder="내용" />
+             <button class="btn btn-success" id="regBtn" type="button">등록</button>
+             &nbsp;
+             <button class="btn btn-info" type="submit">Search</button>
+         
+            <input type="hidden" name="curPage" value="${sch.curPage}"/>
+            
+         </form>   
+
+       </div>
+    </nav>
+    
    <table class="table table-hover table-striped">
-   	<col width="10%">
-   	<col width="45%">
-   	<col width="15%">
-   	<col width="15%">
-   	<col width="15%">
+      <col width="10%">
+      <col width="45%">
+      <col width="15%">
+      <col width="15%">
+      <col width="15%">
     <thead>
     
       <tr class="table-success text-center">
@@ -72,46 +84,34 @@
         <th>등록일</th>
         <th>조회수</th>
       </tr>
-    </thead>	
+    </thead>   
     <tbody>
-    	<c:forEach var="board" items="${list}">
-    	<tr  ondblclick="goDetail(${board.no})"><td>${board.no}</td>
-    		<td>${board.subject}</td>
-    		<td>${board.writer}</td>
-    		<td><fmt:formatDate value="${board.regdte}"/></td>
-    		<td>${board.readcnt}</td></tr>
-    	</c:forEach>
+       <c:forEach var="board" items="${list}">
+       <tr  ondblclick="goDetail(${board.no})">
+          <td>${board.cnt}</td>
+          <td style="text-align:left;">
+             <c:if test="${board.level>1}">      
+                  <c:forEach begin="2" end="${board.level}">
+                   &nbsp;&nbsp;&nbsp;
+                </c:forEach>  
+                <img src="${path}/a01_img/re.jpg" 
+                   width="5%" height="5%">
+             </c:if>
+             ${board.subject}</td>
+          <td>${board.writer}</td>
+          <td><fmt:formatDate value="${board.regdte}"/></td>
+          <td>${board.readcnt}</td></tr>
+       </c:forEach>
     </tbody>
-	</table>    
-    
-</div>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">타이틀</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-		<form id="frm02" class="form"  method="post">
-	     <div class="row">
-	      <div class="col">
-	        <input type="text" class="form-control" placeholder="사원명 입력" name="ename">
-	      </div>
-	      <div class="col">
-	        <input type="text" class="form-control" placeholder="직책명 입력" name="job">
-	      </div>
-	     </div>
-	    </form> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+   </table>    
+   <ul class="pagination  justify-content-end">
+     <li class="page-item"><a class="page-link"  href="javascript:goPage(${sch.startBlock-1});">Previous</a></li>
+   <c:forEach var="cnt" begin="${sch.startBlock}" end="${sch.endBlock}">
+     <li class="page-item ${sch.curPage==cnt?'active':''}">
+     <a class="page-link" href="javascript:goPage(${cnt});">${cnt}</a></li>
+     </c:forEach>
+       <li class="page-item"><a class="page-link"  href="javascript:goPage(${sch.endBlock+1});">Next</a></li>
+   </ul>    
 </div>
 </body>
 </html>

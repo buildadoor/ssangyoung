@@ -30,50 +30,44 @@
        http://www.springframework.org/schema/security/spring-security.xsd   
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd   
-      " >
-      <context:component-scan base-package="board">
-         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
-         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
-      </context:component-scan>
-       <!-- 
-       # 공통설정파일 처리
-         jdbc.driver=oracle.jdbc.driver.OracleDriver
-         jdbc.url=jdbc:oracle:thin:@localhost:1521:xe
-         jdbc.user=scott
-         jdbc.pass=tiger
-        -->
-        <context:property-placeholder location="classpath:resource/a00_config"/>
-       <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-             <property name="driverClassName" value="${jdbc.driver}"/>
-             <property name="url" value="${jdbc.url}"/>
-             <property name="username" value="${jdbc.user}"/>
-             <property name="password" value="${jdbc.pass}"/>
-       </bean>
-        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-           <property name="dataSource" ref="dataSource"/>
-           <property name="configLocation" value="classpath:resource/a02_mybatis.xml"/>
-        </bean>
-        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-           <property name="basePackage" value="board"></property>
-        </bean>
-   <bean id="btnViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
-      <property name="order" value="0"/>
-   </bean> 
-   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-      <property name="order" value="1"/>
-      <property name="prefix" value="/WEB-INF/view/"/>
-      <property name="suffix" value=".jsp"/>
-      <!-- 
-         return "/WEB-INF/view/a01_boardList.jsp"
-      ==>
-      return "a01_boardList"      
-       -->
-   </bean>
-   <bean id="pageJsonReport" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
-      <property name="contentType" 
-         value="text/html;charset=utf-8"/>   
-   </bean>
-   <!-- 파일업로드 -->
- <bean id="multipartResolver"
-   class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/></beans>
+      ">
+	<context:component-scan base-package="board">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+	</context:component-scan>	
+	<context:property-placeholder location="classpath:resource/a00_config"/>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}"/>	
+		<property name="url" value="${jdbc.url}"/>	
+		<property name="username" value="${jdbc.user}"/>	
+		<property name="password" value="${jdbc.pass}"/>	
+	</bean>	 
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:resource/a02_mybatis.xml"/>
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="board"/>
+	</bean>	 
+
+	<bean id="btnViewResolver"
+		class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="0"/>
+	</bean> 
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="1"/>
+		<property name="prefix" value="/WEB-INF/view/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	<bean id="pageJsonReport" class=
+"org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+		<property name="contentType" 
+			value="text/html;charset=utf-8"/>	
+	</bean>
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	<bean id="downloadView" class="board.A04_DownloadView"/>
+	 
+</beans>      

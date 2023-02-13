@@ -14,30 +14,41 @@ import springweb.z01_vo.FileRep;
 
 @Service
 public class A05_FileService {
-
    @Value("${file.upload}")
    private String upload;
-   
+
    public String uploadFile(MultipartFile report) {
-      String fname = report.getOriginalFilename();
-      if(fname!=null && !fname.equals("")) {
-         File fObj = new File(upload+fname);
-         
+
+	  String fname = report.getOriginalFilename();
+      if (fname != null && !fname.equals("")) {
+         File fObj = new File(upload + fname);
+
          try {
-            report.transferTo(fObj); // 필수예외처리(IO발생)
+            report.transferTo(fObj); // 필수예외 처리(IO발생)
          } catch (IllegalStateException e) {
-            System.out.println("파일업로드 예외1:"+e.getMessage());
+            System.out.println("파일업로드 예외1:" + e.getMessage());
          } catch (IOException e) {
-            System.out.println("파일업로드 예외2:"+e.getMessage());
+            System.out.println("파일업로드 예외1:" + e.getMessage());
          }
       }
       return fname;
    }
-   @Autowired(required=false)
+   
+   @Autowired(required = false)
    A05_FileDao dao;
-   public void insertFile(FileRep f) {
+
+   public String insertFile(FileRep f) {
+      // #{path},,#{fname}
+      // 물리적 파일 업로드 처리
+      String fname = uploadFile(f.getReport());
+      // DB입력
+      f.setFname(fname);
+      f.setPath(upload);
+      dao.insertFile(f);
+      return fname;
    }
-   public List<FileRep> getFileList(String title){
-	   return dao.getFileList(title);
+
+   public List<FileRep> getFileList(String title) {
+      return dao.getFileList(title);
    }
 }

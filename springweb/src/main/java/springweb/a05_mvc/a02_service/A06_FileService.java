@@ -9,23 +9,22 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class A06_FileService {
-   @Value("${file.upload2}")
-   private String upload;
-   
-   public String uploadFile(MultipartFile report) {
-      String fname = report.getOriginalFilename();
-      if(fname!=null&&!fname.equals("")) {
-         File fObj = new File(upload+fname);
-         
-         try {
-            report.transferTo(fObj);  //필수예외 처리(IO발생)
-         
-         } catch (IllegalStateException e) {
-            System.out.println("파일업로드 예외1:"+e.getMessage());
-         } catch (IOException e) {
-            System.out.println("파일업로드 예외2:"+e.getMessage());
-         }
-      }
-      return fname;
-   }
+	@Value("${file.upload2}")
+	private String upload;
+	public String uploadFile(MultipartFile report) {
+		String fname = report.getOriginalFilename();
+		if(fname!=null && !fname.equals("")) {
+			File fObj = new File(upload+fname);
+			System.out.println(fObj.getPath());
+			try {
+				report.transferTo(fObj); // 필수예외 처리 (IO발생)
+			} catch (IllegalStateException e) {
+				System.out.println("파일업로드 예외1:"+e.getMessage());
+			} catch (IOException e) {
+				System.out.println("파일업로드 예외2:"+e.getMessage());
+			} 
+			
+		}
+		return fname;
+	}
 }

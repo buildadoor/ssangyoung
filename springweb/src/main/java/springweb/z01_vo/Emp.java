@@ -1,6 +1,7 @@
 package springweb.z01_vo;
-// springweb.z01_vo.Emp
+// jspexp.vo.Emp
 import java.util.Date;
+
 
 public class Emp {
 	private int empno;
@@ -22,24 +23,6 @@ public class Emp {
 	}
 	
 	
-	public Emp(int empno, String ename, String mename, String job, int mgr, Date hiredate, String hiredateS, double sal,
-			double frSal, double toSal, double comm, int deptno, String dname) {
-		this.empno = empno;
-		this.ename = ename;
-		this.mename = mename;
-		this.job = job;
-		this.mgr = mgr;
-		this.hiredate = hiredate;
-		this.hiredateS = hiredateS;
-		this.sal = sal;
-		this.frSal = frSal;
-		this.toSal = toSal;
-		this.comm = comm;
-		this.deptno = deptno;
-		this.dname = dname;
-	}
-
-
 	public Emp(int empno, String ename, double sal, int deptno) {
 		this.empno = empno;
 		this.ename = ename;
@@ -55,15 +38,6 @@ public class Emp {
 		this.hiredateS = hiredateS;
 		this.sal = sal;
 		this.comm = comm;
-		this.deptno = deptno;
-	}
-
-
-	public Emp(int empno, String ename, String job, double sal, int deptno) {
-		this.empno = empno;
-		this.ename = ename;
-		this.job = job;
-		this.sal = sal;
 		this.deptno = deptno;
 	}
 
@@ -127,10 +101,6 @@ public class Emp {
 		return hiredate;
 	}
 
-
-	public long getHiredateTime() {
-		return getHiredate().getTime();
-	}
 
 	public void setHiredate(Date hiredate) {
 		this.hiredate = hiredate;

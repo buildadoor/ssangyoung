@@ -93,6 +93,7 @@
 			value="text/html;charset=utf-8"/>	
 	</bean>
 	<!-- 파일업로드 -->
-	 <bean id="multipartResolver"
-   class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	<!-- 파일다운로드 -->
+	 <bean id="downloadViewer" class="springweb.a06_util.Z01_DownloadView"/>
 </beans>

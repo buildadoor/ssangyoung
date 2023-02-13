@@ -3,22 +3,23 @@ package springweb.z01_vo;
 import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
-
+// springweb.z01_vo.FileRep
 public class FileRep {
-	private int number;
+	private int no;
 	private String title;
 	private String path;
 	private String tempfile;
 	private String fname;
 	private String etc;
-	private Date regte;
-	private Date uptdate;
+	private Date regdte;
+	private Date uptdte;
 	private MultipartFile report;
-	public int getNumber() {
-		return number;
+	
+	public int getNo() {
+		return no;
 	}
-	public void setNumber(int number) {
-		this.number = number;
+	public void setNo(int no) {
+		this.no = no;
 	}
 	public String getTitle() {
 		return title;
@@ -50,17 +51,17 @@ public class FileRep {
 	public void setEtc(String etc) {
 		this.etc = etc;
 	}
-	public Date getRegte() {
-		return regte;
+	public Date getRegdte() {
+		return regdte;
 	}
-	public void setRegte(Date regte) {
-		this.regte = regte;
+	public void setRegdte(Date regdte) {
+		this.regdte = regdte;
 	}
-	public Date getUptdate() {
-		return uptdate;
+	public Date getUptdte() {
+		return uptdte;
 	}
-	public void setUptdate(Date uptdate) {
-		this.uptdate = uptdate;
+	public void setUptdte(Date uptdte) {
+		this.uptdte = uptdte;
 	}
 	public MultipartFile getReport() {
 		return report;
@@ -68,4 +69,6 @@ public class FileRep {
 	public void setReport(MultipartFile report) {
 		this.report = report;
 	}
+	
+	
 }

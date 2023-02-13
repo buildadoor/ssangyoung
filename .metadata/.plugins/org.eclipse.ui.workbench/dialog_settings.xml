@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jst.jsp.ui.internal.wizard.NewJSPWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.wst.html.ui.internal.wizard.NewHTMLWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.wst.web.ui"/>
 		</list>
@@ -48,6 +48,11 @@
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\4조_이윤아.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230209_1.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230209.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230208.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230207.zip"/>
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\board2.zip"/>
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\board.zip"/>
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230201_1.zip"/>
@@ -63,11 +68,6 @@
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230105.zip"/>
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230103.zip"/>
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\1조_이윤아_소스코드.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\1조 이윤아.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230101.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\로그인.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\이윤아.zip"/>
-			<item value="E:\쌍용\이클립스 백업\20221221.zip"/>
 		</list>
 	</section>
 	<section name="InstallationDialogSettings">
