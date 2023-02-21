@@ -1,0 +1,351 @@
+# json 형식의 api를 이용한 플러그인 프로그램 처리
+1. json 형식의 api
+	- 외부에서 제공하는 json 형식 api 데이터 
+		공공데이터, 빅데이터를 통해서 사용할 수 있는 웹상의 공공데이터
+			url 주소 호출, 매개변수를 통해서 json형식의 데이터를 활용할 수 있다.
+	- 개발 서버에서 백앤드단으로 DB처리를 통해 로딩되는 json형식 데이터 
+		플러그인 프로그램이나 json데이터를 ajax로 통해서 화면에서 리스트할 데이터를
+		구현하는 것을 말한다.
+		RestController, Gson, jsonView를 통해서 호출
+2. jquery 플러그인 프로그램
+	- 기능적인 내용을 frontend단으로 처리된 내용을 주로 json 데이터를 샘플예제로
+		가지고 있어서, ajax로 서버단과 연결하면 저장할 수 있는 개발되어진 프로그램을 
+		말한다.
+	- fullcandar, gantt chart, 데시보드용 chart 프로그램(chart.js) 등 여러가지
+		웹화면을 효율적으로 구현할 수 있는 front단 틀을 제공하고 있다.
+3. 처리 프로세스
+	- 로딩 화면에서 데이터를 입력하여, 해당 플러그인에서 지원하는 기능 메서드를 통해서
+		화면을 변경 수정할 수 있고,
+	- ajax를 통해서 서버단과 연동을 하면, 지속적으로 저장되는 데이터를 활용할 수 있다.
+	
+4. 핵심 기술
+	- 스프링과 DB를 통해서 backend단 json 데이터 등록/수정/삭제/리스트 처리
+	- 각 플러그인 프로그램에서 지원하는 데이터 처리 메서드 확인
+	- 다양한 동적 처리내용 ui를 통해서 출력 확인 - api의 document 내용을 분석하여 활용한다.
+	
+
+5. 개발 순서
+	1) 필요로하는 플러그인 프로그램 검색 및 다운로드
+	2) document 문서나 화면기능 처리 및 소스를 통해서 주요 기능 파악
+	3) 처리되는 json내용 확인, 특정이벤트에 의해 처리할 서버단 연동 부분확인
+	4) json 데이터 확인했으면, 이 json데이터가 고정형 rdbms에서 table 구조상 처리할 
+		내용을 확인하고, 생성한다.
+	5) api에서 데이터 CRUD(입력/조회/수정/삭제) 처리할 기능메서드에 대한 내용을 확인하다
+	6) 위 내용에 필요한 요청값, 리스트 데이터를 확인한다.
+	7) 스프링에서 backend단 처리를 한다.
+		DB :sql, vo, 공통 mybatis, XXXMapper, dao, service 
+		요청 controller단: 요청값과 url주소에 의해 호출되는 기능메서드 추가 및
+			service단과 호출처리
+	8) 플러그인 프로그램의 crud기능 메서드 확인 및 요청값 및 출력 json데이터 처리할
+		내용으로 ajax 처리한다.
+	9) 부가적으로 필요로 하는 화면 ui 확인(다이얼로그 박스, form형식, 챠트...)
+	10) 서버단과 연동할 계획을 정리하고, 특정 시점에 ajax가 처리되게 코드 한다.
+	
+# fullcandar 플러그인 프로그램 처리
+1. 필요로하는 플러그인 프로그램 검색 및 다운로드	
+2. 스프링 개발환경으로 설정하기
+	1) lib 복사해 놓기..
+		 a03_fullcalendar/dist 폴드를 a00_com/으로 복사한다.
+	2) examples/selectable.html 파일을 복사해서
+		WEB-INF/views/a05_mvc/하위에 넣고,  a20_fullcalendar.html로
+		이름을 변경해서 저장한다.
+		<script src='/springweb/a00_com/dist/index.global.js'></script>
+	3) springweb.a05_mvc.a01_controller 패키지 하위
+		A20_CalenController.java를 만들고, 해당 html을  a20_fullcalendar.html
+		Get방식으로 /calendar.do 메서드를 통해서, 해당 화면이 로딩된게 한다.
+3. 처리되는 json내용 확인, 특정이벤트에 의해 처리할 서버단 연동 부분확인		
+	 events: [] 가 데이터 로딩되는 속성
+4. json 데이터 확인했으면, 이 json데이터가 고정형 rdbms에서 table 구조상 처리할 
+		내용을 확인하고, 생성한다.
+	속성 : 	title : 일정 내용
+		    start : 시작일
+		    end, : 마지막+1
+		    groupId : 반복된 일정을 group로 설정
+		    url : 해당 링크된 url로 클릭시 이동 처리
+		start    
+			2023-02-02 : 날짜전체
+			2023-02-02T15:00:00 : 시간이 있는 일정
+		end 
+		    2023-02-03 : 마지막날짜+1 전까지 즉, 02-02까지
+		    2023-02-03T16:00:00 : 02-03 16:00전까지
+		id    : 각 일정별 식별자
+		backgroundColor 배경색상
+		textColor	글자색상
+		allDay:true  종일일정여부
+		extendedProps : 추가적인 속성 지정시,(작성자-writer, 내용-content)
+		
+		id
+		title
+		start
+		end
+		writer
+		content
+		backgroundColor
+		textColor
+		allDay
+		url
+		일정식별자
+		타이틀
+		시작일
+		종료일
+		작성자
+		내용
+		일정배경색상
+		일정글자색상
+		종일여부
+		외부링크주소
+	5) api에서 데이터 CRUD(입력/조회/수정/삭제) 처리할 기능메서드에 대한 내용을 확인하다
+		DB 설계
+		create table calendar01(
+			id number primary key,
+			title varchar2(100),
+			start01 varchar2(50),
+			end01 varchar2(50),
+			writer  varchar2(50),
+			content   varchar2(500),
+			backgroundColor varchar2(20), 
+			textColor  varchar2(20),
+			allDay number(1), 
+			url	varchar2(500)	
+		);				
+		create sequence cal01_seq
+			start with 1
+			minvalue 1;
+		--#FFFF00   #0404B4	
+		INSERT INTO calendar01 values(cal01_seq.nextval, '첫번째 일정 등록',
+			'2023-02-16T09:00:00','2023-02-16T23:00:00', '홍길동','내용',
+			'#0404B4','#FFFF00',1,'https://fullcalendar.io/docs/event-display');
+		SELECT * FROM calendar01;
+		DB 조회 처리
+		sql : SELECT * FROM calendar01
+		vo : 
+		class Calendar{
+			private int id;
+			private String title;
+			private String start;
+			private String end;
+			private String writer;
+			private String content;
+			private String backgroundColor;
+			private String textColor;
+			private boolean allDay;
+			private String url;
+		}
+		공통 Mybatis
+			calendar
+			A20_CalendarMapper.xml
+		dao
+			A20_CalendarDao.java
+			public List<Calendar> calList();	
+		mapper
+			15:05~	
+			
+		service	
+5. controller 단 호출 처리
+	1) /calendarAjax.do
+		view : pageJsonReport를 통해서 json데이터 출력하세요 하세요.
+				
+6. 화면단에서 데이터 등록 및 등록된 데이터 확인 처리..
+	1) json 데이터의 삭제
+	2) event 처리에서 json데이터 처리하기
+		events:[] 
+		==>
+		매개변수는 각각 ajax로 서버와 통신관계에 있어서 데이터를 처리해주는 함수이다.
+		successCallback(json데이터):실제 서버에서 넘겨온 json 데이터를 이런 방식으로
+		매개변수로 넘겨주면 데이터를 화면에 출력되게 한다. 
+		events:function(info, successCallback, failureCallback){
+			$.ajax({
+				type:"post",
+				url:"/springweb/calendarAjax.do",
+				dataType:"json",
+				success:function(data){
+					console.log(data.callist)
+					successCallback(data.callist)
+				},
+				error:function(err){
+					console.log(err)
+				}
+			})
+		}
+# fullcandar 데이터 등록하기
+1. 진행 프로세스
+	1) 특정 일정을 클릭하여,
+	2) 기본 데이터(시작일/종료일,전체일/시간)를 포함한 등록할 항목이
+		있는 다이얼로그화면을 로딩한다.
+	3) DB에 등록할 각 항목(타이틀, 내용, 작성자, 배경색상,
+		 글자색상, 링크할 url)을 입력 후, 등록 버튼 클릭시, ajax로
+		controller를 호출하여 등록 처리한다.
+	4) 해당 내용을 처리 후, 초기화면에서 등록된 내용을 확인할 수 있다.
+2. 핵심 기능
+	1) DB 등록 처리(백앤드단)
+	2) 화면 인터페이스 
+		다이얼로그 박스 로딩
+		select: function(arg) 로 받은 데이터를
+			- arg에서 어떤 값이 초기에 로딩되는지 확인
+		form 요소객체에 로딩하여 출력 처리
+	3) ajax로 입력된 데이터 controller단에 전송 처리	
+
+3. 개발 순서	
+	1) 일정 등록(백앤드 처리)
+		- DB
+			sql
+				INSERT INTO calendar01 values(cal01_seq.nextval, '첫번째 일정 등록',
+				'2023-02-16T09:00:00','2023-02-16T23:00:00', '홍길동','내용',
+				'#0404B4','#FFFF00',1,'https://fullcalendar.io/docs/event-display');
+		    vo
+		    공통 mybatis
+		    dao
+		    	public void insertCalendar(Calendar ins);
+		    mapper
+		    	
+		service ==> controller
+		controller
+			/insCalendar.do 기능메서드 추가.
+		----------------------------------------------	
+	2) 화면단 처리
+		- select: function(arg){} 시 처리할 내용
+			arg에서 나오는 기본정보를 다이얼로그 박스에 입력
+				시작일/종료일/종일여부
+			입력/상세 화면 구분
+				타이틀 변경
+				기능 버튼 hide/show
+		- eventClick: function(arg) { 일정 상세화면
+		
+				
+		- 다이얼로그 로딩
+			입력할 항목 form객체로 처리
+			
+			
+			
+		- $.ajax({}) 처리 및 controller 호출
+			등록 버튼 클릭시, ajax호출 처리..
+			
+			
+			
+		id
+		title
+		start
+		end
+		writer
+		content
+		backgroundColor
+		textColor
+		allDay
+		url
+		
+		form 화면 구성	
+		타이틀
+		시작일 종료일
+		작성자 종일여부
+		내용(textarea>
+		일정글자색상 일정배경색상 type=color
+		외부링크주소	
+		------------
+# url 외부링크 처리
+1. 상세화면 로딩과 바로 주소 이동이 기능적으로 겹쳐서, 상세화면으로
+	처리하려면 속성을 사용자 정의 속성으로 변경 필요
+2. vo
+	1) url ==> urllink 변경 
+3. mapper.xml
+	1) resultmap
+		url ==> urllink 추가 
+	2) insert 부분에 
+		url ==> urllink
+4. 화면단(a20_fullcalendar.html)
+	1) eventclick함수
+		function addForm()
+			$("[name=urllink]").val(
+				event.extendedProps.urllink)
+	2) 모달창의 form 데이터
+		<input name= "url" ==> urllink
+	3) $("[name=urllink]").dblclick(function(){
+			if(confirm("페이지이동하시겠습니까?")){
+				location.href=$(this).val()
+			}
+			
+	})
+# 일정 수정 삭제 처리
+1. 처리 프로세스
+	1) 상세화면에서 일정을 내용을 수정하거나 스크롤로 일정 변경을 할 때, 
+	   수정이 되게 처리한다.
+	2) 삭제버튼 클릭시, 삭제 처리 된다.
+2. 개발 순서
+	1) sql 작성
+		update calendar01 
+			set title = #{title},
+				start01 = #{start},
+				end01 = #{end},
+				writer = #{writer},
+				content = #{content},
+				textcolor = #{textColor},
+				backgroundcolor = #{backgroundColor},
+				allday = #{allDay},
+				url = #{urllink}
+			where id = #{id}
+	    
+	    delete 
+	    from calendar01
+	    where id= #{id}	
+	  
+	 2) vo
+	 3) 공통 mybatis 
+	 4) dao
+	 	public void uptCalendar(Calendar upt);
+	 	public void delCalendar(int id);
+	 5) mapper.xml
+	 	<update id="uptCalendar" parameterType=""calendar">
+	 			update calendar01 
+				set title = #{title},
+					start01 = #{start},
+					end01 = #{end},
+					writer = #{writer},
+					content = #{content},
+					textcolor = #{textColor},
+					backgroundcolor = #{backgroundColor},
+					allday = #{allDay},
+					url = #{urllink}
+				where id = #{id}
+			</update>
+	 	<delete id="delCalendar" parameterType="int">
+	 		    delete 
+			    from calendar01
+			    where id= #{id}	
+		</delete>
+	    7) service
+	    8) controller 
+	    	/uptCalendar.do
+	    	/delCalendar.do
+		9) 화면단에서 처리
+			$("#uptBtn").click(function(){
+				if(confirm("수정하시겠습니까?")){
+					ajaxFun("uptCalendar.do")			
+				}
+			}
+			$("#delBtn").click(function(){
+				if(confirm("삭제하시겠습니까?")){
+					ajaxFun("delCalendar.do")
+				}
+			})
+		10) 일정 스크롤 변경시, 이벤트 처리
+			eventDrop:function(info){
+				addForm(info.event)
+				ajaxFun("uptCalendar.do")
+			}
+		11) 일정 확장 변경시 이벤트 처리	
+			eventResize:function(info){
+				addForm(info.event)
+				ajaxFun("uptCalendar.do")
+				
+			}
+	
+	
+	
+			
+		
+		
+			
+		
+			
+			
+		
+		

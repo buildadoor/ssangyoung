@@ -540,6 +540,19 @@
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
+      <xs:attribute name="use-authorization-manager" type="xs:boolean">
+         <xs:annotation>
+            <xs:documentation>Use the AuthorizationManager API instead of AccessDecisionManager (defaults to true)
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="authorization-manager-ref" type="xs:token">
+         <xs:annotation>
+            <xs:documentation>Use this AuthorizationManager instead of the default (supercedes
+                use-authorization-manager)
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
   </xs:attributeGroup>
   
   <xs:attributeGroup name="protect.attlist">
@@ -602,6 +615,8 @@
                 there is a match, the beans will automatically be proxied and security authorization
                 applied to the methods accordingly. Interceptors are invoked in the order specified in
                 AuthorizationInterceptorsOrder. Use can create your own interceptors using Spring AOP.
+                Also, annotation-based interception can be overridden by expressions listed in
+                &lt;protect-pointcut&gt; elements.
                 </xs:documentation>
       </xs:annotation>
       <xs:complexType>
@@ -615,6 +630,17 @@
                </xs:annotation>
                <xs:complexType>
                   <xs:attributeGroup ref="security:ref"/>
+               </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="protect-pointcut">
+               <xs:annotation>
+                  <xs:documentation>Defines a protected pointcut and the access control configuration attributes that apply to
+                it. Every bean registered in the Spring application context that provides a method that
+                matches the pointcut will receive security authorization.
+                </xs:documentation>
+               </xs:annotation>
+               <xs:complexType>
+                  <xs:attributeGroup ref="security:protect-pointcut.attlist"/>
                </xs:complexType>
             </xs:element>
          </xs:sequence>
@@ -648,6 +674,30 @@
       <xs:attribute name="proxy-target-class" type="xs:boolean">
          <xs:annotation>
             <xs:documentation>If true, class-based proxying will be used instead of interface-based proxying.
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="mode">
+         <xs:annotation>
+            <xs:documentation>If set to aspectj, then use AspectJ to intercept method invocation
+                </xs:documentation>
+         </xs:annotation>
+         <xs:simpleType>
+            <xs:restriction base="xs:token">
+               <xs:enumeration value="aspectj"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="security-context-holder-strategy-ref" type="xs:string">
+         <xs:annotation>
+            <xs:documentation>Specifies the security context holder strategy to use, by default uses a ThreadLocal-based
+                strategy
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="observation-registry-ref" type="xs:token">
+         <xs:annotation>
+            <xs:documentation>Use this ObservationRegistry to collect metrics on various parts of the filter chain
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
@@ -915,6 +965,25 @@
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
+      <xs:attribute name="authorization-manager-ref" type="xs:string">
+         <xs:annotation>
+            <xs:documentation>Use this AuthorizationManager instead of deriving one from &lt;intercept-message&gt; elements
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="use-authorization-manager" type="xs:boolean">
+         <xs:annotation>
+            <xs:documentation>Use AuthorizationManager API instead of SecurityMetadatasource (defaults to true)
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="security-context-holder-strategy-ref" type="xs:string">
+         <xs:annotation>
+            <xs:documentation>Use this SecurityContextHolderStrategy (note only supported in conjunction with the
+                AuthorizationManager API)
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
   </xs:attributeGroup>
   <xs:element name="intercept-message">
       <xs:annotation>
@@ -1015,28 +1084,6 @@
             <xs:element ref="security:oauth2-login"/>
             <xs:element ref="security:oauth2-client"/>
             <xs:element ref="security:oauth2-resource-server"/>
-            <xs:element name="openid-login">
-               <xs:annotation>
-                  <xs:documentation>Sets up form login for authentication with an Open ID identity. NOTE: The OpenID 1.0 and
-                2.0 protocols have been deprecated and users are &lt;a
-                href="https://openid.net/specs/openid-connect-migration-1_0.html"&gt;encouraged to
-                migrate&lt;/a&gt; to &lt;a href="https://openid.net/connect/"&gt;OpenID Connect&lt;/a&gt;, which is
-                supported by &lt;code&gt;spring-security-oauth2&lt;/code&gt;.
-                </xs:documentation>
-               </xs:annotation>
-               <xs:complexType>
-                  <xs:sequence>
-                     <xs:element minOccurs="0" maxOccurs="unbounded" ref="security:attribute-exchange"/>
-                  </xs:sequence>
-                  <xs:attributeGroup ref="security:form-login.attlist"/>
-                  <xs:attribute name="user-service-ref" type="xs:token">
-                     <xs:annotation>
-                        <xs:documentation>A reference to a user-service (or UserDetailsService bean) Id
-                </xs:documentation>
-                     </xs:annotation>
-                  </xs:attribute>
-               </xs:complexType>
-            </xs:element>
             <xs:element name="saml2-login">
                <xs:annotation>
                   <xs:documentation>Configures authentication support for SAML 2.0 Login
@@ -1212,6 +1259,13 @@
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
+      <xs:attribute name="security-context-holder-strategy-ref" type="xs:token">
+         <xs:annotation>
+            <xs:documentation>A reference to a SecurityContextHolderStrategy bean. This can be used to customize how the
+                SecurityContextHolder is stored during a request
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
       <xs:attribute name="create-session">
          <xs:annotation>
             <xs:documentation>Controls the eagerness with which an HTTP session is created by Spring Security classes.
@@ -1240,7 +1294,7 @@
       <xs:attribute name="security-context-explicit-save" type="xs:boolean">
          <xs:annotation>
             <xs:documentation>Optional attribute that specifies that the SecurityContext should require explicit saving
-                rather than being synchronized from the SecurityContextHolder. Defaults to "false".
+                rather than being synchronized from the SecurityContextHolder. Defaults to "true".
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
@@ -1275,6 +1329,18 @@
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
+      <xs:attribute name="use-authorization-manager" type="xs:boolean">
+         <xs:annotation>
+            <xs:documentation>Use AuthorizationManager API instead of SecurityMetadataSource (defaults to true)
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="authorization-manager-ref" type="xs:token">
+         <xs:annotation>
+            <xs:documentation>Use this AuthorizationManager instead of deriving one from &lt;intercept-url&gt; elements
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
       <xs:attribute name="access-decision-manager-ref" type="xs:token">
          <xs:annotation>
             <xs:documentation>Optional attribute specifying the ID of the AccessDecisionManager implementation which
@@ -1299,7 +1365,14 @@
       <xs:attribute name="once-per-request" type="xs:boolean">
          <xs:annotation>
             <xs:documentation>Corresponds to the observeOncePerRequest property of FilterSecurityInterceptor. Defaults
-                to "true"
+                to "false"
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="filter-all-dispatcher-types" type="xs:boolean">
+         <xs:annotation>
+            <xs:documentation>Corresponds to the shouldFilterAllDispatcherTypes property of AuthorizationFilter. Do not
+                work when use-authorization-manager=false. Defaults to "true".
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
@@ -1319,6 +1392,12 @@
       <xs:attribute name="authentication-manager-ref" type="xs:token">
          <xs:annotation>
             <xs:documentation>A reference to an AuthenticationManager bean
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="observation-registry-ref" type="xs:token">
+         <xs:annotation>
+            <xs:documentation>Use this ObservationRegistry to collect metrics on various parts of the filter chain
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
@@ -1580,6 +1659,12 @@
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
+      <xs:attribute name="authorization-redirect-strategy-ref" type="xs:token">
+         <xs:annotation>
+            <xs:documentation>Reference to the authorization RedirectStrategy
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
       <xs:attribute name="access-token-response-client-ref" type="xs:token">
          <xs:annotation>
             <xs:documentation>Reference to the OAuth2AccessTokenResponseClient
@@ -1683,6 +1768,12 @@
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
+      <xs:attribute name="authorization-redirect-strategy-ref" type="xs:token">
+         <xs:annotation>
+            <xs:documentation>Reference to the authorization RedirectStrategy
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
       <xs:attribute name="authorization-request-resolver-ref" type="xs:token">
          <xs:annotation>
             <xs:documentation>Reference to the OAuth2AuthorizationRequestResolver
@@ -1756,7 +1847,7 @@
       <xs:attribute name="authorization-grant-type">
          <xs:annotation>
             <xs:documentation>The OAuth 2.0 Authorization Framework defines four Authorization Grant types. The
-                supported values are authorization_code, client_credentials, password and implicit.
+                supported values are authorization_code, client_credentials and password.
                 </xs:documentation>
          </xs:annotation>
          <xs:simpleType>
@@ -1764,7 +1855,6 @@
                <xs:enumeration value="authorization_code"/>
                <xs:enumeration value="client_credentials"/>
                <xs:enumeration value="password"/>
-               <xs:enumeration value="implicit"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1966,70 +2056,10 @@
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
-  </xs:attributeGroup>
-  
-  <xs:element name="attribute-exchange">
-      <xs:annotation>
-         <xs:documentation>Sets up an attribute exchange configuration to request specified attributes from the
-                OpenID identity provider. When multiple elements are used, each must have an
-                identifier-attribute attribute. Each configuration will be matched in turn against the
-                supplied login identifier until a match is found.
-                </xs:documentation>
-      </xs:annotation>
-      <xs:complexType>
-         <xs:sequence>
-            <xs:element maxOccurs="unbounded" ref="security:openid-attribute"/>
-         </xs:sequence>
-         <xs:attributeGroup ref="security:attribute-exchange.attlist"/>
-      </xs:complexType>
-   </xs:element>
-  <xs:attributeGroup name="attribute-exchange.attlist">
-      <xs:attribute name="identifier-match" type="xs:token">
+      <xs:attribute name="authentication-converter-ref" type="xs:token">
          <xs:annotation>
-            <xs:documentation>A regular expression which will be compared against the claimed identity, when deciding
-                which attribute-exchange configuration to use during authentication.
-                </xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
-  </xs:attributeGroup>
-  <xs:element name="openid-attribute">
-      <xs:annotation>
-         <xs:documentation>Attributes used when making an OpenID AX Fetch Request. NOTE: The OpenID 1.0 and 2.0
-                protocols have been deprecated and users are &lt;a
-                href="https://openid.net/specs/openid-connect-migration-1_0.html"&gt;encouraged to
-                migrate&lt;/a&gt; to &lt;a href="https://openid.net/connect/"&gt;OpenID Connect&lt;/a&gt;, which is
-                supported by &lt;code&gt;spring-security-oauth2&lt;/code&gt;.
-                </xs:documentation>
-      </xs:annotation>
-      <xs:complexType>
-         <xs:attributeGroup ref="security:openid-attribute.attlist"/>
-      </xs:complexType>
-   </xs:element>
-  <xs:attributeGroup name="openid-attribute.attlist">
-      <xs:attribute name="name" use="required" type="xs:token">
-         <xs:annotation>
-            <xs:documentation>Specifies the name of the attribute that you wish to get back. For example, email.
-                </xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
-      <xs:attribute name="type" use="required" type="xs:token">
-         <xs:annotation>
-            <xs:documentation>Specifies the attribute type. For example, https://axschema.org/contact/email. See your
-                OP's documentation for valid attribute types.
-                </xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
-      <xs:attribute name="required" type="xs:boolean">
-         <xs:annotation>
-            <xs:documentation>Specifies if this attribute is required to the OP, but does not error out if the OP does
-                not return the attribute. Default is false.
-                </xs:documentation>
-         </xs:annotation>
-      </xs:attribute>
-      <xs:attribute name="count" type="xs:int">
-         <xs:annotation>
-            <xs:documentation>Specifies the number of attributes that you wish to get back. For example, return 3
-                emails. The default value is 1.
+            <xs:documentation>Reference to an OpaqueTokenAuthenticationConverter responsible for converting successful
+                introspection result into an Authentication.
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
@@ -2579,6 +2609,13 @@
   </xs:attributeGroup>
   
   <xs:attributeGroup name="session-management.attlist">
+      <xs:attribute name="authentication-strategy-explicit-invocation" type="xs:boolean">
+         <xs:annotation>
+            <xs:documentation>Specifies that SessionAuthenticationStrategy must be explicitly invoked. Default false
+                (i.e. SessionManagementFilter will implicitly invoke SessionAuthenticationStrategy).
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
       <xs:attribute name="session-fixation-protection">
          <xs:annotation>
             <xs:documentation>Indicates how session fixation protection will be applied when a user authenticates. If
@@ -2965,6 +3002,12 @@
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
+      <xs:attribute name="observation-registry-ref" type="xs:token">
+         <xs:annotation>
+            <xs:documentation>Use this ObservationRegistry to collect metrics on various parts of the filter chain
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
   </xs:attributeGroup>
   
   <xs:attributeGroup name="ap.attlist">
@@ -3145,6 +3188,12 @@
          <xs:annotation>
             <xs:documentation>The CsrfTokenRepository to use. The default is HttpSessionCsrfTokenRepository wrapped by
                 LazyCsrfTokenRepository.
+                </xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="request-handler-ref" type="xs:token">
+         <xs:annotation>
+            <xs:documentation>The CsrfTokenRequestHandler to use. The default is CsrfTokenRequestAttributeHandler.
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
@@ -3522,18 +3571,18 @@
                 </xs:documentation>
          </xs:annotation>
       </xs:attribute>
-      <xs:attribute name="enabled" type="xs:boolean">
+      <xs:attribute name="header-value">
          <xs:annotation>
-            <xs:documentation>specify that XSS Protection should be explicitly enabled or disabled. Default is 'true'
-                meaning it is enabled.
+            <xs:documentation>Specify the value for the X-Xss-Protection header. Defaults to "0".
                 </xs:documentation>
          </xs:annotation>
-      </xs:attribute>
-      <xs:attribute name="block" type="xs:boolean">
-         <xs:annotation>
-            <xs:documentation>Add mode=block to the header or not, default is on.
-                </xs:documentation>
-         </xs:annotation>
+         <xs:simpleType>
+            <xs:restriction base="xs:token">
+               <xs:enumeration value="0"/>
+               <xs:enumeration value="1"/>
+               <xs:enumeration value="1; mode=block"/>
+            </xs:restriction>
+         </xs:simpleType>
       </xs:attribute>
   </xs:attributeGroup>
   <xs:element name="content-type-options">
@@ -3741,7 +3790,6 @@
          <xs:enumeration value="OAUTH2_LOGIN_FILTER"/>
          <xs:enumeration value="SAML2_AUTHENTICATION_FILTER"/>
          <xs:enumeration value="FORM_LOGIN_FILTER"/>
-         <xs:enumeration value="OPENID_FILTER"/>
          <xs:enumeration value="LOGIN_PAGE_FILTER"/>
          <xs:enumeration value="LOGOUT_PAGE_FILTER"/>
          <xs:enumeration value="DIGEST_AUTH_FILTER"/>

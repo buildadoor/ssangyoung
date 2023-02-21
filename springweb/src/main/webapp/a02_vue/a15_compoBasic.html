@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/springweb/a00_com/bootstrap.min.css" >
+<style>
+	td{text-align:center;}
+</style>
+<script src="/springweb/a00_com/jquery.min.js"></script>
+<script src="/springweb/a00_com/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
+<script type="text/javascript">
+/*
+# 컴포넌트
+1. 구조화된 화면을 처리하기 위하여, 
+	사용자 정의 컴포넌트(사용자 정의 태그)를 지정하여 사용 할 수 있다.
+2. 기본 형식
+	0) 템플릿
+		<template id="템릿아이디">
+			<div>  root 태그는 하나만 설정 
+				<h2>{{모델명}}</h2>
+				<h2>{{props속성명}}</h2>
+				모델데이터/props명 둘다 directive로 사용가능
+			</div>
+		</template>
+	1) Vue.component("컴포넌트명",{
+		  template:"컴포넌트로 출력한 포함된 화면 태그 또는 #아이디명",
+		  data:
+			  function(){
+				  
+				  return {컴포넌트에서 사용할 모델 데이터
+					      c01:"데이터"}
+			  },
+		  props:['속성1','속성2'],
+		  methods:{
+			  this.속성1 : 전달하는 props 속성값도 접근
+			  this.c01 : 컴포넌트의 모델 데이터 접근
+			  기능메서드:function(){}
+		  }
+	   })
+	   
+	   <컴포넌트명 :속성1="전달속성값" @이벤트명="기능메서드"></컴포넌트명>
+	   
+	2)   
+ */
+	$(document).ready(function(){
+		Vue.component("hello-component",{
+			template:"<h3>컴포넌트와 첫만남!!</h3>"
+		})
+		Vue.component("show-comp",{
+			template:`
+				<div>
+					<h2>좋은 하루 시작</h2>
+					<p>
+						Vue가 재미 있나요?? 
+					</p>
+				</div>
+			`
+		})
+		// ex) div 안에 이름 나이 사는곳의 정보가 있는 컴포넌트를
+		//     선언하고 호출하세요.
+		Vue.component("person",{
+			template:`
+				<div>
+					<h2>이름:홍길동</h2>
+					<h2>나이:25</h2>
+					<h2>사는곳:인천</h2>
+				</div>
+			`
+		})
+		// # 컴포넌트의 템플릿을 root 태그 하나 안에서 설정을 해야 
+		// 합니다.
+		var vm = new Vue({
+			el:".container",
+			data:{msg:"컴포넌트 기초"}
+		});	
+	});
+</script>
+</head>
+<body>
+
+<div class="container">
+	<div class="jumbotron text-center">
+	  <h2 >{{msg}}</h2>
+	  <person></person>
+	  <person></person>
+	  <person></person>
+	  <show-comp></show-comp>
+	  <show-comp></show-comp>
+	  <hello-component></hello-component>
+	  <hello-component></hello-component>
+	  <hello-component></hello-component>
+	</div>
+	<form id="frm01" class="form-inline"  method="post">
+  	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	    <input class="form-control mr-sm-2" placeholder="제목" />
+	    <input class="form-control mr-sm-2" placeholder="내용" />
+	    <button class="btn btn-info" type="submit">Search</button>
+ 	</nav>
+	</form>
+   <table class="table table-hover table-striped">
+   	<col width="10%">
+   	<col width="50%">
+   	<col width="15%">
+   	<col width="15%">
+   	<col width="10%">
+    <thead>
+    
+      <tr class="table-success text-center">
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회</th>
+      </tr>
+    </thead>	
+    <tbody>
+    	<tr><td></td><td></td><td></td><td></td><td></td></tr>
+    	<tr><td></td><td></td><td></td><td></td><td></td></tr>
+    	<tr><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+	</table>       
+</div>
+</body>
+</html>

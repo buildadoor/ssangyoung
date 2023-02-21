@@ -54,6 +54,11 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
 <script type="text/javascript">
+	var sessId = "${mem.id}"
+	if(sessId==""){
+		alert("로그인을 하여야 합니다\n로그인 화면이동");
+		location.href="${path}/loginFrm.do"
+	}
 	var msg = "${msg}"
 	if(msg=="수정완료"){
 		if(confirm(msg+" 전체조회화면 이동하시겠습니까?")){
@@ -73,25 +78,42 @@
 		$("#goMain").click(function(){
 			location.href="${path}/list.do"			
 		});	
+		var sessName = "${mem.name}"
+					
+		
 		$("#delBtn").click(function(){
-			location.href="${path}/delBoard.do?no="+$("[name=no]").val();
+			if(sessName != $("[name=writer]").val()){
+				//alert("수정 권한이 없습니다\n수정은 작성자만 가능합니다");
+				alert("삭제 권한이 없습니다\n삭제는 작성자만 가능합니다");
+			}else{	
+				if(confirm("삭제하시겠습니까?")){
+					location.href="${path}/delBoard.do?no="+$("[name=no]").val();
+				}
+			}
 		})
+		$("#uptBtn").click(function(){
+			if(sessName != $("[name=writer]").val()){
+				alert("수정 권한이 없습니다\n수정은 작성자만 가능합니다");
+			}else{				
+				if(confirm("수정하시겠습니까?")){
+					$("form").attr("action","${path}/boardUpt.do");
+					$("form").submit();
+				}
+			}
+		})			
 		$("#repBtn").click(function(){
 			$("[name=refno]").val($("[name=no]").val())
+			/*
 			$("[name=subject]").val("RE:"+
 					$("[name=subject]").val())
+			*/
 			$("[name=content]").val(
 					"\n\n\n\n==== 이전글 ===\n"+$("[name=content]").val())
 			$("form").attr("action","${path}/insertFrm.do")
 			
 			$("form").submit()
 		})
-		$("#uptBtn").click(function(){
-			if(confirm("수정하시겠습니까?")){
-				$("form").attr("action","${path}/boardUpt.do");
-				$("form").submit();
-			}
-		})	
+
 	  	$("#downFile").click(function(){
 	  		if(confirm($(this).val()+"을 다운로드하시겠습니까?")){
 	  			location.href="${path}/download.do?fname="+$(this).val()
@@ -135,7 +157,7 @@
           <div class="row">      
 	          <div class="col-md-6 mb-3">
 	            <label for="writer">작성자</label>
-	            <input type="text" name="writer"
+	            <input type="text" name="writer"  readonly	
 	            	 value="${board.writer}"  class="form-control ckValid" id="writer" placeholder="작성자를 입력" required>
 	            <div class="invalid-feedback">
 	              작성자를 입력해주세요.
@@ -184,19 +206,20 @@
             <div class="invalid-feedback">
               첨부파일 입력해주세요.
 	         </div>
-		  </div>  		  
-		       <div class="mb-3">
+		  </div>  
+          <div class="mb-3">
          	<div class="custom-file">
 		        <input type="file" name="report" class="custom-file-input" id="file01">
 		        <label class="custom-file-label" for="file01">
-		        ${empty board.fname?'첨부 파일을 선택하세요':board.fname+' 수정시 선택'}</label>
+		        	${empty board.fname?'첨부 파일을 선택하세요':'수정시 선택'}</label>
 			</div>
 		  </div>	
 
 		  <script type="text/javascript">
-	        $(".custom-file-input").on("change",function(){
-	        	$(this).next(".custom-file-label").text($(this).val())
-	        })	  
+	         $(".custom-file-input").on("change",function(){
+	         	$(this).next(".custom-file-label").text($(this).val())
+	          })			  
+	 		    
 		  
 		  </script>      
           

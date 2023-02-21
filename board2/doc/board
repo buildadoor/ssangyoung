@@ -43,7 +43,7 @@
 			- 파일 업로그 처리
 		- 상세화면 구현
 			- 조회화면에서 상세화면 로딩
-
+		- 답글 달기 
 # 기본 스프링 환경 설정
 0. 설정에 필요한 파일과 처리 구조
 	ex) http://localhost:7080/board/list.do
@@ -101,8 +101,16 @@
 		만들어 진다.
 	- Board.java,BoardSch.java(vo)
 		매개변수나 리턴값을 통해 데이터를 처리해주는 객체..
-
-
+	- a01_boardList.jsp(화면단처리 리스트)
+		페이지 처리되어 제목과 작성자로 검색 
+		등록버튼 등록 화면 이동
+		데이터 항목 클릭시 상세화면 이동
+	- a02_insertBoard.jsp(등록/답글 화면)
+		파일첨부기능 처리
+	- a03_board.jsp(상세 화면)
+		수정 삭제 답글 기능 버튼
+		
+	- 
 1. 컨테이너 분리
     <init-param>
     	<param-name>contextConfigLocation</param-name>
@@ -546,86 +554,115 @@
 
 # 답글 처리
 1. 프로세스
-	1) 각 게시글에 답글 달기를 하면
-	2) 글을 등록한 후에 저장하면 전체 리스트의 하단에 바로 출력이 된다.
+	1) 각 게시글에 답글을 달기를 하면
+	2) 글을 등록한 후에 저장하면 전체 리스트에 하단에 바로 출력이 된다.
 	3) 각 글을 계층적으로 출력이 된다.
 		상위글
-			==> 하위1 
+			==> 하위1
 				==> 차하위1
 				==> 차하위2
 			==> 하위2
 2. 사전 학습 및 이해 내용
 	0) 답글처리 데이터 저장 구조
-		no 	refno	subject 
+		no 	refno 	subject
 		1	0		첫번째글
-		2	0		두번째글
+		2	0		둘번째글
 		3	1		RE:첫번째답글1
 		4	1		RE:첫번째답글2
-		5	3		RE:RE 첫번째답글1답글1
-		==> 실제 화면에 나타날 출력 리스트
+		5	3       RE:RE 첫번째답글1답글1
+		===> 실제 화면에 나타날 출력 리스트
 		첫번째글
 			RE:첫번째답글1
 				RE:RE 첫번째답글1답글1
-			RE:첫번째답글2
-		두번째글 
-		ex) emp테이블에 mgr, empno가 위와 같은 게층구조로 되어 있다.
+			RE:첫번째답글2	
+		둘번째글		
+		ex) emp테이블에 mgr, empno가 위와 같은 계층구조로 되어 있다.
+		
 	1) 계층형 sql에 대한 이해
 		select *
-		from board 
+		from board
 		start with 최상위계층의 조건을 설정
-		ex) 최상위계층 조건 refno=0, mgr = null
-		connect by prior 하위컬럼 = 상위컬럼  
-		하위와 상위 컬럼 연결 조건 
-		ex) no = refno, empno = mgr 
-		ex) 
-			SELECT LEVEL, mgr, e.*
-			FROM emp e 
-			START WITH mgr = 7839
-			CONNECT BY PRIOR empno = mgr;
-	2) 답글 처리 데이터 저장 프로세스 
-3. 개발 순서 
+		ex) 최상위계층 조건 refno=0,   mgr = null
+		connect by prior 하위컬럼 = 상위컬럼
+		하위와 상위 컬럼 연결 조건
+		ex) no = refno, empno = mgr
+		ex)
+			select LEVEL, mgr, e.*
+			from emp e
+			start with mgr = 7839
+			connect by prior empno = mgr;
+	2) 답글 처리 데이터 저장 프로세스
+3. 개발 순서
 	1) 상세 프로세스 정의
 		- 상세화면에서 답글 클릭시, 기존 글등록화면으로 전환되면서 
-		현재 글번호는 답글번호로, 제목은 RE:가 붙어서 처리되고,
-		글 내용 하단에 == 이전 글 == 표시로 이전 글이 표시되면서
-		글 등록 화면이 나타난다.
+			현재 글번호는 답글번호로, 제목은 RE:가 붙어서 처리되고,
+			글 내용 하단에 === 이전 글 === 표시로 이전 글이 표시되면서
+			글 등록 화면이 나타난다.
 		- 글 등록화면 내용에서 변경할 내용을 입력 후,
 		- 등록 처리하면 글 등록 프로세스를 처리되어 
-		- DB에 no : 새로운 sequence번호, refno : 이전글번호가
-			등록되어 처리된다.
-		- 조회 화면에서 계층형 sql을 이용해서 상위 글 밑에 해당 답글이 
-			처리된 것을 알 수 있다. 
-	2) 개발 진행 
-		- 답글 클릭시, form 요소데이터의 변경 및 submit으로 글 등록 요청값 전달.
+		- DB에 no : 새로운 sequence번호,  refno : 이전글번호가
+			등록되어 처리된다
+		- 조회 화면에서 계층형 sql을 이용해서 상위 글 밑에 해당 답글이
+			처리된 것을 알 수 있다.
+	2) 개발 진행
+		- 답글 클릭시, form 요소데이터의 변경 및 submit로 글 등록으로 요청값 전달.
 			$("[name=refno]").val($("[name=no]").val())
 			$("[name=subject]").val("RE:"+$("[name=subject]").val())
-			$("[name=content]").val("\n\n\n===이전글===\n"+$("[name=content]").val())
+			$("[name=content]").val("\n\n\n=== 이전글 ===\n"
+								+$("[name=content]").val())
 			$("form").attr("action","${path}/insert.do");
 			$("form").submit()
 		- 등록 처리 프로세스로 진행..
-		- 계층형 sql 작성 (mapper)
+		- 계층형 sql  작성(mapper)
+			select rownum cnt, level 
+				: 글을 순서별로 numbering, level : 계층 레벨처리
+			start with refno = 0
+			connect by prior no = refno
+			order siblings by no desc 
 			-- 최근 등록된 글을 가장 먼저 나오게 처리(계층별)
 			mapper 처리 내용
 			select rownum cnt, level, b.*
 			from board b
 			where 1=1
 			and subject like '%'||#{subject}||'%'
-			and writer like '%'||#{writer}||'%'
-			START WITH refno=0
-			CONNECT BY PRIOR NO = refno
-			ORDER siblings BY NO desc
-		- VO 추가(Board) 추가 cnt, level
-		
-		- 화면단 처리
-			no ==> cnt, 
-			level을 기준으로 왼쪽 들여쓰기 처리(계층 레벨에 따른 간격 추가)
+			and writer like '%'||#{writer}||'%'	
+			START WITH refno =0
+			CONNECT BY PRIOR NO =refno
+			ORDER siblings BY NO DESC			
 			
-						
-		
+		- VO(Board) 추가 cnt, level
+		- 화면단 처리
+			no ==> cnt,
+			level을 기준으로 왼쪽 들여쓰기 처리(계층 레벨에 따른 간격 추가)
+# 계층적 sql에 대한 이해
+			select b.*
+			from board b
+			where 1=1;
+-- 계층적 sql은 통해서 답글이 원래글 밑에
+/* 계층적 sql 
+			START WITH refno =0  :계층 트리의 최상위 부분 설정
+			CONNECT BY PRIOR NO =refno : 계층 트리를 처리하는 조건
+ * */
+			select rownum cnt, level, b.*
+			from board b
+			where 1=1
+			START WITH refno =0
+			CONNECT BY PRIOR NO =refno;	
+-- ORDER siblings BY NO DESC 역순위 처리..	
+-- level : 계층형 sql을 사용하는 것으로 공백 간격을 계층 레벨에 따라 처리하기 위한 내용이다.	
+			select rownum cnt, level, b.*
+			from board b
+			where 1=1
+			START WITH refno =0
+			CONNECT BY PRIOR NO =refno
+			ORDER siblings BY NO DESC;
+
+
+
 # 페이징 처리
 1. 기능
-	1) 하단이나 상단에 한번 보일 데이터 크기를 지정하여, 페이지 리스트를 
-		만들고, 해당 페이지 리스트를 클릭시, 지정한 리스트 크키 단위로
+	1) 하단이나 상단에 한번에 보일 데이터 크기를 지정하여, 페이지 리스트를
+		만들고, 해당 페이지 리스트를 클릭시, 지정한 데이터 리스트 크기 단위로
 		출력하는 것을 말한다.
 	2) 많은 데이터가 있을 때, DB 부하를 줄여주면서 효과적으로 데이터리스트를
 		확인할 수 있게 처리하는 기능을 말한다.
@@ -633,75 +670,81 @@
 	1) 초기 화면에서는 default로 지정한 페이지당 건수(5개)로 데이터가 
 		리스트 되고,
 	2) 하단에 이 페이지당 건수에 맞게 페이지 번호 리스트가 나온다.
-		ex) 20건 데이터 페이지 건수(5), 하단에 1 2 3 4 데이터
+		ex) 20건 데이터 페이지 건수(5), 하단에 1 2 3 4 데이터 
 		페이지가 리스트 된다.
 	3) 하단에 리스트된 페이지 번호를 클릭시, 해당 페이지 번호에 해당하는
-		데이터가 리스트 된다.
+		데이터가 리스트된다.
 		1 ==> 1~5, 2 ==> 6~10, 3 ==> 11~15
-	4) 데이터 리스트 테이블 상단에 총 데이터 건수와 왼쪽에는 한 번에 보일
+	4) 데이터 리스트 테이블 상단에 총데이터 건수와 왼쪽에는 한번에 보일 
 		데이터 건수를 select 박스에 의해 선택할 수 있게 한다.
 		3/5/10/20/30/50
 	5) 한번에 보일 데이터 건수를 선택시에도 데이터 리스트가 재조합되어
 		리스트 처리된다.
 	6) 하단에 한번에 보일 페이지 수 
-		100건일 경우 
-		1 2 3 4 ....20
-		==> 페이지 블럭 처리 (5개씩 처리)
-		1 2 3 4 5 >
+		100건일 경우
+		1 2 3 4 ....... 20
+		==> 페이지 블럭 처리(5개씩 처리)
+		 1 2 3 4 5 >
 		<6 7 8 9 10>
 		<1112131415>
 		<1617181920
 3. 개발 순서
-	1) 페이지 번호를 입력 받았을 때, 이 페이지에 해당하는 데이터
+	1) 페이지 번호을 입력 받았을 때, 이 페이지에 해당하는 데이터 
 		리스트를 처리할 sql을 작성
 		1 ==> 1~5까지 데이터
 		2 ==> 6~10까지 데이터
-		이를 위한 만들 데이터 속성이 rownu 라인별 번호 ==> cnt
+		이를 위한 만들 데이터 속성이 rownum 라인별 번호 ==> cnt
 		select *
 		from (
-			select rownum..
-			from ..
+			select rownum cnt
+			from ...
 		)
-		where cnt = 1 and 5
-		시작번호와 마지막 번호를 알고리즘에 의해 도출하여 전달하면 된다.
-	2) 이 내용을 위해 필요한 속성 ==> BoardSch 할당
-		- count 전체 데이터 건수(DB) count
+		where cnt between 시작번호 and 마지막번호
+		시작번호와 마지막 번호을 알고리즘에 의해 도출하여 전달하면 된다.
+	2) 이 내용을 위해 필요하는 속성 ==> BoardSch  할당
+		- count 전체 데이터 건수(DB)
 			select count(*)
 			from board
-			where subject ..
-				and writer .. ==> dao추가..
-			page
-		- pageSize 선택한 한 페이지에서 보일 데이터 건수(select COMBO) - 요청값
+			where subject ...
+				and writer... ==> dao 추가..
+			
+		- pageSize 선택한 한페이지에서  보일 데이터 건수(select COMBO) - 요청값
+		
 			3/5/10/20/30/50
-		- pageCount 하단에 리스트되는 페이지 수
-			총 데이터 건수/한 페이지당 데이터 건수 ==> 총 페이지 수
-			ex) 20 (총 데이터건수)/5(한 페이지당 데이터 건수)
-			==> 4 (총 페이지 수)
-			[1] [2] [3] [4]
-			15 ==> 3
-			10 ==> 2
-			11건 몇페이지에 보여야 하는지?
-			11/5 ==> 2.2 .. 2페이지 ? 3페이지?  
-				[1] ==> 1~5
-				[2] ==> 6~10
-				[3] ==> 11
-			소숫점이 있으면 올림 처리되게 하여 페이지수를 결정한다.
-		- curPage : 클릭한 현재 페이지 번호
-		- 
-		- 데이터의 시작 번호, 마지막 번호를 도출
-			where rownum  between 시작번호 and 마지막번호
-			한 페이지당 보여줄 데이터(pageSize), 
+			
+		- pageCount 하단에 리스트되는 페이지 수(로직)
+			총데이터건수/한페이지당데이터 건수 ==> 총페이지수
+			ex) 20(총데이터건수)/5(한페이지당데이터 건수) 
+				==> 4(총페이지수)
+				[1] [2] [3] [4]
+				15 ==> 3
+				10 ==> 2
+				11건 몇페이지에 보여야 하는지?
+				11/5 ==> 2.2..  2페이지? 3페이지?
+					[1] ==> 1~5
+					[2] ==> 6~10
+					[3] ==> 11
+				소숫점이 있으면 올림 처리되게 하여 페이지수를 결정한다.
+		- curPage : 클릭한 현재 페이지 번호		
+		- start/end 데이터의 시작 번호, 마지막 번호를 도출
+			where rownum between 시작번호 and 마지막번호
+			한페이지당 보여줄데이터(pageSize), 
 			클릭한 페이지 번호(curPage)를 통해서
-blocknum	rownum/cnt		pageSize 5
-1			1 2 3 4 5 [1] 시작번호1 마지막번호5
-2			6 7 8 9 10 [2] 시작번호 6 마지막번호 10
-3			1112131415 [3] 시작번호 11 마지막번호 15
-4			1617181920 [4]	시작번호 16 마지막번호 20
-			마지막번호 : curPage*pageSize
-			시작번호 : (curPage-1)*pageSize+1
+	    	rownum/cnt   	pageSize 5  
+			1 2 3 4 5  [1]	시작번호 1 마지막번호 5
+			6 7 8 9 10 [2]  시작번호 6 마지막번호 10  
+			1112131415 [3]  시작번호 11 마지막번호 15  
+			1617181920 [4]  시작번호 16 마지막번호 20
+			마지막번호 : curPage*pageSize 
+			시작번호 : (curPage-1)*pageSize+1  
+			rownum/cnt   	pageSize 3  
+			1 2 3   [1]	 시작번호 1 마지막번호 3
+			4 5 6   [2]  시작번호 4 마지막번호 6  
+			7 8 9   [3]  시작번호 7 마지막번호 9  
+			101112  [4]  시작번호 10 마지막번호 12			
 		- blockSize
-			하단에 페이지수가 많아지면, 한 번에 보일 
-			페이지 블럭을 지정하고, 해당 수가 넘으면 
+			하단에 페이지수가 많아지면, 한번에 보일 
+			페이지 블럭을 지정하고, 해당 수가 넘으면
 			previous(이전) [6][7][8][9][10] next(이후)
 			형태로 처리하여 효과적으로 페이지 블럭을 
 			관리하도록 한다.
@@ -710,59 +753,126 @@ blocknum	rownum/cnt		pageSize 5
 			2. 블럭 번호 지정 : 현재 페이지번호/블럭의 크기
 				sch.getCurPage()/sch.getBlockSize()
 				올림 처리
-blocknum	페이지번호			
-1			[이전]1 2 3 4 5 [이후]  시작블럭번호1 마지막블럭번호5
-2			[이전]6 7 8 9 10[이후] 시작블럭번호 6 마지막블럭번호 10
-3			[이전]1112131415[이후] 시작블럭번호 11 마지막블럭번호 15
-4			[이전]1617181920[이후] 시작블럭번호 16 마지막블럭번호 20			
-			3. 마지막 블럭번호
-				blocknum * 블럭크기
-				예외사항 pageCount(총페이지수를 넘는 경우는)
-				 총 페이지 수로 설정
+blocknum	페이지번호   		  
+1	   [이전]	1 2 3 4 5 [이후] 시작블럭번호 1 마지막블럭번호 5
+2	   [이전]	6 7 8 9 10[이후] 시작블럭번호 6 마지막블럭번호 10  
+3	   [이전]	1112131415[이후] 시작블럭번호 11 마지막블럭번호 15  
+4	   [이전]	161718    [이후] 시작블럭번호 16 마지막블럭번호 20
+			3. 마지막 블럭번호.
+			   blocknum * 블럭크기
+			   예외사항 pageCount(총페이지수를 넘는경우는)
+			   	총페이지 수로 설정.
 			4. 시작 블럭번호
-				(blocknum-1)*블럭크기 + 1
-		- startBlock/endBlock
+			   (blocknum-1)*블럭크기 + 1
+			   
 		
 		
 		
-		
-	3) 	service단
+		- startBlock/endBlock	
+	3) service단
 		- 위 속성에 따라 로직에 의해 처리하기..
 	4) 화면단 구성(jsp)
-		<input type="hidden" name="curPage"/>
-		총 페이지 수 표시
+		<input type="hidden" name="curPage" />
+		총페이지 수 표시
 		<select name="pageSize">
 		페이지 리스트
 		<c:forEach var="cnt" begin="1" 
 			end="${sch.pageCount}">
-			<span onclick="goPage(${cnt})">${cnt}</span>			
-		
+			<span onclick="goPage(${cnt})">${cnt}</span>	
+					
 		function goPage(page){
-			${"name=curPage").val(page)
+			$("name=curPage").val(page)
 			$("form").submit();
-		}
-# 상세화면에서 첨부파일 수정처리 
+		}	
+
+# 상세화면에서 첨부파일 수정처리
 1. 프로세스
 	1) 첨부된 파일을 변경하기 위해 첨부된 항목에서 클릭으로
 		변경할 파일을 다시 첨부한다.
 	2) 수정 클릭시, controller단 수정 처리를 호출하면서
-	3) service단 수정 처리를 수행한다.
+	3) service단 수정 처리를 수행 한다.
 		파일 정보 수정 update 처리(DB수정)
+			merge를 이용하여 첨부파일이 없는 경우에는 insert처리
+						   첨부파일이 있는 경우에는 update처리
 		수정된 파일을 해당 폴드에 업로드한다.(물리적 파일 위치로 업로드)
 2. 개발순서
 	0) 등록시, 공백이라도 해당 파일정보를 등록되게 한다.
-		service단 파일 공백 조건 없애기
-	1) DB 파일 정보 수정 처리
-		update boardfile
-			set fname = #{fname}
-			where no = #{no}
-		public void uptBoadrdFile(BoardFile upt);
-	2) 서비스단에서 수정시도 파일업로드프로세스 처리
+
+	1) DB 파일 정보 수정 처리.
+	    merge into boardfile  a     # 수정하거나 등록할 테이블
+		     using BOARD b          # 위 수정/등록을 위해 비교할 테이블
+		        on (a.no = b.no)    # 수정 등록의 조건
+		      when matched then    
+			update set fname = #{fname},
+					uptdte = sysdate
+				   where no = #{no}	
+			  when not matched then
+				insert values(b.no, 
+						#{fname},b.subject,sysdate,sysdate)	
+
+		public void uptBoardFile(BoardFile upt);	
+	2) 서비스단에서 수정시도 파일업로드 프로세스 처리
 		DB처리
-		upload프로세스 
-	3) 화면단 처리
+		upload프로세스
+	3) 화면단 처리..
+
+ 인해서 session 회원명과 동일한 경우에서 수정 삭제 된다.
+		- 이 경우, 동명이인이 있을 수 있을 경우 session의 id명을 DB에서도 처리하여 비교한다.
+2. 개발 순서
+	1) 로그인 DB 처리
+		sql 작성		
+			SELECT * 
+			FROM MEMBER
+			WHERE id='himan'
+			AND pass = '7777'
+		vo
+		공통 mybatis
+		dao
+			public Member login(Member m);
+		mapper
+		<select id="login" parameterType="member" resultType="member">
+		select *
+		from member
+		where id = #{id}
+		and pass = #{pass}
+		</select>		
 		
-#로그인세션으로 처리하는 게시판 권한 관리.
+		service
+	------------------------
+		
+	2) 로그인 controller 처리 session 처리 HttpSession session
+		/loginFrm.do 
+		/login.do
+		a04_login.jsp
+		- 로그인 form
+		- 로그인 처리기능 메서드
+		화면단
+		로그인 성공/로그인 실패 
+		
+	3) 화면단(각 화면)
+		session 값을 id가 없는 경우에 로그인 화면 controller 화면으로 이동하게 처리
+		
+		var sessId = "${mem.id}"
+		if(sessId==""){
+			alert("로그인을 하여야합니다\n로그인 화면 이동");
+			location.href="${path}/loginFrm.do"
+		}
+	4) 등록화면에서 session 이름을 등록시, 작성자를 등록되게 한다.
+		${mem.name} readonly
+		
+	5) 상세화면에서 수정/삭제 버튼 클릭시, session 이름을 비교하여 처리하게 한다.
+		var sessName = "${mem.name}"
+		if(sessName == $("name=writer]").val()){
+			alert("수정 권한이 없습니다\n수정은 작성자만 가능합니다.");
+			//alert("삭제 권한이 없습니다\n삭제는 작성자만 가능합니다.");
+			return;
+		}
+		
+		
+		
+		
+		
+				 
 		
  			
 		

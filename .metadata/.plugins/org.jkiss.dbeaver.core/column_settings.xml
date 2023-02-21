@@ -3,8 +3,8 @@
 	<item id="NodeList/DBNProjectDatabases/DBNBookmarkFolder/DBNDiagramFolder/DBNResource">
 		<column name="이름" visible="true" order="0" width="126"/>
 		<column name="경로" visible="true" order="1" width="223"/>
-		<column name="크기" visible="true" order="3" width="100"/>
 		<column name="최종 수정" visible="true" order="2" width="100"/>
+		<column name="크기" visible="true" order="3" width="100"/>
 	</item>
 	<item id="NodeList/DBNProjectDatabases/DBNResource/DBNBookmarkFolder/DBNDiagramFolder">
 		<column name="이름" visible="true" order="0" width="135"/>
@@ -51,9 +51,9 @@
 		<column name="Name" visible="true" order="0" width="186"/>
 	</item>
 	<item id="Suggestion/NodeList/OracleTableColumn">
-		<column name="컬럼명" visible="true" order="0" width="108"/>
+		<column name="컬럼명" visible="true" order="0" width="208"/>
 		<column name="#" visible="true" order="1" width="40"/>
-		<column name="Type" visible="true" order="2" width="155"/>
+		<column name="Type" visible="true" order="2" width="145"/>
 		<column name="Type Mod" visible="false" order="3" width="100"/>
 		<column name="Not Null" visible="true" order="3" width="83"/>
 		<column name="디폴트" visible="true" order="4" width="68"/>

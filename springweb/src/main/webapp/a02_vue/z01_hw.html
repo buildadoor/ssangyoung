@@ -11,62 +11,66 @@
 <script src="/springweb/a00_com/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
+<template id="stTmp">
+	<div>
+		<h2>{{name}}의 성적, 평균 : {{avg}}</h2>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		    <input v-model="kor" class="form-control mr-sm-2" placeholder="국어" />
+		    <input v-model="eng" class="form-control mr-sm-2" placeholder="영어" />
+		    <input v-model="math" class="form-control mr-sm-2" placeholder="수학" />
+		    <button class="btn btn-info" @click="calcu" type="button">평균</button>
+ 		</nav>
+	</div>
+</template>
 <script type="text/javascript">
-/*
-# 이벤트 처리
-1. 기본 구조
-	1) view 단
-	v-on:이벤트명 = "inline 모델데이터 처리 or 기능메서드"
-	==> @:이벤트명 = "inline 모델데이터 처리 or 기능메서드"
-		ex) v-on:click = "tot = grade*cnt"
-		    v-on:click = "totAll"
-		    <input v-model="grade"/>
-		    <input v-model="cnt"/>
-		    {{grade}} X {{cnt}} = {{tot}}
-		new Vue({
-			data:{grade:0,cnt:0, tot:0},
-			methods:{
-				function totAll(){
-					// this : 전역변수로 모델 데이터나 포함된 기능 메서드 접근이 가능..
-					this.tot = this.grade*this.cnt
-				}
-			}
-		})
-	2) Vue 인스턴스 객체 선언
-		기능 메서드 함수 정의		
+Vue.component("stu-comp", {
+		template:"#stTmp",
+		data:function(){
+			return {kor:0,eng:0,math:0,avg:0}
+		},
+		props: ['name'],
 		methods:{
-			함수명1:function(){
-				처리할 내용
-			},
-			함수명2:fucntion(){
-				처리할 내용
+			calcu:function(){
+				var tot = parseInt(this.kor)+parseInt(this.eng)+parseInt(this.math)
+				this.avg = Math.floor(tot/3)
+				this.$emit("calcuavg", this.avg)
+			// <stu-comp name="홍길동" @calcuavg="totavg"><stu-comp>
 			}
 		}
- */
-
-
+	})
 	$(document).ready(function(){
 		var vm = new Vue({
 			el:".container",
-			data:{msg:"이벤트 처리", price:0, cnt:0, tot:0,cnt2:0}
+			data:{msg:"학생 성적(컴포넌트)", tot:0, alivag:0, stnames:['홍길동','김길동','신길동']},
+			methods:{
+				totavg(avg){
+					var stucount = stnames.length
+					this.tot += avg;
+					this.allavg = Math.floor(this.tot/stucount)
+				}
+			}
 		});	
+		/*
+		<h2>전체평균:{{allavg}}</h2>
+		<tr v-for="name in stnames"><td>{{name}}</td></tr>
+		*/
 	});
-
 </script>
 </head>
 <body>
 
 <div class="container">
-  	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	    <input v-model="price" class="form-control mr-sm-2" placeholder="가격을 입력하세요" />
-	    <input v-model="cnt" class="form-control mr-sm-2" placeholder="갯수를 입력하세요" />
-	    <button v-on:click="tot+=price*cnt, cnt2+=parseInt(cnt)"  class="btn btn-info" type="button">총계 확인</button>
- 	</nav>
-<div class="jumbotron text-center">
-	  <h2 >{{msg}}</h2>
-	   	<h3>단가:{{price}} 갯수:{{cnt2}}개 총계:{{tot}}</h3>
+	<div class="jumbotron text-center">
+	  	<h2 >{{msg}}</h2>
+		<soccer-comp :sc="soccers"></soccer-comp>
 	</div>
-	
+	<form id="frm01" class="form-inline"  method="post">
+  	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	    <input class="form-control mr-sm-2" placeholder="제목" />
+	    <input class="form-control mr-sm-2" placeholder="내용" />
+	    <button class="btn btn-info" type="submit">Search</button>
+ 	</nav>
+	</form>
    <table class="table table-hover table-striped">
    	<col width="10%">
    	<col width="50%">

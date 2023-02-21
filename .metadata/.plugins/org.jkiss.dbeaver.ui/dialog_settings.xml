@@ -58,7 +58,7 @@
 		<item key="showConnected" value="true"/>
 	</section>
 	<section name="DBeaver.ScriptSelectorPopup">
-		<item key="DIALOG_X_ORIGIN" value="654"/>
+		<item key="DIALOG_X_ORIGIN" value="334"/>
 		<item key="DIALOG_Y_ORIGIN" value="220"/>
 		<item key="DIALOG_WIDTH" value="635"/>
 		<item key="DIALOG_HEIGHT" value="443"/>
@@ -104,5 +104,13 @@
 	<section name="TransformerSettingsDialog">
 	</section>
 	<section name="ValueViewDialog">
+	</section>
+	<section name="DBeaver.SQLQueryParameterBindDialog">
+		<item key="DIALOG_X_ORIGIN" value="236"/>
+		<item key="DIALOG_Y_ORIGIN" value="82"/>
+		<item key="DIALOG_WIDTH" value="480"/>
+		<item key="DIALOG_HEIGHT" value="639"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		<item key="PARAM_HIDE_IF_SET" value="false"/>
 	</section>
 </section>

@@ -8160,3 +8160,294 @@
 2월 13, 2023 15:26:44.483 [13036:22372:0213/152644.474:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
 2월 13, 2023 16:01:28.892 [13036:28076:0213/160128.890:ERROR:device_event_log_impl.cc(215)] [16:01:28.890] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
 2월 13, 2023 16:19:18.716 [24224:26440:0213/161918.715:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+2월 14, 2023 12:49:31.749 NEW SESSION
+2월 14, 2023 12:49:31.749 [1896:18900:0214/124931.705:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+2월 14, 2023 13:15:29.188 [1896:28264:0214/131529.187:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 14, 2023 13:57:52.121 [1896:28264:0214/135752.120:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 14, 2023 13:57:54.386 [1896:28996:0214/135754.385:ERROR:device_event_log_impl.cc(215)] [13:57:54.385] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+2월 14, 2023 14:29:05.924 [2340:2408:0214/142905.918:ERROR:get_updates_processor.cc(264)] PostClientToServerMessage() failed during GetUpdates with error 2
+2월 14, 2023 14:30:46.986 [26436:21288:0214/143046.986:ERROR:get_updates_processor.cc(264)] PostClientToServerMessage() failed during GetUpdates with error 2
+
+2월 15, 2023 09:40:55.880 NEW SESSION
+2월 15, 2023 09:40:55.880 기존 브라우저 세션에서 여는 중입니다.
+2월 15, 2023 17:51:28.50 [26292:24136:0215/175128.049:ERROR:device_event_log_impl.cc(218)] [17:51:28.049] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+
+2월 16, 2023 14:00:24.770 NEW SESSION
+2월 16, 2023 14:00:24.770 [2596:7448:0216/140024.764:ERROR:device_event_log_impl.cc(218)] [14:00:24.763] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+
+2월 16, 2023 16:35:20.602 NEW SESSION
+2월 16, 2023 16:35:20.602 [15524:12292:0216/163520.599:ERROR:device_event_log_impl.cc(218)] [16:35:20.598] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 16, 2023 16:35:42.786 [11900:3548:0216/163542.785:ERROR:device_event_log_impl.cc(218)] [16:35:42.785] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+2월 16, 2023 16:42:44.899 NEW SESSION
+2월 16, 2023 16:42:44.900 [10928:1564:0216/164244.896:ERROR:device_event_log_impl.cc(218)] [16:42:44.896] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 16, 2023 16:44:38.876 [16624:852:0216/164438.875:ERROR:device_event_log_impl.cc(218)] [16:44:38.875] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+2월 16, 2023 16:47:35.333 NEW SESSION
+2월 16, 2023 16:47:35.333 [10728:12876:0216/164735.327:ERROR:device_event_log_impl.cc(218)] [16:47:35.327] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 16, 2023 16:52:31.179 [9480:2208:0216/165231.178:ERROR:device_event_log_impl.cc(218)] [16:52:31.178] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 16, 2023 16:52:44.943 [14620:17276:0216/165244.942:ERROR:device_event_log_impl.cc(218)] [16:52:44.941] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+2월 16, 2023 18:30:39.727 NEW SESSION
+2월 16, 2023 18:30:39.727 [21356:20428:0216/183039.725:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:30:39.728 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:30:39.728 ERROR: Failed parsing Certificate
+2월 16, 2023 18:30:39.728 
+2월 16, 2023 18:30:52.720 [11484:1972:0216/183052.720:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:30:52.721 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:30:52.722 ERROR: Failed parsing Certificate
+2월 16, 2023 18:30:52.722 
+2월 16, 2023 18:30:53.746 [11484:1972:0216/183053.745:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:30:53.746 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:30:53.746 ERROR: Failed parsing Certificate
+2월 16, 2023 18:30:53.747 
+2월 16, 2023 18:30:59.655 [6184:6748:0216/183059.654:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:30:59.656 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:30:59.656 ERROR: Failed parsing Certificate
+2월 16, 2023 18:30:59.656 
+2월 16, 2023 18:31:09.520 [20940:16512:0216/183109.519:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:31:09.520 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:31:09.521 ERROR: Failed parsing Certificate
+2월 16, 2023 18:31:09.521 
+2월 16, 2023 18:36:02.315 [20940:16512:0216/183602.314:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:36:02.316 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:36:02.316 ERROR: Failed parsing Certificate
+2월 16, 2023 18:36:02.318 
+2월 16, 2023 18:39:01.244 [14628:20208:0216/183901.243:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:39:01.246 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:39:01.247 ERROR: Failed parsing Certificate
+2월 16, 2023 18:39:01.247 
+2월 16, 2023 18:39:53.315 [9464:1452:0216/183953.314:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:39:53.315 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:39:53.316 ERROR: Failed parsing Certificate
+2월 16, 2023 18:39:53.316 
+2월 16, 2023 18:41:09.522 [9464:1452:0216/184109.514:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:41:09.524 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:41:09.525 ERROR: Failed parsing Certificate
+2월 16, 2023 18:41:09.525 
+2월 16, 2023 18:41:20.882 [3696:19088:0216/184120.881:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:41:20.883 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:41:20.883 ERROR: Failed parsing Certificate
+2월 16, 2023 18:41:20.884 
+2월 16, 2023 18:41:30.225 [20044:10100:0216/184130.224:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:41:30.225 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:41:30.226 ERROR: Failed parsing Certificate
+2월 16, 2023 18:41:30.226 
+2월 16, 2023 18:41:47.380 [20096:3852:0216/184147.379:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:41:47.380 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:41:47.381 ERROR: Failed parsing Certificate
+2월 16, 2023 18:41:47.381 
+2월 16, 2023 18:41:58.321 [20196:8752:0216/184158.321:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:41:58.321 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:41:58.322 ERROR: Failed parsing Certificate
+2월 16, 2023 18:41:58.322 
+2월 16, 2023 18:42:09.763 [5536:21228:0216/184209.762:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:42:09.763 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:42:09.763 ERROR: Failed parsing Certificate
+2월 16, 2023 18:42:09.764 
+2월 16, 2023 18:42:17.236 [16356:21052:0216/184217.236:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:42:17.237 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:42:17.237 ERROR: Failed parsing Certificate
+2월 16, 2023 18:42:17.237 
+2월 16, 2023 18:43:05.142 [12724:20892:0216/184305.142:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:43:05.143 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:43:05.143 ERROR: Failed parsing Certificate
+2월 16, 2023 18:43:05.143 
+2월 16, 2023 18:43:29.736 [12124:15580:0216/184329.736:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:43:29.736 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:43:29.738 ERROR: Failed parsing Certificate
+2월 16, 2023 18:43:29.738 
+2월 16, 2023 18:43:39.416 [20664:21356:0216/184339.416:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:43:39.417 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:43:39.417 ERROR: Failed parsing Certificate
+2월 16, 2023 18:43:39.417 
+2월 16, 2023 18:43:59.946 [19328:18128:0216/184359.946:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:43:59.947 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:43:59.947 ERROR: Failed parsing Certificate
+2월 16, 2023 18:43:59.948 
+2월 16, 2023 18:45:27.360 [19328:18128:0216/184527.359:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 16, 2023 18:45:27.361 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 16, 2023 18:45:27.361 ERROR: Failed parsing Certificate
+2월 16, 2023 18:45:27.361 
+
+2월 16, 2023 20:50:22.809 NEW SESSION
+2월 16, 2023 20:50:22.809 [14312:8596:0216/205022.807:ERROR:device_event_log_impl.cc(218)] [20:50:22.806] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 16, 2023 21:03:44.40 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+2월 16, 2023 21:04:12.369 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+2월 16, 2023 21:04:20.400 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+2월 16, 2023 21:24:16.754 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+
+2월 18, 2023 20:31:54.474 NEW SESSION
+2월 18, 2023 20:31:54.474 [14116:18408:0218/203154.470:ERROR:device_event_log_impl.cc(218)] [20:31:54.471] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 21:09:55.521 [14116:17140:0218/210955.515:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -105
+2월 18, 2023 21:10:01.621 [14116:17140:0218/211001.621:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -105
+2월 18, 2023 21:55:14.454 [21212:19424:0218/215514.453:ERROR:device_event_log_impl.cc(218)] [21:55:14.453] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 22:00:27.34 [13380:23068:0218/220027.030:ERROR:device_event_log_impl.cc(218)] [22:00:27.029] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 22:01:27.772 [11468:7032:0218/220127.772:ERROR:device_event_log_impl.cc(218)] [22:01:27.771] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 22:06:59.710 [23132:7380:0218/220659.710:ERROR:device_event_log_impl.cc(218)] [22:06:59.710] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 22:07:06.612 [20700:5968:0218/220706.611:ERROR:device_event_log_impl.cc(218)] [22:07:06.611] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 22:07:15.993 [12392:16432:0218/220715.993:ERROR:device_event_log_impl.cc(218)] [22:07:15.993] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 22:15:56.529 [8992:14152:0218/221556.527:ERROR:device_event_log_impl.cc(218)] [22:15:56.528] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 22:38:22.143 [8992:12532:0218/223822.143:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 18, 2023 22:45:19.954 [8992:14504:0218/224519.953:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:45:19.955 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:45:19.955 ERROR: Failed parsing Certificate
+2월 18, 2023 22:45:19.956 
+2월 18, 2023 22:45:22.928 [8992:14504:0218/224522.928:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:45:22.929 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:45:22.929 ERROR: Failed parsing Certificate
+2월 18, 2023 22:45:22.929 
+2월 18, 2023 22:45:24.00 [8992:14504:0218/224524.000:ERROR:cert_verify_proc_builtin.cc(677)] CertVerifyProcBuiltin for www.jtnews.kr failed:
+2월 18, 2023 22:45:24.01 ----- Certificate i=0 (CN=www.cbnews.co.kr,OU=PositiveSSL,OU=Domain Control Validated) -----
+2월 18, 2023 22:45:24.02 ERROR: Time is after notAfter
+2월 18, 2023 22:45:24.03 
+2월 18, 2023 22:45:24.04 
+2월 18, 2023 22:45:37.453 [8992:14152:0218/224537.452:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+2월 18, 2023 22:45:50.352 [8992:14504:0218/224550.351:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:45:50.352 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:45:50.353 ERROR: Failed parsing Certificate
+2월 18, 2023 22:45:50.353 
+2월 18, 2023 22:45:51.976 [8992:14152:0218/224551.974:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+2월 18, 2023 22:45:52.845 [8992:14504:0218/224552.844:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:45:52.845 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:45:52.846 ERROR: Failed parsing Certificate
+2월 18, 2023 22:45:52.846 
+2월 18, 2023 22:45:54.317 [8992:17436:0218/224554.317:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:45:54.318 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:45:54.318 ERROR: Failed parsing Certificate
+2월 18, 2023 22:45:54.319 
+2월 18, 2023 22:47:40.215 [8992:14504:0218/224740.215:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:47:40.216 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:47:40.217 ERROR: Failed parsing Certificate
+2월 18, 2023 22:47:40.218 
+2월 18, 2023 22:47:45.06 [8992:14152:0218/224745.006:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+2월 18, 2023 22:48:04.268 [8992:14504:0218/224804.267:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:48:04.268 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:48:04.269 ERROR: Failed parsing Certificate
+2월 18, 2023 22:48:04.270 
+2월 18, 2023 22:48:06.501 [8992:14152:0218/224806.500:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+2월 18, 2023 22:48:09.23 [8992:14504:0218/224809.023:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:48:09.25 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:48:09.25 ERROR: Failed parsing Certificate
+2월 18, 2023 22:48:09.26 
+2월 18, 2023 22:49:11.811 [8992:14504:0218/224911.810:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:49:11.812 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:49:11.812 ERROR: Failed parsing Certificate
+2월 18, 2023 22:49:11.813 
+2월 18, 2023 22:49:18.371 [8992:14504:0218/224918.371:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:49:18.372 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:49:18.373 ERROR: Failed parsing Certificate
+2월 18, 2023 22:49:18.374 
+2월 18, 2023 22:49:41.373 [8992:14152:0218/224941.373:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+2월 18, 2023 22:49:53.553 [8992:14504:0218/224953.553:ERROR:cert_verify_proc_builtin.cc(677)] CertVerifyProcBuiltin for www.hairmagazine.co.kr failed:
+2월 18, 2023 22:49:53.554 ----- Certificate i=0 (CN=issn.or.kr,OU=GoGetSSL Domain SSL,OU=Domain Control Validated) -----
+2월 18, 2023 22:49:53.555 ERROR: Time is after notAfter
+2월 18, 2023 22:49:53.556 
+2월 18, 2023 22:49:53.557 
+2월 18, 2023 22:49:53.792 [8992:14152:0218/224953.791:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+2월 18, 2023 22:51:06.462 [8992:14504:0218/225106.461:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:51:06.462 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:51:06.463 ERROR: Failed parsing Certificate
+2월 18, 2023 22:51:06.464 
+2월 18, 2023 22:51:28.388 [8992:14504:0218/225128.387:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:51:28.389 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:51:28.389 ERROR: Failed parsing Certificate
+2월 18, 2023 22:51:28.390 
+2월 18, 2023 22:51:28.391 [8992:14504:0218/225128.387:ERROR:cert_verify_proc_builtin.cc(677)] CertVerifyProcBuiltin for www.igoodnews.or.kr failed:
+2월 18, 2023 22:51:28.391 ----- Certificate i=2 (CN=DST Root CA X3,O=Digital Signature Trust Co.) -----
+2월 18, 2023 22:51:28.392 ERROR: No matching issuer found
+2월 18, 2023 22:51:28.393 
+2월 18, 2023 22:51:28.393 
+2월 18, 2023 22:51:37.177 [8992:14504:0218/225137.177:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:51:37.178 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:51:37.178 ERROR: Failed parsing Certificate
+2월 18, 2023 22:51:37.179 
+2월 18, 2023 22:51:43.491 [8992:14504:0218/225143.491:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:51:43.492 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:51:43.493 ERROR: Failed parsing Certificate
+2월 18, 2023 22:51:43.493 
+2월 18, 2023 22:51:43.541 [8992:14504:0218/225143.541:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:51:43.542 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:51:43.543 ERROR: Failed parsing Certificate
+2월 18, 2023 22:51:43.543 
+2월 18, 2023 22:51:45.746 [8992:14504:0218/225145.745:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:51:45.746 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:51:45.747 ERROR: Failed parsing Certificate
+2월 18, 2023 22:51:45.748 
+2월 18, 2023 22:51:49.331 [8992:14504:0218/225149.330:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 18, 2023 22:51:49.333 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 18, 2023 22:51:49.334 ERROR: Failed parsing Certificate
+2월 18, 2023 22:51:49.335 
+2월 18, 2023 22:56:40.281 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+2월 18, 2023 22:56:51.888 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+2월 18, 2023 22:57:12.488 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+2월 18, 2023 22:57:21.11 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+2월 18, 2023 23:03:16.774 [17460:1444:0218/230316.774:ERROR:device_event_log_impl.cc(218)] [23:03:16.773] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 23:07:22.833 [7528:18132:0218/230722.832:ERROR:device_event_log_impl.cc(218)] [23:07:22.832] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 23:09:53.358 [15880:7156:0218/230953.358:ERROR:device_event_log_impl.cc(218)] [23:09:53.358] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 23:12:44.695 [22364:20796:0218/231244.694:ERROR:device_event_log_impl.cc(218)] [23:12:44.694] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 23:13:29.998 [16476:13888:0218/231329.997:ERROR:device_event_log_impl.cc(218)] [23:13:29.998] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 18, 2023 23:13:39.690 [14144:21500:0218/231339.690:ERROR:device_event_log_impl.cc(218)] [23:13:39.690] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 24:00:38.222 [15152:21272:0219/000038.221:ERROR:device_event_log_impl.cc(218)] [00:00:38.221] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 24:08:02.175 [19144:8000:0219/000802.175:ERROR:device_event_log_impl.cc(218)] [00:08:02.175] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 24:09:05.448 [11656:15188:0219/000905.448:ERROR:device_event_log_impl.cc(218)] [00:09:05.447] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 24:09:39.352 [280:13084:0219/000939.352:ERROR:device_event_log_impl.cc(218)] [00:09:39.352] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 24:09:55.775 [12764:7600:0219/000955.775:ERROR:device_event_log_impl.cc(218)] [00:09:55.775] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 24:10:15.140 [11092:21392:0219/001015.140:ERROR:device_event_log_impl.cc(218)] [00:10:15.140] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 24:10:27.568 [2932:11736:0219/001027.568:ERROR:device_event_log_impl.cc(218)] [00:10:27.568] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 24:10:40.547 [7048:23132:0219/001040.547:ERROR:device_event_log_impl.cc(218)] [00:10:40.547] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+2월 19, 2023 19:46:11.936 NEW SESSION
+2월 19, 2023 19:46:11.936 [10732:12464:0219/194611.933:ERROR:device_event_log_impl.cc(218)] [19:46:11.933] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 20:08:36.311 [3148:10064:0219/200836.310:ERROR:device_event_log_impl.cc(218)] [20:08:36.311] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 20:10:08.08 [11364:21316:0219/201008.007:ERROR:device_event_log_impl.cc(218)] [20:10:08.007] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 20:34:50.301 [11364:15644:0219/203450.300:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 19, 2023 21:01:59.289 [11364:21316:0219/210159.288:ERROR:device_event_log_impl.cc(218)] [21:01:59.287] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+2월 19, 2023 21:02:02.523 [11364:15644:0219/210202.523:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -105
+2월 19, 2023 21:08:10.980 [22736:9084:0219/210810.979:ERROR:device_event_log_impl.cc(218)] [21:08:10.978] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 21:09:58.394 [1252:3620:0219/210958.394:ERROR:device_event_log_impl.cc(218)] [21:09:58.394] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 19, 2023 21:30:02.39 [1252:3620:0219/213002.036:ERROR:device_event_log_impl.cc(218)] [21:30:02.037] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+2월 19, 2023 21:40:23.127 [1252:21068:0219/214023.126:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+
+2월 20, 2023 14:34:25.750 NEW SESSION
+2월 20, 2023 14:34:25.751 [9512:24056:0220/143425.748:ERROR:device_event_log_impl.cc(218)] [14:34:25.748] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 20, 2023 16:23:02.568 [5452:7200:0220/162302.560:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -105
+2월 20, 2023 16:49:30.940 [17780:14796:0220/164930.931:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -105
+
+2월 20, 2023 20:31:10.211 NEW SESSION
+2월 20, 2023 20:31:10.211 [7952:9636:0220/203110.209:ERROR:device_event_log_impl.cc(218)] [20:31:10.208] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+2월 21, 2023 24:05:10.133 NEW SESSION
+2월 21, 2023 24:05:10.134 [12400:23524:0221/000510.129:ERROR:device_event_log_impl.cc(218)] [00:05:10.130] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:17:13.293 [23320:20664:0221/001713.292:ERROR:device_event_log_impl.cc(218)] [00:17:13.292] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:18:11.143 [15772:2524:0221/001811.142:ERROR:device_event_log_impl.cc(218)] [00:18:11.142] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:18:32.200 [5192:14148:0221/001832.199:ERROR:device_event_log_impl.cc(218)] [00:18:32.199] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:18:50.443 [5980:11384:0221/001850.442:ERROR:device_event_log_impl.cc(218)] [00:18:50.442] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:19:43.878 [7868:24240:0221/001943.877:ERROR:device_event_log_impl.cc(218)] [00:19:43.875] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:20:43.420 [24420:19220:0221/002043.419:ERROR:device_event_log_impl.cc(218)] [00:20:43.418] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:28:29.332 [25352:17492:0221/002829.331:ERROR:device_event_log_impl.cc(218)] [00:28:29.331] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:28:54.703 [1904:2928:0221/002854.702:ERROR:device_event_log_impl.cc(218)] [00:28:54.703] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:31:55.511 [3152:20040:0221/003155.510:ERROR:device_event_log_impl.cc(218)] [00:31:55.510] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:32:39.879 [7048:16320:0221/003239.879:ERROR:get_updates_processor.cc(264)] PostClientToServerMessage() failed during GetUpdates with error 2
+2월 21, 2023 24:33:07.955 [13576:8452:0221/003307.953:ERROR:device_event_log_impl.cc(218)] [00:33:07.953] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:33:25.831 [10656:2860:0221/003325.829:ERROR:device_event_log_impl.cc(218)] [00:33:25.829] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:38:29.308 [23980:9380:0221/003829.295:ERROR:device_event_log_impl.cc(218)] [00:38:29.296] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:38:57.697 [9616:20220:0221/003857.696:ERROR:device_event_log_impl.cc(218)] [00:38:57.696] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+2월 21, 2023 24:43:08.457 NEW SESSION
+2월 21, 2023 24:43:08.458 [23804:7680:0221/004308.455:ERROR:get_updates_processor.cc(264)] PostClientToServerMessage() failed during GetUpdates with error 2
+2월 21, 2023 24:45:33.880 [19588:23852:0221/004533.880:ERROR:device_event_log_impl.cc(218)] [00:45:33.880] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:47:06.427 [9072:15712:0221/004706.426:ERROR:device_event_log_impl.cc(218)] [00:47:06.426] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 24:59:14.904 [8228:4000:0221/005914.904:ERROR:device_event_log_impl.cc(218)] [00:59:14.904] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+2월 21, 2023 13:33:50.953 NEW SESSION
+2월 21, 2023 13:33:50.953 [12784:4952:0221/133350.951:ERROR:device_event_log_impl.cc(218)] [13:33:50.951] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 21, 2023 13:36:51.497 [12784:16256:0221/133651.497:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 21, 2023 13:36:51.499 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 21, 2023 13:36:51.500 ERROR: Failed parsing Certificate
+2월 21, 2023 13:36:51.501 
+2월 21, 2023 13:36:56.257 [12784:16256:0221/133656.257:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+2월 21, 2023 13:36:56.258 ERROR: Couldn't read tbsCertificate as SEQUENCE
+2월 21, 2023 13:36:56.258 ERROR: Failed parsing Certificate
+2월 21, 2023 13:36:56.258 
