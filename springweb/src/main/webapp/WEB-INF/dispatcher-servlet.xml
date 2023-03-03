@@ -30,48 +30,48 @@
        http://www.springframework.org/schema/security/spring-security.xsd   
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd   
-      " >
-   <!-- 
-      자동을 특정 패키지에 컨테이너에 할당할 클래스 설정
-         1. springweb 하위 패키지에
-         2. annotation으로 Controller, Service, Repository로 선언된
-            클래스를 호출하여 객체로 생성되게 처리.
-    -->
-      <context:component-scan base-package="springweb">
-         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
-         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
-      </context:component-scan>
-       <context:property-placeholder location="classpath:resource/a00_config"/>
-      <!-- 
-         # DB연결처리
-         1. dbcp(database connection pool)로 연결
-             oracle.jdbc.driver.OracleDriver
-       -->
-       <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-             <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-             <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
-             <property name="username" value="scott"></property>
-             <property name="password" value="tiger"></property>
-       </bean>
-       <!-- 
-             # Mybatis 연동
-             1. 위 선언한 dbcp와 연결
-             2. mybatis 공통 xml과 연동처리
-                src\main\java\resource\mybatis.Spring.xml
-        -->
-        <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-           <property name="dataSource" ref="dataSource"></property>
-           <property name="configLocation" value="classpath:resource/mybatis.Spring.xml"></property>
-        </bean>
-        <!-- 
-           # 마이바티즈에 의해 자동 생성 dao 인터페이스 선언
-        -->
-        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-           <property name="basePackage" value="springweb.a05_mvc.a03_dao"></property>
-        </bean>
+      ">
+	<!-- 자동을 특정 패키지에 컨테이너에 할당할 클래스 설정 
+	1. springweb하위 패키지에
+	2. annotation으로 Controller, Service, Repository로 선언된 것은
+		클래스를 호출하여 객체로 생성되게 처리.
+	-->
+	<context:component-scan base-package="springweb">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+	</context:component-scan>
+	<context:property-placeholder location="classpath:resource/a00_config"/>
+	
 	<!-- 
-	# 컨트롤단에서 마지막 리턴되는 값이 bean id값과 동일하면 객체로 view를 처리해주고(1순위),
+	# DB연결처리
+	1. dbcp(database connection pool) 로 연결
+	 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>	
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>	
+		<property name="username" value="scott"/>	
+		<property name="password" value="tiger"/>	
+	</bean>	 
+	<!-- 
+	# Mybatis연동
+	1. 위 선언한 dbcp와 연결
+	2. mybatis 공통 xml과 연동 처리
+		src\main\java\resource\mybatis.Spring.xml
+	 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:resource/mybatis.Spring.xml"/>
+	</bean>
+	<!-- 
+	# 마이바티즈에 의해 자동 생성 dao 인터페이스 선언
+	 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="springweb.a05_mvc.a03_dao"/>
+	</bean>	 
+	<!-- 
+	# 컨트롤단에서 마지막 리턴되는 값이 bean id값과 동일하면 해당 객체로 view을 처리해주고(1순위),
 	그 외에는 jsp/html로 경로를 찾아가서 화면을 로딩한다.(2순위)
 	
 	
@@ -88,15 +88,14 @@
 		<property name="order" value="1"/>
 	</bean>
 	<!-- 위에서 1순위 채택하는 json viewer -->
-	<bean id="pageJsonReport" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+	<bean id="pageJsonReport" class=
+"org.springframework.web.servlet.view.json.MappingJackson2JsonView">
 		<property name="contentType" 
 			value="text/html;charset=utf-8"/>	
 	</bean>
-	<!-- 파일업로드 -->
-	 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
-	<!-- 파일다운로드 -->
-	 <bean id="downloadViewer" class="springweb.a06_util.Z01_DownloadView"/>
-		<!-- 
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	<bean id="downloadViewer" class="springweb.a06_util.Z01_DownloadView"/>
+	<!-- 
 	2. 다국어 코드 등록 설정위치 지정
 	 -->
 	<bean id="messageSource" 
@@ -111,6 +110,42 @@
 	1. 언어 변환 처리를 위한 객체 등록 -->
 	<bean id="localeResolver" 
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
+	<!-- 
+	#  웹소켙통신을 위한 객체 선언
+	1. handlermapping, adapter
+	 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+	<!-- 
+	# 특정 url주소를 통해서 handler 객체 호출 및 소켙session 처리
+		클라이언트 : 웹소켓 js객체 chat-ws.do 서버에 핸들객체 호출
+	 -->
+	<mvc:default-servlet-handler/> 
+	<websocket:handlers>
+		<websocket:mapping handler="chatHandler" path="/chat-ws.do"/>
+		<websocket:handshake-interceptors>
+			<bean class="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor"/>
+		
+		</websocket:handshake-interceptors>	
+	</websocket:handlers>
+	<!-- 
+	# 메일 발송 모듈 객체 선언.(스프링 프레임워 사용)
+	 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com"/>
+		<property name="port" value="587"/>
+		<property name="username" value="janexagnes@gmail.com"/>
+		<property name="password" value="jpeubtdyhqtsogma"/>
+		<property name="javaMailProperties" >
+			<props>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+			</props>
+		</property>
+	</bean>	 
 	
-	
-	</beans>
+</beans>      

@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="0"/>
 	<item key="ResetTargetSelectionDialog.resetType" value="HARD"/>
+	<item key="GitSelectRepositoryPage.lastRepository" value="C:\a01_javaexp\workspace\fleaMarketProject\.git"/>
 	<list key="EGit.KnownHosts">
-		<item value="bitbucket.org"/>
 		<item value="git.eclipse.org"/>
+		<item value="bitbucket.org"/>
 		<item value="github.com"/>
 	</list>
 	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/ssangyoung9736/bootexp.git"/>
+		<item value="https://github.com/LeeJeongMyeng/fleaMarketProject.git"/>
+		<item value="ttps://buildadoor@github.com/LeeJeongMyeng/fleaMarketProject.git"/>
 		<item value="https://github.com/ssangyoung9736/board.git"/>
 		<item value="https://github.com/ssangyoung9736/springweb.git"/>
 		<item value="https://github.com/janexagnes/jane.git"/>
@@ -25,6 +29,9 @@
 		<item key="sortItemState" value="false"/>
 	</section>
 	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\lya_0\git\fleaMarketProject\.git">
+			<item value="empty"/>
+		</list>
 	</section>
 	<section name="GitImportWizard">
 		<item key="GitProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
@@ -33,7 +40,7 @@
 		<item key="DIALOG_X_ORIGIN" value="169"/>
 		<item key="DIALOG_Y_ORIGIN" value="159"/>
 		<item key="DIALOG_WIDTH" value="638"/>
-		<item key="DIALOG_HEIGHT" value="524"/>
+		<item key="DIALOG_HEIGHT" value="798"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.fetch.FetchResultDialog.dialogBounds">
@@ -44,8 +51,8 @@
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.dialogs.ResetTargetSelectionDialog.dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="139"/>
-		<item key="DIALOG_Y_ORIGIN" value="11"/>
+		<item key="DIALOG_X_ORIGIN" value="225"/>
+		<item key="DIALOG_Y_ORIGIN" value="49"/>
 		<item key="DIALOG_WIDTH" value="700"/>
 		<item key="DIALOG_HEIGHT" value="958"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

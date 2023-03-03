@@ -2,6 +2,7 @@
 <modules>
   <module moduleId="org.eclipse.jst.jee.server:web01" serverId="Tomcat v10.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:jspexp" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:fleaMarket" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:frontWeb" serverId="Tomcat v10.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:springweb_oliveyoung" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:web05" serverId="Tomcat v10.0 Server at localhost"/>

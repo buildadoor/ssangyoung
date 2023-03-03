@@ -48,6 +48,12 @@
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230303.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\1.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\윤아\쌍용\7.최종프로젝트\윤아백업\230226.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\윤아\쌍용\7.최종프로젝트\윤아백업\lib압축.zip"/>
+			<item value="C:\Users\lya_0\OneDrive\바탕 화면\윤아\쌍용\7.최종프로젝트\윤아백업\search.zip"/>
+			<item value="E:\쌍용\이클립스 백업\230223.zip"/>
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\템플릿.zip"/>
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230215.zip"/>
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\4조_이윤아.zip"/>
@@ -62,12 +68,6 @@
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230127.zip"/>
 			<item value="E:\쌍용\이클립스 백업\230121.zip"/>
 			<item value="C:\Users\lya_0\OneDrive\바탕 화면\230120.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\a05.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\202301120zip.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230119.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230116.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230111.zip"/>
-			<item value="C:\Users\lya_0\OneDrive\바탕 화면\20230105.zip"/>
 		</list>
 	</section>
 	<section name="InstallationDialogSettings">

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="z03_kurlyproject.vo.User"/>
-    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-    <fullyQualifiedTypeName name="jspexp.vo.Dept"/>
     <fullyQualifiedTypeName name="jspexp.a13_database.A02_EmpDao"/>
     <fullyQualifiedTypeName name="jspexp.vo.Emp"/>
     <fullyQualifiedTypeName name="springweb.z01_vo.Kimbap"/>
@@ -48,10 +45,8 @@
     <fullyQualifiedTypeName name="springweb.z01_vo.Code"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="ch.qos.logback.core.recovery.ResilientSyslogOutputStream"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.net.URLEncoder"/>
     <fullyQualifiedTypeName name="java.io.OutputStream"/>
     <fullyQualifiedTypeName name="org.springframework.util.FileCopyUtils"/>
@@ -60,4 +55,9 @@
     <fullyQualifiedTypeName name="board.vo.Member"/>
     <fullyQualifiedTypeName name="springweb.a05_mvc.a02_service.A20_CalendarService"/>
     <fullyQualifiedTypeName name="springweb.z01_vo.Calendar"/>
+    <fullyQualifiedTypeName name="org.springframework.web.socket.WebSocketSession"/>
+    <fullyQualifiedTypeName name="fleaMarket.a03_dao.Req1001_Dao"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="vo.Member"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 </qualifiedTypeNameHistroy>

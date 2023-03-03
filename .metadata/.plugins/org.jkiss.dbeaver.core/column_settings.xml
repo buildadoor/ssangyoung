@@ -51,7 +51,7 @@
 		<column name="Name" visible="true" order="0" width="186"/>
 	</item>
 	<item id="Suggestion/NodeList/OracleTableColumn">
-		<column name="컬럼명" visible="true" order="0" width="208"/>
+		<column name="컬럼명" visible="true" order="0" width="177"/>
 		<column name="#" visible="true" order="1" width="40"/>
 		<column name="Type" visible="true" order="2" width="145"/>
 		<column name="Type Mod" visible="false" order="3" width="100"/>

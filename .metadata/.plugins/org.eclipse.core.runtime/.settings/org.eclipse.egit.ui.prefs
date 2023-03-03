@@ -1,3 +1,4 @@
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>20230102</message>\r\n</messages>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>\uD15C\uD50C\uB9BF</message>\r\n<message>20230102</message>\r\n</messages>
 eclipse.preferences.version=1
 repositories_view_filters=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<FilterCache/>
+show_running_launch_on_checkout_warning=false

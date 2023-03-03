@@ -6,25 +6,29 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="search"/>
+		<item key="selection" value="kanban"/>
 		<list key="findhistory">
-			<item value="search"/>
-			<item value="`"/>
-			<item value="Search"/>
-			<item value="To"/>
-			<item value="top"/>
-			<item value="채팅"/>
-			<item value="Flea"/>
-			<item value="TinyMCE Editor"/>
-			<item value="Form Editors"/>
-			<item value="종일"/>
-			<item value="답글 처리"/>
-			<item value="arg"/>
-			<item value="agr."/>
-			<item value="Contact"/>
-			<item value="contact"/>
+			<item value="Kanban"/>
+			<item value="문의"/>
+			<item value="a"/>
+			<item value="고객센터"/>
+			<item value="Ka"/>
+			<item value="Kab"/>
+			<item value="Kaban"/>
+			<item value="회사소개"/>
+			<item value="추가메뉴"/>
+			<item value="추가 메뉴"/>
+			<item value="공지사항 조회"/>
+			<item value="공지사항"/>
+			<item value="회원가입"/>
+			<item value="QNA"/>
+			<item value="검색"/>
 		</list>
 		<list key="replacehistory">
+			<item value="${path}/"/>
+			<item value="${path}"/>
+			<item value="$"/>
+			<item value="${path}/assets"/>
 			<item value="02"/>
 			<item value="/"/>
 			<item value="src=&quot;${path}/resources/img"/>
@@ -36,15 +40,11 @@
 			<item value="th"/>
 			<item value="Salgrade"/>
 			<item value="from person"/>
-			<item value="person"/>
-			<item value="dept100"/>
-			<item value="FROM emp100"/>
-			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="11"/>
-		<item key="DIALOG_Y_ORIGIN" value="365"/>
+		<item key="DIALOG_X_ORIGIN" value="123"/>
+		<item key="DIALOG_Y_ORIGIN" value="349"/>
 		<item key="DIALOG_WIDTH" value="418"/>
 		<item key="DIALOG_HEIGHT" value="523"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
